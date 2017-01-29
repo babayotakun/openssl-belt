@@ -18,6 +18,9 @@
 #include "modes_lcl.h"
 #include <openssl/rand.h>
 #include "evp_locl.h"
+#include "../../include/openssl/aes.h"
+#include "../../include/openssl/evp.h"
+#include "../../include/openssl/modes.h"
 
 typedef struct {
     union {
