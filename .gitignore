@@ -1,6 +1,6 @@
 # Ignore editor artefacts
 /.dir-locals.el
-
+*.opensdf
 # Top level excludes
 /Makefile.orig
 /MINFO
