@@ -1,0 +1,1808 @@
+﻿Build started 29.01.2017 16:11:03.
+     1>Project "C:\Studing\openssl\openssl-belt.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of cms.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are apps\cms.c, fuzz\cms.c.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of crl.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are apps\crl.c, fuzz\crl.c.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of x509.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are apps\x509.c, fuzz\x509.c.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of cms_enc.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are crypto\cms\cms_enc.c, demos\cms\cms_enc.c.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W1 /WX- /Od /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TC /errorReport:prompt apps\apps.c apps\app_rand.c apps\asn1pars.c apps\ca.c apps\ciphers.c apps\cms.c apps\crl.c apps\crl2p7.c apps\dgst.c apps\dhparam.c apps\dsa.c apps\dsaparam.c apps\ec.c apps\ecparam.c apps\enc.c apps\engine.c apps\errstr.c apps\gendsa.c apps\genpkey.c apps\genrsa.c apps\nseq.c apps\ocsp.c apps\openssl.c apps\opt.c apps\passwd.c apps\pkcs12.c apps\pkcs7.c apps\pkcs8.c apps\pkey.c apps\pkeyparam.c apps\pkeyutl.c apps\prime.c apps\rand.c apps\rehash.c apps\req.c apps\rsa.c apps\rsautl.c apps\sess_id.c apps\smime.c apps\speed.c apps\spkac.c apps\srp.c apps\s_cb.c apps\s_client.c apps\s_server.c apps\s_socket.c apps\s_time.c apps\ts.c apps\verify.c apps\version.c apps\vms_decc_init.c apps\vms_term_sock.c apps\win32_init.c apps\x509.c crypto\aes\aes_cbc.c crypto\aes\aes_cfb.c crypto\aes\aes_core.c crypto\aes\aes_ecb.c crypto\aes\aes_ige.c crypto\aes\aes_misc.c crypto\aes\aes_ofb.c crypto\aes\aes_wrap.c crypto\aes\aes_x86core.c crypto\armcap.c crypto\asn1\ameth_lib.c crypto\asn1\asn1_err.c crypto\asn1\asn1_gen.c crypto\asn1\asn1_lib.c crypto\asn1\asn1_par.c crypto\asn1\asn_mime.c crypto\asn1\asn_moid.c crypto\asn1\asn_mstbl.c crypto\asn1\asn_pack.c crypto\asn1\a_bitstr.c crypto\asn1\a_d2i_fp.c crypto\asn1\a_digest.c crypto\asn1\a_dup.c crypto\asn1\a_gentm.c crypto\asn1\a_i2d_fp.c crypto\asn1\a_int.c crypto\asn1\a_mbstr.c crypto\asn1\a_object.c crypto\asn1\a_octet.c crypto\asn1\a_print.c crypto\asn1\a_sign.c crypto\asn1\a_strex.c crypto\asn1\a_strnid.c crypto\asn1\a_time.c crypto\asn1\a_type.c crypto\asn1\a_utctm.c crypto\asn1\a_utf8.c crypto\asn1\a_verify.c crypto\asn1\bio_asn1.c crypto\asn1\bio_ndef.c crypto\asn1\d2i_pr.c crypto\asn1\d2i_pu.c crypto\asn1\evp_asn1.c crypto\asn1\f_int.c crypto\asn1\f_string.c crypto\asn1\i2d_pr.c crypto\asn1\i2d_pu.c crypto\asn1\nsseq.c crypto\asn1\n_pkey.c crypto\asn1\p5_pbe.c crypto\asn1\p5_pbev2.c crypto\asn1\p5_scrypt.c crypto\asn1\p8_pkey.c crypto\asn1\tasn_dec.c crypto\asn1\tasn_enc.c crypto\asn1\tasn_fre.c crypto\asn1\tasn_new.c crypto\asn1\tasn_prn.c crypto\asn1\tasn_scn.c crypto\asn1\tasn_typ.c crypto\asn1\tasn_utl.c crypto\asn1\t_bitst.c crypto\asn1\t_pkey.c crypto\asn1\t_spki.c crypto\asn1\x_algor.c crypto\asn1\x_bignum.c crypto\asn1\x_info.c crypto\asn1\x_long.c crypto\asn1\x_pkey.c crypto\asn1\x_sig.c crypto\asn1\x_spki.c crypto\asn1\x_val.c crypto\async\arch\async_null.c crypto\async\arch\async_posix.c crypto\async\arch\async_win.c crypto\async\async.c crypto\async\async_err.c crypto\async\async_wait.c crypto\bf\bf_cbc.c crypto\bf\bf_cfb64.c crypto\bf\bf_ecb.c crypto\bf\bf_enc.c crypto\bf\bf_ofb64.c crypto\bf\bf_skey.c crypto\bio\bf_buff.c crypto\bio\bf_lbuf.c crypto\bio\bf_nbio.c crypto\bio\bf_null.c crypto\bio\bio_cb.c crypto\bio\bio_err.c crypto\bio\bio_lib.c crypto\bio\bio_meth.c crypto\bio\bss_acpt.c crypto\bio\bss_bio.c crypto\bio\bss_conn.c crypto\bio\bss_dgram.c crypto\bio\bss_fd.c crypto\bio\bss_file.c crypto\bio\bss_log.c crypto\bio\bss_mem.c crypto\bio\bss_null.c crypto\bio\bss_sock.c crypto\bio\b_addr.c crypto\bio\b_dump.c crypto\bio\b_print.c crypto\bio\b_sock.c crypto\bio\b_sock2.c crypto\blake2\blake2b.c crypto\blake2\blake2s.c crypto\blake2\m_blake2b.c crypto\blake2\m_blake2s.c "crypto\bn\asm\x86_64-gcc.c" crypto\bn\bn_add.c crypto\bn\bn_asm.c crypto\bn\bn_blind.c crypto\bn\bn_const.c crypto\bn\bn_ctx.c crypto\bn\bn_depr.c crypto\bn\bn_dh.c crypto\bn\bn_div.c crypto\bn\bn_err.c crypto\bn\bn_exp.c crypto\bn\bn_exp2.c crypto\bn\bn_gcd.c crypto\bn\bn_gf2m.c crypto\bn\bn_intern.c crypto\bn\bn_kron.c crypto\bn\bn_lib.c crypto\bn\bn_mod.c crypto\bn\bn_mont.c crypto\bn\bn_mpi.c crypto\bn\bn_mul.c crypto\bn\bn_nist.c crypto\bn\bn_prime.c crypto\bn\bn_print.c crypto\bn\bn_rand.c crypto\bn\bn_recp.c crypto\bn\bn_shift.c crypto\bn\bn_sqr.c crypto\bn\bn_sqrt.c crypto\bn\bn_srp.c crypto\bn\bn_word.c crypto\bn\bn_x931p.c crypto\bn\rsaz_exp.c crypto\buffer\buffer.c crypto\buffer\buf_err.c crypto\camellia\camellia.c crypto\camellia\cmll_cbc.c crypto\camellia\cmll_cfb.c crypto\camellia\cmll_ctr.c crypto\camellia\cmll_ecb.c crypto\camellia\cmll_misc.c crypto\camellia\cmll_ofb.c crypto\cast\c_cfb64.c crypto\cast\c_ecb.c crypto\cast\c_enc.c crypto\cast\c_ofb64.c crypto\cast\c_skey.c crypto\chacha\chacha_enc.c crypto\cmac\cmac.c crypto\cmac\cm_ameth.c crypto\cmac\cm_pmeth.c crypto\cms\cms_asn1.c crypto\cms\cms_att.c crypto\cms\cms_cd.c crypto\cms\cms_dd.c crypto\cms\cms_enc.c crypto\cms\cms_env.c crypto\cms\cms_err.c crypto\cms\cms_ess.c crypto\cms\cms_io.c crypto\cms\cms_kari.c crypto\cms\cms_lib.c crypto\cms\cms_pwri.c crypto\cms\cms_sd.c crypto\cms\cms_smime.c crypto\comp\comp_err.c crypto\comp\comp_lib.c crypto\comp\c_zlib.c crypto\conf\conf_api.c crypto\conf\conf_def.c crypto\conf\conf_err.c crypto\conf\conf_lib.c crypto\conf\conf_mall.c crypto\conf\conf_mod.c crypto\conf\conf_sap.c crypto\cpt_err.c crypto\cryptlib.c crypto\ct\ct_b64.c crypto\ct\ct_err.c crypto\ct\ct_log.c crypto\ct\ct_oct.c crypto\ct\ct_policy.c crypto\ct\ct_prn.c crypto\ct\ct_sct.c crypto\ct\ct_sct_ctx.c crypto\ct\ct_vfy.c crypto\ct\ct_x509v3.c crypto\cversion.c crypto\des\cbc_cksm.c crypto\des\cbc_enc.c crypto\des\cfb64ede.c crypto\des\cfb64enc.c crypto\des\cfb_enc.c crypto\des\des_enc.c crypto\des\ecb3_enc.c crypto\des\ecb_enc.c crypto\des\fcrypt.c crypto\des\fcrypt_b.c crypto\des\ncbc_enc.c crypto\des\ofb64ede.c crypto\des\ofb64enc.c crypto\des\ofb_enc.c crypto\des\pcbc_enc.c crypto\des\qud_cksm.c crypto\des\rand_key.c crypto\des\rpc_enc.c crypto\des\set_key.c crypto\des\str2key.c crypto\des\xcbc_enc.c crypto\dh\dh_ameth.c crypto\dh\dh_asn1.c crypto\dh\dh_check.c crypto\dh\dh_depr.c crypto\dh\dh_err.c crypto\dh\dh_gen.c crypto\dh\dh_kdf.c crypto\dh\dh_key.c crypto\dh\dh_lib.c crypto\dh\dh_meth.c crypto\dh\dh_pmeth.c crypto\dh\dh_prn.c crypto\dh\dh_rfc5114.c crypto\dllmain.c crypto\dsa\dsa_ameth.c crypto\dsa\dsa_asn1.c crypto\dsa\dsa_depr.c crypto\dsa\dsa_err.c crypto\dsa\dsa_gen.c crypto\dsa\dsa_key.c crypto\dsa\dsa_lib.c crypto\dsa\dsa_meth.c crypto\dsa\dsa_ossl.c crypto\dsa\dsa_pmeth.c crypto\dsa\dsa_prn.c crypto\dsa\dsa_sign.c crypto\dsa\dsa_vrf.c crypto\dso\dso_dl.c crypto\dso\dso_dlfcn.c crypto\dso\dso_err.c crypto\dso\dso_lib.c crypto\dso\dso_openssl.c crypto\dso\dso_vms.c crypto\dso\dso_win32.c crypto\ebcdic.c crypto\ec\curve25519.c crypto\ec\ec2_mult.c crypto\ec\ec2_oct.c crypto\ec\ec2_smpl.c crypto\ec\ecdh_kdf.c crypto\ec\ecdh_ossl.c crypto\ec\ecdsa_ossl.c crypto\ec\ecdsa_sign.c crypto\ec\ecdsa_vrf.c crypto\ec\eck_prn.c crypto\ec\ecp_mont.c crypto\ec\ecp_nist.c crypto\ec\ecp_nistp224.c crypto\ec\ecp_nistp256.c crypto\ec\ecp_nistp521.c crypto\ec\ecp_nistputil.c crypto\ec\ecp_nistz256.c crypto\ec\ecp_nistz256_table.c crypto\ec\ecp_oct.c crypto\ec\ecp_smpl.c crypto\ec\ecx_meth.c crypto\ec\ec_ameth.c crypto\ec\ec_asn1.c crypto\ec\ec_check.c crypto\ec\ec_curve.c crypto\ec\ec_cvt.c crypto\ec\ec_err.c crypto\ec\ec_key.c crypto\ec\ec_kmeth.c crypto\ec\ec_lib.c crypto\ec\ec_mult.c crypto\ec\ec_oct.c crypto\ec\ec_pmeth.c crypto\ec\ec_print.c crypto\engine\eng_all.c crypto\engine\eng_cnf.c crypto\engine\eng_cryptodev.c crypto\engine\eng_ctrl.c crypto\engine\eng_dyn.c crypto\engine\eng_err.c crypto\engine\eng_fat.c crypto\engine\eng_init.c crypto\engine\eng_lib.c crypto\engine\eng_list.c crypto\engine\eng_openssl.c crypto\engine\eng_pkey.c crypto\engine\eng_rdrand.c crypto\engine\eng_table.c crypto\engine\tb_asnmth.c crypto\engine\tb_cipher.c crypto\engine\tb_dh.c crypto\engine\tb_digest.c crypto\engine\tb_dsa.c crypto\engine\tb_eckey.c crypto\engine\tb_pkmeth.c crypto\engine\tb_rand.c crypto\engine\tb_rsa.c crypto\err\err.c crypto\err\err_all.c crypto\err\err_prn.c crypto\evp\bio_b64.c crypto\evp\bio_enc.c crypto\evp\bio_md.c crypto\evp\bio_ok.c crypto\evp\cmeth_lib.c crypto\evp\c_allc.c crypto\evp\c_alld.c crypto\evp\digest.c crypto\evp\encode.c crypto\evp\evp_cnf.c crypto\evp\evp_enc.c crypto\evp\evp_err.c crypto\evp\evp_key.c crypto\evp\evp_lib.c crypto\evp\evp_pbe.c crypto\evp\evp_pkey.c crypto\evp\e_aes.c crypto\evp\e_aes_cbc_hmac_sha1.c crypto\evp\e_aes_cbc_hmac_sha256.c crypto\evp\e_bf.c crypto\evp\e_camellia.c crypto\evp\e_cast.c crypto\evp\e_chacha20_poly1305.c crypto\evp\e_des.c crypto\evp\e_des3.c crypto\evp\e_idea.c crypto\evp\e_null.c crypto\evp\e_old.c crypto\evp\e_rc2.c crypto\evp\e_rc4.c crypto\evp\e_rc4_hmac_md5.c crypto\evp\e_rc5.c crypto\evp\e_seed.c crypto\evp\e_xcbc_d.c crypto\evp\m_md2.c crypto\evp\m_md4.c crypto\evp\m_md5.c crypto\evp\m_md5_sha1.c crypto\evp\m_mdc2.c crypto\evp\m_null.c crypto\evp\m_ripemd.c crypto\evp\m_sha1.c crypto\evp\m_sigver.c crypto\evp\m_wp.c crypto\evp\names.c crypto\evp\p5_crpt.c crypto\evp\p5_crpt2.c crypto\evp\pmeth_fn.c crypto\evp\pmeth_gn.c crypto\evp\pmeth_lib.c crypto\evp\p_dec.c crypto\evp\p_enc.c crypto\evp\p_lib.c crypto\evp\p_open.c crypto\evp\p_seal.c crypto\evp\p_sign.c crypto\evp\p_verify.c crypto\evp\scrypt.c crypto\ex_data.c crypto\hmac\hmac.c crypto\hmac\hm_ameth.c crypto\hmac\hm_pmeth.c crypto\idea\i_cbc.c crypto\idea\i_cfb64.c crypto\idea\i_ecb.c crypto\idea\i_ofb64.c crypto\idea\i_skey.c crypto\init.c crypto\kdf\hkdf.c crypto\kdf\kdf_err.c crypto\kdf\tls1_prf.c crypto\lhash\lhash.c crypto\lhash\lh_stats.c crypto\LPdir_nyi.c crypto\LPdir_unix.c crypto\LPdir_vms.c crypto\LPdir_win.c crypto\LPdir_win32.c crypto\LPdir_wince.c crypto\md2\md2_dgst.c crypto\md2\md2_one.c crypto\md4\md4_dgst.c crypto\md4\md4_one.c crypto\md5\md5_dgst.c crypto\md5\md5_one.c crypto\mdc2\mdc2dgst.c crypto\mdc2\mdc2_one.c crypto\mem.c crypto\mem_clr.c crypto\mem_dbg.c crypto\mem_sec.c crypto\modes\cbc128.c crypto\modes\ccm128.c crypto\modes\cfb128.c crypto\modes\ctr128.c crypto\modes\cts128.c crypto\modes\gcm128.c crypto\modes\ocb128.c crypto\modes\ofb128.c crypto\modes\wrap128.c crypto\modes\xts128.c crypto\objects\obj_dat.c crypto\objects\obj_err.c crypto\objects\obj_lib.c crypto\objects\obj_xref.c crypto\objects\o_names.c crypto\ocsp\ocsp_asn.c crypto\ocsp\ocsp_cl.c crypto\ocsp\ocsp_err.c crypto\ocsp\ocsp_ext.c crypto\ocsp\ocsp_ht.c crypto\ocsp\ocsp_lib.c crypto\ocsp\ocsp_prn.c crypto\ocsp\ocsp_srv.c crypto\ocsp\ocsp_vfy.c crypto\ocsp\v3_ocsp.c crypto\o_dir.c crypto\o_fips.c crypto\o_fopen.c crypto\o_init.c crypto\o_str.c crypto\o_time.c crypto\pem\pem_all.c crypto\pem\pem_err.c crypto\pem\pem_info.c crypto\pem\pem_lib.c crypto\pem\pem_oth.c crypto\pem\pem_pk8.c crypto\pem\pem_pkey.c crypto\pem\pem_sign.c crypto\pem\pem_x509.c crypto\pem\pem_xaux.c crypto\pem\pvkfmt.c crypto\pkcs12\p12_add.c crypto\pkcs12\p12_asn.c crypto\pkcs12\p12_attr.c crypto\pkcs12\p12_crpt.c crypto\pkcs12\p12_crt.c crypto\pkcs12\p12_decr.c crypto\pkcs12\p12_init.c crypto\pkcs12\p12_key.c crypto\pkcs12\p12_kiss.c crypto\pkcs12\p12_mutl.c crypto\pkcs12\p12_npas.c crypto\pkcs12\p12_p8d.c crypto\pkcs12\p12_p8e.c crypto\pkcs12\p12_sbag.c crypto\pkcs12\p12_utl.c crypto\pkcs12\pk12err.c crypto\pkcs7\bio_pk7.c crypto\pkcs7\pk7_asn1.c crypto\pkcs7\pk7_attr.c crypto\pkcs7\pk7_dgst.c crypto\pkcs7\pk7_doit.c crypto\pkcs7\pk7_enc.c crypto\pkcs7\pk7_lib.c crypto\pkcs7\pk7_mime.c crypto\pkcs7\pk7_smime.c crypto\pkcs7\pkcs7err.c crypto\poly1305\poly1305.c crypto\poly1305\poly1305_ieee754.c crypto\ppccap.c crypto\rand\md_rand.c crypto\rand\randfile.c crypto\rand\rand_egd.c crypto\rand\rand_err.c crypto\rand\rand_lib.c crypto\rand\rand_unix.c crypto\rand\rand_vms.c crypto\rand\rand_win.c crypto\rc2\rc2cfb64.c crypto\rc2\rc2ofb64.c crypto\rc2\rc2_cbc.c crypto\rc2\rc2_ecb.c crypto\rc2\rc2_skey.c crypto\rc2\tab.c crypto\rc4\rc4_enc.c crypto\rc4\rc4_skey.c crypto\rc5\rc5cfb64.c crypto\rc5\rc5ofb64.c crypto\rc5\rc5_ecb.c crypto\rc5\rc5_enc.c crypto\rc5\rc5_skey.c crypto\ripemd\rmd_dgst.c crypto\ripemd\rmd_one.c crypto\rsa\rsa_ameth.c crypto\rsa\rsa_asn1.c crypto\rsa\rsa_chk.c crypto\rsa\rsa_crpt.c crypto\rsa\rsa_depr.c crypto\rsa\rsa_err.c crypto\rsa\rsa_gen.c crypto\rsa\rsa_lib.c crypto\rsa\rsa_meth.c crypto\rsa\rsa_none.c crypto\rsa\rsa_null.c crypto\rsa\rsa_oaep.c crypto\rsa\rsa_ossl.c crypto\rsa\rsa_pk1.c crypto\rsa\rsa_pmeth.c crypto\rsa\rsa_prn.c crypto\rsa\rsa_pss.c crypto\rsa\rsa_saos.c crypto\rsa\rsa_sign.c crypto\rsa\rsa_ssl.c crypto\rsa\rsa_x931.c crypto\rsa\rsa_x931g.c crypto\s390xcap.c crypto\seed\seed.c crypto\seed\seed_cbc.c crypto\seed\seed_cfb.c crypto\seed\seed_ecb.c crypto\seed\seed_ofb.c crypto\sha\sha1dgst.c crypto\sha\sha1_one.c crypto\sha\sha256.c crypto\sha\sha512.c crypto\sparcv9cap.c crypto\srp\srp_lib.c crypto\srp\srp_vfy.c crypto\stack\stack.c crypto\threads_none.c crypto\threads_pthread.c crypto\threads_win.c crypto\ts\ts_asn1.c crypto\ts\ts_conf.c crypto\ts\ts_err.c crypto\ts\ts_lib.c crypto\ts\ts_req_print.c crypto\ts\ts_req_utils.c crypto\ts\ts_rsp_print.c crypto\ts\ts_rsp_sign.c crypto\ts\ts_rsp_utils.c crypto\ts\ts_rsp_verify.c crypto\ts\ts_verify_ctx.c crypto\txt_db\txt_db.c crypto\uid.c crypto\ui\ui_err.c crypto\ui\ui_lib.c crypto\ui\ui_openssl.c crypto\ui\ui_util.c crypto\whrlpool\wp_block.c crypto\whrlpool\wp_dgst.c crypto\x509v3\pcy_cache.c crypto\x509v3\pcy_data.c crypto\x509v3\pcy_lib.c crypto\x509v3\pcy_map.c crypto\x509v3\pcy_node.c crypto\x509v3\pcy_tree.c crypto\x509v3\tabtest.c crypto\x509v3\v3conf.c crypto\x509v3\v3err.c crypto\x509v3\v3prin.c crypto\x509v3\v3_addr.c crypto\x509v3\v3_akey.c crypto\x509v3\v3_akeya.c crypto\x509v3\v3_alt.c crypto\x509v3\v3_asid.c crypto\x509v3\v3_bcons.c crypto\x509v3\v3_bitst.c crypto\x509v3\v3_conf.c crypto\x509v3\v3_cpols.c crypto\x509v3\v3_crld.c crypto\x509v3\v3_enum.c crypto\x509v3\v3_extku.c crypto\x509v3\v3_genn.c crypto\x509v3\v3_ia5.c crypto\x509v3\v3_info.c crypto\x509v3\v3_int.c crypto\x509v3\v3_lib.c crypto\x509v3\v3_ncons.c crypto\x509v3\v3_pci.c crypto\x509v3\v3_pcia.c crypto\x509v3\v3_pcons.c crypto\x509v3\v3_pku.c crypto\x509v3\v3_pmaps.c crypto\x509v3\v3_prn.c crypto\x509v3\v3_purp.c crypto\x509v3\v3_skey.c crypto\x509v3\v3_sxnet.c crypto\x509v3\v3_tlsf.c crypto\x509v3\v3_utl.c crypto\x509\by_dir.c crypto\x509\by_file.c crypto\x509\t_crl.c crypto\x509\t_req.c crypto\x509\t_x509.c crypto\x509\x509cset.c crypto\x509\x509name.c crypto\x509\x509rset.c crypto\x509\x509spki.c crypto\x509\x509type.c crypto\x509\x509_att.c crypto\x509\x509_cmp.c crypto\x509\x509_d2.c crypto\x509\x509_def.c crypto\x509\x509_err.c crypto\x509\x509_ext.c crypto\x509\x509_lu.c crypto\x509\x509_obj.c crypto\x509\x509_r2x.c crypto\x509\x509_req.c crypto\x509\x509_set.c crypto\x509\x509_trs.c crypto\x509\x509_txt.c crypto\x509\x509_v3.c crypto\x509\x509_vfy.c crypto\x509\x509_vpm.c crypto\x509\x_all.c crypto\x509\x_attrib.c crypto\x509\x_crl.c crypto\x509\x_exten.c crypto\x509\x_name.c crypto\x509\x_pubkey.c crypto\x509\x_req.c crypto\x509\x_x509.c crypto\x509\x_x509a.c "demos\bio\client-arg.c" "demos\bio\client-conf.c" demos\bio\saccept.c demos\bio\sconnect.c "demos\bio\server-arg.c" "demos\bio\server-cmod.c" "demos\bio\server-conf.c" demos\cms\cms_comp.c demos\cms\cms_ddec.c demos\cms\cms_dec.c demos\cms\cms_denc.c demos\cms\cms_enc.c demos\cms\cms_sign.c demos\cms\cms_sign2.c demos\cms\cms_uncomp.c demos\cms\cms_ver.c demos\evp\aesccm.c demos\evp\aesgcm.c demos\pkcs12\pkread.c demos\pkcs12\pkwrite.c demos\smime\smdec.c demos\smime\smenc.c demos\smime\smsign.c demos\smime\smsign2.c demos\smime\smver.c engines\afalg\e_afalg.c engines\afalg\e_afalg_err.c engines\e_capi.c engines\e_capi_err.c engines\e_chil.c engines\e_chil_err.c engines\e_dasync.c engines\e_dasync_err.c engines\e_ossltest.c engines\e_ossltest_err.c engines\e_padlock.c fuzz\asn1.c fuzz\asn1parse.c fuzz\bignum.c fuzz\bndiv.c fuzz\cms.c fuzz\conf.c fuzz\crl.c fuzz\ct.c fuzz\driver.c fuzz\server.c "fuzz\test-corpus.c" fuzz\x509.c ms\applink.c ms\uplink.c ssl\bio_ssl.c ssl\d1_lib.c ssl\d1_msg.c ssl\d1_srtp.c ssl\methods.c ssl\pqueue.c ssl\record\dtls1_bitmap.c ssl\record\rec_layer_d1.c ssl\record\rec_layer_s3.c ssl\record\ssl3_buffer.c ssl\record\ssl3_record.c ssl\s3_cbc.c ssl\s3_enc.c ssl\s3_lib.c ssl\s3_msg.c ssl\ssl_asn1.c ssl\ssl_cert.c ssl\ssl_ciph.c ssl\ssl_conf.c ssl\ssl_err.c ssl\ssl_init.c ssl\ssl_lib.c ssl\ssl_mcnf.c ssl\ssl_rsa.c ssl\ssl_sess.c ssl\ssl_stat.c ssl\ssl_txt.c ssl\ssl_utst.c ssl\statem\statem.c ssl\statem\statem_clnt.c ssl\statem\statem_dtls.c ssl\statem\statem_lib.c ssl\statem\statem_srvr.c ssl\t1_enc.c ssl\t1_ext.c ssl\t1_lib.c ssl\t1_reneg.c ssl\t1_trce.c ssl\tls_srp.c test\aborttest.c test\afalgtest.c test\asynciotest.c test\asynctest.c test\bad_dtls_test.c test\bftest.c test\bioprinttest.c test\bio_enc_test.c test\bntest.c test\casttest.c test\cipherlist_test.c test\clienthellotest.c test\constant_time_test.c test\crltest.c test\ct_test.c test\d2i_test.c test\danetest.c test\destest.c test\dhtest.c test\dsatest.c test\dtlstest.c test\dtlsv1listentest.c test\ecdhtest.c test\ecdsatest.c test\ectest.c test\enginetest.c test\evp_extra_test.c test\evp_test.c test\exdatatest.c test\exptest.c test\gmdifftest.c test\handshake_helper.c test\heartbeat_test.c test\hmactest.c test\ideatest.c test\igetest.c test\md2test.c test\md4test.c test\md5test.c test\mdc2test.c test\memleaktest.c test\methtest.c test\p5_crpt2_test.c test\packettest.c test\pbelutest.c test\r160test.c test\randtest.c test\rc2test.c test\rc4test.c test\rc5test.c test\rmdtest.c test\rsa_test.c test\sanitytest.c test\secmemtest.c test\sha1test.c test\sha256t.c test\sha512t.c test\shlibloadtest.c test\srptest.c test\sslapitest.c test\sslcorrupttest.c test\ssltestlib.c test\ssltest_old.c test\ssl_test.c test\ssl_test_ctx.c test\ssl_test_ctx_test.c test\testutil.c test\threadstest.c test\v3ext.c test\v3nametest.c test\verify_extra_test.c test\wp_test.c test\x509aux.c
+         x509aux.c
+     1>c:\studing\openssl\test\x509aux.c(15): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         wp_test.c
+     1>c:\studing\openssl\test\wp_test.c(14): fatal error C1083: Cannot open include file: 'openssl/whrlpool.h': No such file or directory
+         verify_extra_test.c
+     1>c:\studing\openssl\test\verify_extra_test.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         v3nametest.c
+     1>c:\studing\openssl\test\v3nametest.c(10): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         v3ext.c
+     1>c:\studing\openssl\test\v3ext.c(11): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         threadstest.c
+     1>c:\studing\openssl\test\threadstest.c(16): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         testutil.c
+     1>c:\studing\openssl\test\testutil.h(13): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ssl_test_ctx_test.c
+     1>c:\studing\openssl\test\ssl_test_ctx_test.c(18): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_test_ctx.c
+     1>c:\studing\openssl\test\ssl_test_ctx.c(12): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ssl_test.c
+     1>c:\studing\openssl\test\ssl_test.c(13): fatal error C1083: Cannot open include file: 'openssl/conf.h': No such file or directory
+         ssltest_old.c
+     1>c:\studing\openssl\test\ssltest_old.c(59): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssltestlib.c
+     1>c:\studing\openssl\test\ssltestlib.h(13): fatal error C1083: Cannot open include file: 'openssl/ssl.h': No such file or directory
+         sslcorrupttest.c
+     1>c:\studing\openssl\test\ssltestlib.h(13): fatal error C1083: Cannot open include file: 'openssl/ssl.h': No such file or directory
+         sslapitest.c
+     1>c:\studing\openssl\test\sslapitest.c(12): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         srptest.c
+     1>c:\studing\openssl\test\srptest.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         shlibloadtest.c
+     1>c:\studing\openssl\test\shlibloadtest.c(13): fatal error C1083: Cannot open include file: 'openssl/opensslv.h': No such file or directory
+         sha512t.c
+     1>c:\studing\openssl\test\sha512t.c(14): fatal error C1083: Cannot open include file: 'openssl/sha.h': No such file or directory
+         sha256t.c
+     1>c:\studing\openssl\test\sha256t.c(14): fatal error C1083: Cannot open include file: 'openssl/sha.h': No such file or directory
+         sha1test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         secmemtest.c
+     1>c:\studing\openssl\test\secmemtest.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         Generating Code...
+         Compiling...
+         sanitytest.c
+     1>c:\studing\openssl\test\sanitytest.c(12): fatal error C1083: Cannot open include file: 'internal/numbers.h': No such file or directory
+         rsa_test.c
+     1>c:\studing\openssl\test\rsa_test.c(15): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rmdtest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         rc5test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         rc4test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         rc2test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         randtest.c
+     1>c:\studing\openssl\test\randtest.c(12): fatal error C1083: Cannot open include file: 'openssl/rand.h': No such file or directory
+         r160test.c
+         pbelutest.c
+     1>c:\studing\openssl\test\pbelutest.c(10): fatal error C1083: Cannot open include file: 'openssl/evp.h': No such file or directory
+         packettest.c
+     1>c:\studing\openssl\ssl\packet_locl.h(14): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         p5_crpt2_test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         methtest.c
+     1>c:\studing\openssl\test\methtest.c(12): fatal error C1083: Cannot open include file: 'openssl/rsa.h': No such file or directory
+         memleaktest.c
+     1>c:\studing\openssl\test\memleaktest.c(12): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         mdc2test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         md5test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         md4test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         md2test.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         igetest.c
+     1>c:\studing\openssl\test\igetest.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ideatest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         hmactest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         Generating Code...
+         Compiling...
+         heartbeat_test.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         handshake_helper.c
+     1>c:\studing\openssl\test\handshake_helper.c(12): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         gmdifftest.c
+     1>c:\studing\openssl\test\gmdifftest.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         exptest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         exdatatest.c
+     1>c:\studing\openssl\test\exdatatest.c(14): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         evp_test.c
+     1>c:\studing\openssl\test\evp_test.c(14): fatal error C1083: Cannot open include file: 'openssl/evp.h': No such file or directory
+         evp_extra_test.c
+     1>c:\studing\openssl\test\evp_extra_test.c(12): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         enginetest.c
+     1>c:\studing\openssl\test\enginetest.c(12): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ectest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ecdsatest.c
+     1>c:\studing\openssl\test\ecdsatest.c(28): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ecdhtest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dtlsv1listentest.c
+     1>c:\studing\openssl\test\dtlsv1listentest.c(11): fatal error C1083: Cannot open include file: 'openssl/ssl.h': No such file or directory
+         dtlstest.c
+     1>c:\studing\openssl\test\dtlstest.c(10): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         dsatest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dhtest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         destest.c
+     1>c:\studing\openssl\test\destest.c(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         danetest.c
+     1>c:\studing\openssl\test\danetest.c(16): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         d2i_test.c
+     1>c:\studing\openssl\test\testutil.h(13): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ct_test.c
+     1>c:\studing\openssl\test\ct_test.c(16): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         crltest.c
+     1>c:\studing\openssl\e_os.h(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         Generating Code...
+         Compiling...
+         constant_time_test.c
+     1>c:\studing\openssl\test\constant_time_test.c(10): fatal error C1083: Cannot open include file: 'internal/constant_time_locl.h': No such file or directory
+         clienthellotest.c
+     1>c:\studing\openssl\test\clienthellotest.c(12): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         cipherlist_test.c
+     1>c:\studing\openssl\test\cipherlist_test.c(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         casttest.c
+     1>c:\studing\openssl\test\casttest.c(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bntest.c
+     1>c:\studing\openssl\test\bntest.c(28): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bio_enc_test.c
+     1>c:\studing\openssl\test\bio_enc_test.c(11): fatal error C1083: Cannot open include file: 'openssl/evp.h': No such file or directory
+         bioprinttest.c
+     1>c:\studing\openssl\test\bioprinttest.c(12): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         bftest.c
+     1>c:\studing\openssl\test\bftest.c(18): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bad_dtls_test.c
+     1>c:\studing\openssl\test\bad_dtls_test.c(32): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         asynctest.c
+     1>c:\studing\openssl\test\asynctest.c(16): fatal error C1083: Cannot open include file: 'openssl/async.h': No such file or directory
+         asynciotest.c
+     1>c:\studing\openssl\test\asynciotest.c(12): fatal error C1083: Cannot open include file: 'openssl/ssl.h': No such file or directory
+         afalgtest.c
+     1>c:\studing\openssl\test\afalgtest.c(11): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         aborttest.c
+     1>c:\studing\openssl\test\aborttest.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         tls_srp.c
+     1>c:\studing\openssl\ssl\tls_srp.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         t1_trce.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         t1_reneg.c
+     1>c:\studing\openssl\ssl\t1_reneg.c(11): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         t1_lib.c
+     1>c:\studing\openssl\ssl\t1_lib.c(12): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         t1_ext.c
+     1>c:\studing\openssl\ssl\t1_ext.c(12): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         t1_enc.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         statem_srvr.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         statem_lib.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         statem_dtls.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         statem_clnt.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         statem.c
+     1>c:\studing\openssl\ssl\statem\statem.c(10): fatal error C1083: Cannot open include file: 'openssl/rand.h': No such file or directory
+         ssl_utst.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_txt.c
+     1>c:\studing\openssl\ssl\ssl_txt.c(38): fatal error C1083: Cannot open include file: 'openssl/buffer.h': No such file or directory
+         ssl_stat.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_sess.c
+     1>c:\studing\openssl\ssl\ssl_sess.c(38): fatal error C1083: Cannot open include file: 'openssl/lhash.h': No such file or directory
+         ssl_rsa.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_mcnf.c
+     1>c:\studing\openssl\ssl\ssl_mcnf.c(11): fatal error C1083: Cannot open include file: 'openssl/conf.h': No such file or directory
+         ssl_lib.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_init.c
+     1>c:\studing\openssl\ssl\ssl_init.c(10): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_err.c
+     1>c:\studing\openssl\ssl\ssl_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ssl_conf.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_ciph.c
+     1>c:\studing\openssl\ssl\ssl_ciph.c(44): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         ssl_cert.c
+     1>c:\studing\openssl\ssl\ssl_cert.c(18): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl_asn1.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         s3_msg.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         s3_lib.c
+     1>c:\studing\openssl\ssl\s3_lib.c(51): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         s3_enc.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         s3_cbc.c
+     1>c:\studing\openssl\ssl\s3_cbc.c(10): fatal error C1083: Cannot open include file: 'internal/constant_time_locl.h': No such file or directory
+         ssl3_record.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ssl3_buffer.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rec_layer_s3.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rec_layer_d1.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         dtls1_bitmap.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         pqueue.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         methods.c
+     1>c:\studing\openssl\ssl\methods.c(11): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         d1_srtp.c
+     1>c:\studing\openssl\ssl\d1_srtp.c(17): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         d1_msg.c
+     1>c:\studing\openssl\ssl\ssl_locl.h(49): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         d1_lib.c
+     1>c:\studing\openssl\ssl\d1_lib.c(12): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         bio_ssl.c
+     1>c:\studing\openssl\ssl\bio_ssl.c(14): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         uplink.c
+     1>c:\studing\openssl\ms\uplink.c(92): warning C4311: 'type cast': pointer truncation from 'void *' to 'int'
+         applink.c
+         x509.c
+     1>c:\studing\openssl\fuzz\x509.c(11): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         test-corpus.c
+     1>c:\studing\openssl\fuzz\test-corpus.c(20): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         server.c
+     1>c:\studing\openssl\fuzz\server.c(16): fatal error C1083: Cannot open include file: 'openssl/rand.h': No such file or directory
+         driver.c
+     1>c:\studing\openssl\fuzz\driver.c(11): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         ct.c
+     1>c:\studing\openssl\fuzz\ct.c(16): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         crl.c
+     1>c:\studing\openssl\fuzz\crl.c(11): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         Generating Code...
+         Compiling...
+         conf.c
+     1>c:\studing\openssl\fuzz\conf.c(15): fatal error C1083: Cannot open include file: 'openssl/conf.h': No such file or directory
+         cms.c
+     1>c:\studing\openssl\fuzz\cms.c(15): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         bndiv.c
+     1>c:\studing\openssl\fuzz\bndiv.c(17): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         bignum.c
+     1>c:\studing\openssl\fuzz\bignum.c(17): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         asn1parse.c
+     1>c:\studing\openssl\fuzz\asn1parse.c(16): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         asn1.c
+     1>c:\studing\openssl\fuzz\asn1.c(20): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         e_padlock.c
+     1>c:\studing\openssl\engines\e_padlock.c(13): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_ossltest_err.c
+     1>c:\studing\openssl\engines\e_ossltest_err.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         e_ossltest.c
+     1>c:\studing\openssl\engines\e_ossltest.c(19): fatal error C1083: Cannot open include file: 'openssl/engine.h': No such file or directory
+         e_dasync_err.c
+     1>c:\studing\openssl\engines\e_dasync_err.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         e_dasync.c
+     1>c:\studing\openssl\engines\e_dasync.c(17): fatal error C1083: Cannot open include file: 'openssl/engine.h': No such file or directory
+         e_chil_err.c
+     1>c:\studing\openssl\engines\e_chil_err.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         e_chil.c
+     1>c:\studing\openssl\engines\e_chil.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         e_capi_err.c
+     1>c:\studing\openssl\engines\e_capi_err.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         e_capi.c
+     1>c:\studing\openssl\engines\e_capi.c(25): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         e_afalg_err.c
+     1>c:\studing\openssl\engines\afalg\e_afalg_err.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         e_afalg.c
+     1>c:\studing\openssl\engines\afalg\e_afalg.c(16): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         smver.c
+     1>c:\studing\openssl\demos\smime\smver.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         smsign2.c
+     1>c:\studing\openssl\demos\smime\smsign2.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         smsign.c
+     1>c:\studing\openssl\demos\smime\smsign.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         Generating Code...
+         Compiling...
+         smenc.c
+     1>c:\studing\openssl\demos\smime\smenc.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         smdec.c
+     1>c:\studing\openssl\demos\smime\smdec.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         pkwrite.c
+     1>c:\studing\openssl\demos\pkcs12\pkwrite.c(12): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         pkread.c
+     1>c:\studing\openssl\demos\pkcs12\pkread.c(12): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         aesgcm.c
+     1>c:\studing\openssl\demos\evp\aesgcm.c(15): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         aesccm.c
+     1>c:\studing\openssl\demos\evp\aesccm.c(15): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         cms_ver.c
+     1>c:\studing\openssl\demos\cms\cms_ver.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_uncomp.c
+     1>c:\studing\openssl\demos\cms\cms_uncomp.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_sign2.c
+     1>c:\studing\openssl\demos\cms\cms_sign2.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_sign.c
+     1>c:\studing\openssl\demos\cms\cms_sign.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_enc.c
+     1>c:\studing\openssl\demos\cms\cms_enc.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_denc.c
+     1>c:\studing\openssl\demos\cms\cms_denc.c(14): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_dec.c
+     1>c:\studing\openssl\demos\cms\cms_dec.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_ddec.c
+     1>c:\studing\openssl\demos\cms\cms_ddec.c(14): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         cms_comp.c
+     1>c:\studing\openssl\demos\cms\cms_comp.c(11): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         server-conf.c
+     1>c:\studing\openssl\demos\bio\server-conf.c(19): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         server-cmod.c
+     1>c:\studing\openssl\demos\bio\server-cmod.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         server-arg.c
+     1>c:\studing\openssl\demos\bio\server-arg.c(19): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         sconnect.c
+     1>c:\studing\openssl\demos\bio\sconnect.c(19): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         saccept.c
+     1>c:\studing\openssl\demos\bio\saccept.c(22): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         Generating Code...
+         Compiling...
+         client-conf.c
+     1>c:\studing\openssl\demos\bio\client-conf.c(11): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         client-arg.c
+     1>c:\studing\openssl\demos\bio\client-arg.c(11): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         x_x509a.c
+     1>c:\studing\openssl\crypto\x509\x_x509a.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_x509.c
+     1>c:\studing\openssl\crypto\x509\x_x509.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_req.c
+     1>c:\studing\openssl\crypto\x509\x_req.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_pubkey.c
+     1>c:\studing\openssl\crypto\x509\x_pubkey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_name.c
+     1>c:\studing\openssl\crypto\x509\x_name.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_exten.c
+     1>c:\studing\openssl\crypto\x509\x_exten.c(11): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         x_crl.c
+     1>c:\studing\openssl\crypto\x509\x_crl.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_attrib.c
+     1>c:\studing\openssl\crypto\x509\x_attrib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_all.c
+     1>c:\studing\openssl\crypto\x509\x_all.c(11): fatal error C1083: Cannot open include file: 'openssl/stack.h': No such file or directory
+         x509_vpm.c
+     1>c:\studing\openssl\crypto\x509\x509_vpm.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_vfy.c
+     1>c:\studing\openssl\crypto\x509\x509_vfy.c(15): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_v3.c
+     1>c:\studing\openssl\crypto\x509\x509_v3.c(11): fatal error C1083: Cannot open include file: 'openssl/stack.h': No such file or directory
+         x509_txt.c
+     1>c:\studing\openssl\crypto\x509\x509_txt.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_trs.c
+     1>c:\studing\openssl\crypto\x509\x509_trs.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_set.c
+     1>c:\studing\openssl\crypto\x509\x509_set.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_req.c
+     1>c:\studing\openssl\crypto\x509\x509_req.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_r2x.c
+     1>c:\studing\openssl\crypto\x509\x509_r2x.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_obj.c
+     1>c:\studing\openssl\crypto\x509\x509_obj.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         x509_lu.c
+     1>c:\studing\openssl\crypto\x509\x509_lu.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_ext.c
+     1>c:\studing\openssl\crypto\x509\x509_ext.c(11): fatal error C1083: Cannot open include file: 'openssl/stack.h': No such file or directory
+         x509_err.c
+     1>c:\studing\openssl\crypto\x509\x509_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         x509_def.c
+     1>c:\studing\openssl\crypto\x509\x509_def.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_d2.c
+     1>c:\studing\openssl\crypto\x509\x509_d2.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_cmp.c
+     1>c:\studing\openssl\crypto\x509\x509_cmp.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509_att.c
+     1>c:\studing\openssl\crypto\x509\x509_att.c(11): fatal error C1083: Cannot open include file: 'openssl/stack.h': No such file or directory
+         x509type.c
+     1>c:\studing\openssl\crypto\x509\x509type.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509spki.c
+     1>c:\studing\openssl\crypto\x509\x509spki.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509rset.c
+     1>c:\studing\openssl\crypto\x509\x509rset.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x509name.c
+     1>c:\studing\openssl\crypto\x509\x509name.c(11): fatal error C1083: Cannot open include file: 'openssl/stack.h': No such file or directory
+         x509cset.c
+     1>c:\studing\openssl\crypto\x509\x509cset.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         t_x509.c
+     1>c:\studing\openssl\crypto\x509\t_x509.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         t_req.c
+     1>c:\studing\openssl\crypto\x509\t_req.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         t_crl.c
+     1>c:\studing\openssl\crypto\x509\t_crl.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         by_file.c
+     1>c:\studing\openssl\crypto\x509\by_file.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         by_dir.c
+     1>c:\studing\openssl\crypto\x509\by_dir.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_utl.c
+     1>c:\studing\openssl\crypto\x509v3\v3_utl.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_tlsf.c
+     1>c:\studing\openssl\crypto\x509v3\v3_tlsf.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_sxnet.c
+     1>c:\studing\openssl\crypto\x509v3\v3_sxnet.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         v3_skey.c
+     1>c:\studing\openssl\crypto\x509v3\v3_skey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_purp.c
+     1>c:\studing\openssl\crypto\x509v3\v3_purp.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_prn.c
+     1>c:\studing\openssl\crypto\x509v3\v3_prn.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_pmaps.c
+     1>c:\studing\openssl\crypto\x509v3\v3_pmaps.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_pku.c
+     1>c:\studing\openssl\crypto\x509v3\v3_pku.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_pcons.c
+     1>c:\studing\openssl\crypto\x509v3\v3_pcons.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_pcia.c
+     1>c:\studing\openssl\crypto\x509v3\v3_pcia.c(42): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         v3_pci.c
+     1>c:\studing\openssl\crypto\x509v3\v3_pci.c(43): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_ncons.c
+     1>c:\studing\openssl\crypto\x509v3\v3_ncons.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_lib.c
+     1>c:\studing\openssl\crypto\x509v3\v3_lib.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_int.c
+     1>c:\studing\openssl\crypto\x509v3\v3_int.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_info.c
+     1>c:\studing\openssl\crypto\x509v3\v3_info.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_ia5.c
+     1>c:\studing\openssl\crypto\x509v3\v3_ia5.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_genn.c
+     1>c:\studing\openssl\crypto\x509v3\v3_genn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_extku.c
+     1>c:\studing\openssl\crypto\x509v3\v3_extku.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_enum.c
+     1>c:\studing\openssl\crypto\x509v3\v3_enum.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_crld.c
+     1>c:\studing\openssl\crypto\x509v3\v3_crld.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_cpols.c
+     1>c:\studing\openssl\crypto\x509v3\v3_cpols.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_conf.c
+     1>c:\studing\openssl\crypto\x509v3\v3_conf.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_bitst.c
+     1>c:\studing\openssl\crypto\x509v3\v3_bitst.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         v3_bcons.c
+     1>c:\studing\openssl\crypto\x509v3\v3_bcons.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_asid.c
+     1>c:\studing\openssl\crypto\x509v3\v3_asid.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_alt.c
+     1>c:\studing\openssl\crypto\x509v3\v3_alt.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_akeya.c
+     1>c:\studing\openssl\crypto\x509v3\v3_akeya.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_akey.c
+     1>c:\studing\openssl\crypto\x509v3\v3_akey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3_addr.c
+     1>c:\studing\openssl\crypto\x509v3\v3_addr.c(17): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         v3prin.c
+     1>c:\studing\openssl\crypto\x509v3\v3prin.c(11): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         v3err.c
+     1>c:\studing\openssl\crypto\x509v3\v3err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         v3conf.c
+     1>c:\studing\openssl\crypto\x509v3\v3conf.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tabtest.c
+     1>c:\studing\openssl\crypto\x509v3\tabtest.c(17): fatal error C1083: Cannot open include file: 'openssl/x509v3.h': No such file or directory
+         pcy_tree.c
+     1>c:\studing\openssl\crypto\x509v3\pcy_tree.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pcy_node.c
+     1>c:\studing\openssl\crypto\x509v3\pcy_node.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         pcy_map.c
+     1>c:\studing\openssl\crypto\x509v3\pcy_map.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pcy_lib.c
+     1>c:\studing\openssl\crypto\x509v3\pcy_lib.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pcy_data.c
+     1>c:\studing\openssl\crypto\x509v3\pcy_data.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pcy_cache.c
+     1>c:\studing\openssl\crypto\x509v3\pcy_cache.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         wp_dgst.c
+     1>c:\studing\openssl\crypto\whrlpool\wp_dgst.c(63): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         wp_block.c
+     1>c:\studing\openssl\crypto\whrlpool\wp_locl.h(10): fatal error C1083: Cannot open include file: 'openssl/whrlpool.h': No such file or directory
+         ui_util.c
+     1>c:\studing\openssl\crypto\ui\ui_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/ui.h': No such file or directory
+         ui_openssl.c
+     1>c:\studing\openssl\crypto\ui\ui_openssl.c(10): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         Generating Code...
+         Compiling...
+         ui_lib.c
+     1>c:\studing\openssl\crypto\ui\ui_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ui_err.c
+     1>c:\studing\openssl\crypto\ui\ui_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         uid.c
+     1>c:\studing\openssl\crypto\uid.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         txt_db.c
+     1>c:\studing\openssl\crypto\txt_db\txt_db.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_verify_ctx.c
+     1>c:\studing\openssl\crypto\ts\ts_verify_ctx.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_rsp_verify.c
+     1>c:\studing\openssl\crypto\ts\ts_rsp_verify.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_rsp_utils.c
+     1>c:\studing\openssl\crypto\ts\ts_rsp_utils.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_rsp_sign.c
+     1>c:\studing\openssl\crypto\ts\ts_rsp_sign.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_rsp_print.c
+     1>c:\studing\openssl\crypto\ts\ts_rsp_print.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_req_utils.c
+     1>c:\studing\openssl\crypto\ts\ts_req_utils.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_req_print.c
+     1>c:\studing\openssl\crypto\ts\ts_req_print.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_lib.c
+     1>c:\studing\openssl\crypto\ts\ts_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ts_err.c
+     1>c:\studing\openssl\crypto\ts\ts_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ts_conf.c
+     1>c:\studing\openssl\crypto\ts\ts_conf.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ts_asn1.c
+     1>c:\studing\openssl\crypto\ts\ts_asn1.c(10): fatal error C1083: Cannot open include file: 'openssl/ts.h': No such file or directory
+         threads_win.c
+     1>c:\studing\openssl\crypto\threads_win.c(14): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         threads_pthread.c
+     1>c:\studing\openssl\crypto\threads_pthread.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         threads_none.c
+     1>c:\studing\openssl\crypto\threads_none.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         stack.c
+     1>c:\studing\openssl\crypto\stack\stack.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         srp_vfy.c
+     1>c:\studing\openssl\crypto\srp\srp_vfy.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         srp_lib.c
+     1>c:\studing\openssl\crypto\srp\srp_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         sparcv9cap.c
+     1>c:\studing\openssl\crypto\sparcv9cap.c(15): fatal error C1083: Cannot open include file: 'sys/time.h': No such file or directory
+         sha512.c
+     1>c:\studing\openssl\crypto\sha\sha512.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         sha256.c
+     1>c:\studing\openssl\crypto\sha\sha256.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         sha1_one.c
+     1>c:\studing\openssl\crypto\sha\sha1_one.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         sha1dgst.c
+     1>c:\studing\openssl\crypto\sha\sha1dgst.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         seed_ofb.c
+     1>c:\studing\openssl\crypto\seed\seed_ofb.c(10): fatal error C1083: Cannot open include file: 'openssl/seed.h': No such file or directory
+         seed_ecb.c
+     1>c:\studing\openssl\crypto\seed\seed_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/seed.h': No such file or directory
+         seed_cfb.c
+     1>c:\studing\openssl\crypto\seed\seed_cfb.c(10): fatal error C1083: Cannot open include file: 'openssl/seed.h': No such file or directory
+         seed_cbc.c
+     1>c:\studing\openssl\crypto\seed\seed_cbc.c(10): fatal error C1083: Cannot open include file: 'openssl/seed.h': No such file or directory
+         seed.c
+     1>c:\studing\openssl\crypto\seed\seed.c(44): fatal error C1083: Cannot open include file: 'openssl/seed.h': No such file or directory
+         s390xcap.c
+     1>c:\studing\openssl\crypto\s390xcap.c(18): error C2061: syntax error: identifier 'ill_jmp'
+     1>c:\studing\openssl\crypto\s390xcap.c(18): error C2059: syntax error: ';'
+     1>c:\studing\openssl\crypto\s390xcap.c(21): error C2065: 'ill_jmp': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(28): error C2065: 'sigset_t': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(28): error C2146: syntax error: missing ';' before identifier 'oset'
+     1>c:\studing\openssl\crypto\s390xcap.c(28): error C2065: 'oset': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(29): error C2079: 'ill_act' uses undefined struct 'sigaction'
+     1>c:\studing\openssl\crypto\s390xcap.c(29): error C2079: 'oact' uses undefined struct 'sigaction'
+     1>c:\studing\openssl\crypto\s390xcap.c(37): error C2224: left of '.sa_handler' must have struct/union type
+     1>c:\studing\openssl\crypto\s390xcap.c(38): error C2224: left of '.sa_mask' must have struct/union type
+     1>c:\studing\openssl\crypto\s390xcap.c(39): error C2224: left of '.sa_mask' must have struct/union type
+     1>c:\studing\openssl\crypto\s390xcap.c(40): error C2224: left of '.sa_mask' must have struct/union type
+     1>c:\studing\openssl\crypto\s390xcap.c(40): error C2065: 'SIGTRAP': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(41): error C2065: 'SIG_SETMASK': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(41): error C2224: left of '.sa_mask' must have struct/union type
+     1>c:\studing\openssl\crypto\s390xcap.c(41): error C2065: 'oset': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(45): error C2065: 'ill_jmp': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(49): error C2065: 'SIG_SETMASK': undeclared identifier
+     1>c:\studing\openssl\crypto\s390xcap.c(49): error C2065: 'oset': undeclared identifier
+         rsa_x931g.c
+     1>c:\studing\openssl\crypto\rsa\rsa_x931g.c(13): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         rsa_x931.c
+     1>c:\studing\openssl\crypto\rsa\rsa_x931.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_ssl.c
+     1>c:\studing\openssl\crypto\rsa\rsa_ssl.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_sign.c
+     1>c:\studing\openssl\crypto\rsa\rsa_sign.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_saos.c
+     1>c:\studing\openssl\crypto\rsa\rsa_saos.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_pss.c
+     1>c:\studing\openssl\crypto\rsa\rsa_pss.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_prn.c
+     1>c:\studing\openssl\crypto\rsa\rsa_prn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_pmeth.c
+     1>c:\studing\openssl\crypto\rsa\rsa_pmeth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         rsa_pk1.c
+     1>c:\studing\openssl\crypto\rsa\rsa_pk1.c(10): fatal error C1083: Cannot open include file: 'internal/constant_time_locl.h': No such file or directory
+         rsa_ossl.c
+     1>c:\studing\openssl\crypto\rsa\rsa_ossl.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_oaep.c
+     1>c:\studing\openssl\crypto\rsa\rsa_oaep.c(23): fatal error C1083: Cannot open include file: 'internal/constant_time_locl.h': No such file or directory
+         rsa_null.c
+     1>c:\studing\openssl\crypto\rsa\rsa_null.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_none.c
+     1>c:\studing\openssl\crypto\rsa\rsa_none.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_meth.c
+     1>c:\studing\openssl\crypto\rsa\rsa_locl.h(10): fatal error C1083: Cannot open include file: 'openssl/rsa.h': No such file or directory
+         rsa_lib.c
+     1>c:\studing\openssl\crypto\rsa\rsa_lib.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         rsa_gen.c
+     1>c:\studing\openssl\crypto\rsa\rsa_gen.c(18): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_err.c
+     1>c:\studing\openssl\crypto\rsa\rsa_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         rsa_depr.c
+     1>c:\studing\openssl\crypto\rsa\rsa_depr.c(15): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         rsa_crpt.c
+     1>c:\studing\openssl\crypto\rsa\rsa_crpt.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         rsa_chk.c
+     1>c:\studing\openssl\crypto\rsa\rsa_chk.c(10): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         rsa_asn1.c
+     1>c:\studing\openssl\crypto\rsa\rsa_asn1.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsa_ameth.c
+     1>c:\studing\openssl\crypto\rsa\rsa_ameth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rmd_one.c
+     1>c:\studing\openssl\crypto\ripemd\rmd_one.c(12): fatal error C1083: Cannot open include file: 'openssl/ripemd.h': No such file or directory
+         rmd_dgst.c
+     1>c:\studing\openssl\crypto\ripemd\rmd_locl.h(12): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         rc5_skey.c
+     1>c:\studing\openssl\crypto\rc5\rc5_skey.c(10): fatal error C1083: Cannot open include file: 'openssl/rc5.h': No such file or directory
+         rc5_enc.c
+     1>c:\studing\openssl\crypto\rc5\rc5_enc.c(11): fatal error C1083: Cannot open include file: 'openssl/rc5.h': No such file or directory
+         rc5_ecb.c
+     1>c:\studing\openssl\crypto\rc5\rc5_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/rc5.h': No such file or directory
+         rc5ofb64.c
+     1>c:\studing\openssl\crypto\rc5\rc5ofb64.c(10): fatal error C1083: Cannot open include file: 'openssl/rc5.h': No such file or directory
+         Generating Code...
+         Compiling...
+         rc5cfb64.c
+     1>c:\studing\openssl\crypto\rc5\rc5cfb64.c(10): fatal error C1083: Cannot open include file: 'openssl/rc5.h': No such file or directory
+         rc4_skey.c
+     1>c:\studing\openssl\crypto\rc4\rc4_skey.c(10): fatal error C1083: Cannot open include file: 'openssl/rc4.h': No such file or directory
+         rc4_enc.c
+     1>c:\studing\openssl\crypto\rc4\rc4_enc.c(10): fatal error C1083: Cannot open include file: 'openssl/rc4.h': No such file or directory
+         tab.c
+         rc2_skey.c
+     1>c:\studing\openssl\crypto\rc2\rc2_skey.c(10): fatal error C1083: Cannot open include file: 'openssl/rc2.h': No such file or directory
+         rc2_ecb.c
+     1>c:\studing\openssl\crypto\rc2\rc2_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/rc2.h': No such file or directory
+         rc2_cbc.c
+     1>c:\studing\openssl\crypto\rc2\rc2_cbc.c(10): fatal error C1083: Cannot open include file: 'openssl/rc2.h': No such file or directory
+         rc2ofb64.c
+     1>c:\studing\openssl\crypto\rc2\rc2ofb64.c(10): fatal error C1083: Cannot open include file: 'openssl/rc2.h': No such file or directory
+         rc2cfb64.c
+     1>c:\studing\openssl\crypto\rc2\rc2cfb64.c(10): fatal error C1083: Cannot open include file: 'openssl/rc2.h': No such file or directory
+         rand_win.c
+     1>c:\studing\openssl\crypto\rand\rand_win.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rand_vms.c
+     1>c:\studing\openssl\crypto\rand\rand_vms.c(16): fatal error C1083: Cannot open include file: 'openssl/rand.h': No such file or directory
+         rand_unix.c
+     1>c:\studing\openssl\crypto\rand\rand_unix.c(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rand_lib.c
+     1>c:\studing\openssl\crypto\rand\rand_lib.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rand_err.c
+     1>c:\studing\openssl\crypto\rand\rand_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         rand_egd.c
+     1>c:\studing\openssl\crypto\rand\rand_egd.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         randfile.c
+     1>c:\studing\openssl\crypto\rand\randfile.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         md_rand.c
+     1>c:\studing\openssl\crypto\rand\md_rand.c(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ppccap.c
+     1>c:\studing\openssl\crypto\ppccap.c(15): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         poly1305_ieee754.c
+     1>c:\studing\openssl\crypto\poly1305\poly1305_ieee754.c(50): fatal error C1189: #error:  "this is gcc-specific template"
+         poly1305.c
+     1>c:\studing\openssl\crypto\poly1305\poly1305.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         Generating Code...
+         Compiling...
+         pkcs7err.c
+     1>c:\studing\openssl\crypto\pkcs7\pkcs7err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         pk7_smime.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_smime.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pk7_mime.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_mime.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pk7_lib.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pk7_enc.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_enc.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pk7_doit.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_doit.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pk7_dgst.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_dgst.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pk7_attr.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_attr.c(12): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         pk7_asn1.c
+     1>c:\studing\openssl\crypto\pkcs7\pk7_asn1.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bio_pk7.c
+     1>c:\studing\openssl\crypto\pkcs7\bio_pk7.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         pk12err.c
+     1>c:\studing\openssl\crypto\pkcs12\pk12err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         p12_utl.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_utl.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_sbag.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_sbag.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_p8e.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_p8e.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_p8d.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_p8d.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_npas.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_npas.c(13): fatal error C1083: Cannot open include file: 'openssl/pem.h': No such file or directory
+         p12_mutl.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_mutl.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_kiss.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_kiss.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_key.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_key.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_init.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_init.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         p12_decr.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_decr.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_crt.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_crt.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_crpt.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_crpt.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_attr.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_attr.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_asn.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_asn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p12_add.c
+     1>c:\studing\openssl\crypto\pkcs12\p12_add.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pvkfmt.c
+     1>c:\studing\openssl\crypto\pem\pvkfmt.c(15): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_xaux.c
+     1>c:\studing\openssl\crypto\pem\pem_xaux.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_x509.c
+     1>c:\studing\openssl\crypto\pem\pem_x509.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_sign.c
+     1>c:\studing\openssl\crypto\pem\pem_sign.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_pkey.c
+     1>c:\studing\openssl\crypto\pem\pem_pkey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_pk8.c
+     1>c:\studing\openssl\crypto\pem\pem_pk8.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_oth.c
+     1>c:\studing\openssl\crypto\pem\pem_oth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_lib.c
+     1>c:\studing\openssl\crypto\pem\pem_lib.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_info.c
+     1>c:\studing\openssl\crypto\pem\pem_info.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pem_err.c
+     1>c:\studing\openssl\crypto\pem\pem_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         pem_all.c
+     1>c:\studing\openssl\crypto\pem\pem_all.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         o_time.c
+     1>c:\studing\openssl\crypto\o_time.c(10): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         o_str.c
+     1>c:\studing\openssl\crypto\o_str.c(12): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         o_init.c
+     1>c:\studing\openssl\crypto\o_init.c(10): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         o_fopen.c
+     1>c:\studing\openssl\crypto\o_fopen.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         o_fips.c
+     1>c:\studing\openssl\crypto\o_fips.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         o_dir.c
+     1>c:\studing\openssl\crypto\o_dir.c(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         v3_ocsp.c
+     1>c:\studing\openssl\crypto\ocsp\v3_ocsp.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ocsp_vfy.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_vfy.c(10): fatal error C1083: Cannot open include file: 'openssl/ocsp.h': No such file or directory
+         ocsp_srv.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_srv.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ocsp_prn.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_prn.c(10): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         ocsp_lib.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ocsp_ht.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_ht.c(14): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ocsp_ext.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_ext.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ocsp_err.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ocsp_cl.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_cl.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ocsp_asn.c
+     1>c:\studing\openssl\crypto\ocsp\ocsp_asn.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         o_names.c
+     1>c:\studing\openssl\crypto\objects\o_names.c(14): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         obj_xref.c
+     1>c:\studing\openssl\crypto\objects\obj_xref.c(10): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         obj_lib.c
+     1>c:\studing\openssl\crypto\objects\obj_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         obj_err.c
+     1>c:\studing\openssl\crypto\objects\obj_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         obj_dat.c
+     1>c:\studing\openssl\crypto\objects\obj_dat.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         xts128.c
+     1>c:\studing\openssl\crypto\modes\xts128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         wrap128.c
+     1>c:\studing\openssl\crypto\modes\wrap128.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         ofb128.c
+     1>c:\studing\openssl\crypto\modes\ofb128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ocb128.c
+     1>c:\studing\openssl\crypto\modes\ocb128.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         gcm128.c
+     1>c:\studing\openssl\crypto\modes\gcm128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         cts128.c
+     1>c:\studing\openssl\crypto\modes\cts128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ctr128.c
+     1>c:\studing\openssl\crypto\modes\ctr128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         cfb128.c
+     1>c:\studing\openssl\crypto\modes\cfb128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ccm128.c
+     1>c:\studing\openssl\crypto\modes\ccm128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         cbc128.c
+     1>c:\studing\openssl\crypto\modes\cbc128.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         mem_sec.c
+     1>c:\studing\openssl\crypto\mem_sec.c(22): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         mem_dbg.c
+     1>c:\studing\openssl\crypto\mem_dbg.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         mem_clr.c
+     1>c:\studing\openssl\crypto\mem_clr.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         mem.c
+     1>c:\studing\openssl\crypto\mem.c(13): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         mdc2_one.c
+     1>c:\studing\openssl\crypto\mdc2\mdc2_one.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         mdc2dgst.c
+     1>c:\studing\openssl\crypto\mdc2\mdc2dgst.c(13): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         md5_one.c
+     1>c:\studing\openssl\crypto\md5\md5_one.c(12): fatal error C1083: Cannot open include file: 'openssl/md5.h': No such file or directory
+         md5_dgst.c
+     1>c:\studing\openssl\crypto\md5\md5_locl.h(12): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         md4_one.c
+     1>c:\studing\openssl\crypto\md4\md4_one.c(12): fatal error C1083: Cannot open include file: 'openssl/md4.h': No such file or directory
+         md4_dgst.c
+     1>c:\studing\openssl\crypto\md4\md4_dgst.c(11): fatal error C1083: Cannot open include file: 'openssl/opensslv.h': No such file or directory
+         md2_one.c
+     1>c:\studing\openssl\crypto\md2\md2_one.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         md2_dgst.c
+     1>c:\studing\openssl\crypto\md2\md2_dgst.c(13): fatal error C1083: Cannot open include file: 'openssl/md2.h': No such file or directory
+         Generating Code...
+         Compiling...
+         LPdir_wince.c
+     1>c:\studing\openssl\crypto\lpdir_win.c(38): fatal error C1083: Cannot open include file: 'internal/numbers.h': No such file or directory
+         LPdir_win32.c
+     1>c:\studing\openssl\crypto\lpdir_win.c(38): fatal error C1083: Cannot open include file: 'internal/numbers.h': No such file or directory
+         LPdir_win.c
+     1>c:\studing\openssl\crypto\lpdir_win.c(38): fatal error C1083: Cannot open include file: 'internal/numbers.h': No such file or directory
+         LPdir_vms.c
+     1>c:\studing\openssl\crypto\lpdir_vms.c(40): fatal error C1083: Cannot open include file: 'descrip.h': No such file or directory
+         LPdir_unix.c
+     1>c:\studing\openssl\crypto\lpdir_unix.c(41): fatal error C1083: Cannot open include file: 'dirent.h': No such file or directory
+         LPdir_nyi.c
+     1>c:\studing\openssl\crypto\lpdir_nyi.c(37): fatal error C1083: Cannot open include file: 'LPdir.h': No such file or directory
+         lh_stats.c
+     1>c:\studing\openssl\crypto\lhash\lh_stats.c(17): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         lhash.c
+     1>c:\studing\openssl\crypto\lhash\lhash.c(13): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         tls1_prf.c
+     1>c:\studing\openssl\crypto\kdf\tls1_prf.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         kdf_err.c
+     1>c:\studing\openssl\crypto\kdf\kdf_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         hkdf.c
+     1>c:\studing\openssl\crypto\kdf\hkdf.c(12): fatal error C1083: Cannot open include file: 'openssl/hmac.h': No such file or directory
+         init.c
+     1>c:\studing\openssl\crypto\init.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib_int.h': No such file or directory
+         i_skey.c
+     1>c:\studing\openssl\crypto\idea\i_skey.c(10): fatal error C1083: Cannot open include file: 'openssl/idea.h': No such file or directory
+         i_ofb64.c
+     1>c:\studing\openssl\crypto\idea\i_ofb64.c(10): fatal error C1083: Cannot open include file: 'openssl/idea.h': No such file or directory
+         i_ecb.c
+     1>c:\studing\openssl\crypto\idea\i_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/idea.h': No such file or directory
+         i_cfb64.c
+     1>c:\studing\openssl\crypto\idea\i_cfb64.c(10): fatal error C1083: Cannot open include file: 'openssl/idea.h': No such file or directory
+         i_cbc.c
+     1>c:\studing\openssl\crypto\idea\i_cbc.c(10): fatal error C1083: Cannot open include file: 'openssl/idea.h': No such file or directory
+         hm_pmeth.c
+     1>c:\studing\openssl\crypto\hmac\hm_pmeth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         hm_ameth.c
+     1>c:\studing\openssl\crypto\hmac\hm_ameth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         hmac.c
+     1>c:\studing\openssl\crypto\hmac\hmac.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         ex_data.c
+     1>c:\studing\openssl\crypto\ex_data.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib_int.h': No such file or directory
+         scrypt.c
+     1>c:\studing\openssl\crypto\evp\scrypt.c(13): fatal error C1083: Cannot open include file: 'openssl/evp.h': No such file or directory
+         p_verify.c
+     1>c:\studing\openssl\crypto\evp\p_verify.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p_sign.c
+     1>c:\studing\openssl\crypto\evp\p_sign.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p_seal.c
+     1>c:\studing\openssl\crypto\evp\p_seal.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p_open.c
+     1>c:\studing\openssl\crypto\evp\p_open.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p_lib.c
+     1>c:\studing\openssl\crypto\evp\p_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p_enc.c
+     1>c:\studing\openssl\crypto\evp\p_enc.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p_dec.c
+     1>c:\studing\openssl\crypto\evp\p_dec.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pmeth_lib.c
+     1>c:\studing\openssl\crypto\evp\pmeth_lib.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pmeth_gn.c
+     1>c:\studing\openssl\crypto\evp\pmeth_gn.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         pmeth_fn.c
+     1>c:\studing\openssl\crypto\evp\pmeth_fn.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p5_crpt2.c
+     1>c:\studing\openssl\crypto\evp\p5_crpt2.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p5_crpt.c
+     1>c:\studing\openssl\crypto\evp\p5_crpt.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         names.c
+     1>c:\studing\openssl\crypto\evp\names.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_wp.c
+     1>c:\studing\openssl\crypto\evp\m_wp.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_sigver.c
+     1>c:\studing\openssl\crypto\evp\m_sigver.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_sha1.c
+     1>c:\studing\openssl\crypto\evp\m_sha1.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_ripemd.c
+     1>c:\studing\openssl\crypto\evp\m_ripemd.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_null.c
+     1>c:\studing\openssl\crypto\evp\m_null.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         m_mdc2.c
+     1>c:\studing\openssl\crypto\evp\m_mdc2.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_md5_sha1.c
+     1>c:\studing\openssl\crypto\evp\m_md5_sha1.c(12): fatal error C1083: Cannot open include file: 'openssl/evp.h': No such file or directory
+         m_md5.c
+     1>c:\studing\openssl\crypto\evp\m_md5.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_md4.c
+     1>c:\studing\openssl\crypto\evp\m_md4.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_md2.c
+     1>c:\studing\openssl\crypto\evp\m_md2.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_xcbc_d.c
+     1>c:\studing\openssl\crypto\evp\e_xcbc_d.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_seed.c
+     1>c:\studing\openssl\crypto\evp\e_seed.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_rc5.c
+     1>c:\studing\openssl\crypto\evp\e_rc5.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_rc4_hmac_md5.c
+     1>c:\studing\openssl\crypto\evp\e_rc4_hmac_md5.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_rc4.c
+     1>c:\studing\openssl\crypto\evp\e_rc4.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_rc2.c
+     1>c:\studing\openssl\crypto\evp\e_rc2.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_old.c
+     1>c:\studing\openssl\crypto\evp\e_old.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_null.c
+     1>c:\studing\openssl\crypto\evp\e_null.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_idea.c
+     1>c:\studing\openssl\crypto\evp\e_idea.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_des3.c
+     1>c:\studing\openssl\crypto\evp\e_des3.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_des.c
+     1>c:\studing\openssl\crypto\evp\e_des.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_chacha20_poly1305.c
+     1>c:\studing\openssl\crypto\evp\e_chacha20_poly1305.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_cast.c
+     1>c:\studing\openssl\crypto\evp\e_cast.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         e_camellia.c
+     1>c:\studing\openssl\crypto\evp\e_camellia.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_bf.c
+     1>c:\studing\openssl\crypto\evp\e_bf.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         e_aes_cbc_hmac_sha256.c
+     1>c:\studing\openssl\crypto\evp\e_aes_cbc_hmac_sha256.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_aes_cbc_hmac_sha1.c
+     1>c:\studing\openssl\crypto\evp\e_aes_cbc_hmac_sha1.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         e_aes.c
+     1>c:\studing\openssl\crypto\evp\e_aes.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         evp_pkey.c
+     1>c:\studing\openssl\crypto\evp\evp_pkey.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         evp_pbe.c
+     1>c:\studing\openssl\crypto\evp\evp_pbe.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         evp_lib.c
+     1>c:\studing\openssl\crypto\evp\evp_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         evp_key.c
+     1>c:\studing\openssl\crypto\evp\evp_key.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         evp_err.c
+     1>c:\studing\openssl\crypto\evp\evp_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         evp_enc.c
+     1>c:\studing\openssl\crypto\evp\evp_enc.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         evp_cnf.c
+     1>c:\studing\openssl\crypto\evp\evp_cnf.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         encode.c
+     1>c:\studing\openssl\crypto\evp\encode.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         digest.c
+     1>c:\studing\openssl\crypto\evp\digest.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         c_alld.c
+     1>c:\studing\openssl\crypto\evp\c_alld.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         c_allc.c
+     1>c:\studing\openssl\crypto\evp\c_allc.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cmeth_lib.c
+     1>c:\studing\openssl\crypto\evp\cmeth_lib.c(12): fatal error C1083: Cannot open include file: 'openssl/evp.h': No such file or directory
+         bio_ok.c
+     1>c:\studing\openssl\crypto\evp\bio_ok.c(74): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bio_md.c
+     1>c:\studing\openssl\crypto\evp\bio_md.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bio_enc.c
+     1>c:\studing\openssl\crypto\evp\bio_enc.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bio_b64.c
+     1>c:\studing\openssl\crypto\evp\bio_b64.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         err_prn.c
+     1>c:\studing\openssl\crypto\err\err_prn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         err_all.c
+     1>c:\studing\openssl\crypto\err\err_all.c(11): fatal error C1083: Cannot open include file: 'internal/err_int.h': No such file or directory
+         err.c
+     1>c:\studing\openssl\crypto\err\err.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib_int.h': No such file or directory
+         tb_rsa.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_rand.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_pkmeth.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_eckey.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_dsa.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_digest.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_dh.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_cipher.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tb_asnmth.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_table.c
+     1>c:\studing\openssl\crypto\engine\eng_table.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_rdrand.c
+     1>c:\studing\openssl\crypto\engine\eng_rdrand.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         eng_pkey.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_openssl.c
+     1>c:\studing\openssl\crypto\engine\eng_openssl.c(17): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         eng_list.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_lib.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_init.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_fat.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_err.c
+     1>c:\studing\openssl\crypto\engine\eng_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         Generating Code...
+         Compiling...
+         eng_dyn.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_ctrl.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_cryptodev.c
+     1>c:\studing\openssl\crypto\engine\eng_cryptodev.c(38): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         eng_cnf.c
+     1>c:\studing\openssl\crypto\engine\eng_int.h(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         eng_all.c
+     1>c:\studing\openssl\crypto\engine\eng_all.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ec_print.c
+     1>c:\studing\openssl\crypto\ec\ec_print.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ec_pmeth.c
+     1>c:\studing\openssl\crypto\ec\ec_pmeth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ec_oct.c
+     1>c:\studing\openssl\crypto\ec\ec_oct.c(18): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec_mult.c
+     1>c:\studing\openssl\crypto\ec\ec_mult.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec_lib.c
+     1>c:\studing\openssl\crypto\ec\ec_lib.c(18): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec_kmeth.c
+     1>c:\studing\openssl\crypto\ec\ec_kmeth.c(11): fatal error C1083: Cannot open include file: 'openssl/ec.h': No such file or directory
+         ec_key.c
+     1>c:\studing\openssl\crypto\ec\ec_key.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ec_err.c
+     1>c:\studing\openssl\crypto\ec\ec_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec_cvt.c
+     1>c:\studing\openssl\crypto\ec\ec_cvt.c(24): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec_curve.c
+     1>c:\studing\openssl\crypto\ec\ec_lcl.h(26): fatal error C1083: Cannot open include file: 'openssl/obj_mac.h': No such file or directory
+         ec_check.c
+     1>c:\studing\openssl\crypto\ec\ec_lcl.h(26): fatal error C1083: Cannot open include file: 'openssl/obj_mac.h': No such file or directory
+         ec_asn1.c
+     1>c:\studing\openssl\crypto\ec\ec_lcl.h(26): fatal error C1083: Cannot open include file: 'openssl/obj_mac.h': No such file or directory
+         ec_ameth.c
+     1>c:\studing\openssl\crypto\ec\ec_ameth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ecx_meth.c
+     1>c:\studing\openssl\crypto\ec\ecx_meth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ecp_smpl.c
+     1>c:\studing\openssl\crypto\ec\ecp_smpl.c(16): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         Generating Code...
+         Compiling...
+         ecp_oct.c
+     1>c:\studing\openssl\crypto\ec\ecp_oct.c(16): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ecp_nistz256_table.c
+     1>c:\studing\openssl\crypto\ec\ecp_nistz256_table.c(31): error C2061: syntax error: identifier 'ecp_nistz256_precomputed'
+     1>c:\studing\openssl\crypto\ec\ecp_nistz256_table.c(31): error C2059: syntax error: ';'
+     1>c:\studing\openssl\crypto\ec\ecp_nistz256_table.c(31): error C2059: syntax error: '['
+         ecp_nistz256.c
+     1>c:\studing\openssl\crypto\ec\ecp_nistz256.c(40): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ecp_nistputil.c
+     1>c:\studing\openssl\crypto\ec\ecp_nistputil.c(26): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ecp_nistp521.c
+     1>c:\studing\openssl\crypto\ec\ecp_nistp521.c(34): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ecp_nistp256.c
+     1>c:\studing\openssl\crypto\ec\ecp_nistp256.c(34): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ecp_nistp224.c
+     1>c:\studing\openssl\crypto\ec\ecp_nistp224.c(33): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ecp_nist.c
+     1>c:\studing\openssl\crypto\ec\ecp_nist.c(18): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ecp_mont.c
+     1>c:\studing\openssl\crypto\ec\ecp_mont.c(16): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         eck_prn.c
+     1>c:\studing\openssl\crypto\ec\eck_prn.c(17): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ecdsa_vrf.c
+     1>c:\studing\openssl\crypto\ec\ecdsa_vrf.c(10): fatal error C1083: Cannot open include file: 'openssl/ec.h': No such file or directory
+         ecdsa_sign.c
+     1>c:\studing\openssl\crypto\ec\ecdsa_sign.c(10): fatal error C1083: Cannot open include file: 'openssl/ec.h': No such file or directory
+         ecdsa_ossl.c
+     1>c:\studing\openssl\crypto\ec\ecdsa_ossl.c(11): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ecdh_ossl.c
+     1>c:\studing\openssl\crypto\ec\ecdh_ossl.c(28): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ecdh_kdf.c
+     1>c:\studing\openssl\crypto\ec\ecdh_kdf.c(11): fatal error C1083: Cannot open include file: 'openssl/ec.h': No such file or directory
+         ec2_smpl.c
+     1>c:\studing\openssl\crypto\ec\ec2_smpl.c(25): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec2_oct.c
+     1>c:\studing\openssl\crypto\ec\ec2_oct.c(25): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ec2_mult.c
+     1>c:\studing\openssl\crypto\ec\ec2_mult.c(25): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         curve25519.c
+     1>c:\studing\openssl\crypto\ec\ec_lcl.h(26): fatal error C1083: Cannot open include file: 'openssl/obj_mac.h': No such file or directory
+         ebcdic.c
+     1>c:\studing\openssl\crypto\ebcdic.c(10): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         Generating Code...
+         Compiling...
+         dso_win32.c
+     1>c:\studing\openssl\crypto\dso\dso_locl.h(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dso_vms.c
+     1>c:\studing\openssl\crypto\dso\dso_locl.h(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dso_openssl.c
+     1>c:\studing\openssl\crypto\dso\dso_locl.h(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dso_lib.c
+     1>c:\studing\openssl\crypto\dso\dso_locl.h(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dso_err.c
+     1>c:\studing\openssl\crypto\dso\dso_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         dso_dlfcn.c
+     1>c:\studing\openssl\crypto\dso\dso_locl.h(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dso_dl.c
+     1>c:\studing\openssl\crypto\dso\dso_locl.h(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_vrf.c
+     1>c:\studing\openssl\crypto\dsa\dsa_vrf.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_sign.c
+     1>c:\studing\openssl\crypto\dsa\dsa_sign.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_prn.c
+     1>c:\studing\openssl\crypto\dsa\dsa_prn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_pmeth.c
+     1>c:\studing\openssl\crypto\dsa\dsa_pmeth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_ossl.c
+     1>c:\studing\openssl\crypto\dsa\dsa_ossl.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_meth.c
+     1>c:\studing\openssl\crypto\dsa\dsa_locl.h(10): fatal error C1083: Cannot open include file: 'openssl/dsa.h': No such file or directory
+         dsa_lib.c
+     1>c:\studing\openssl\crypto\dsa\dsa_lib.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_key.c
+     1>c:\studing\openssl\crypto\dsa\dsa_key.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_gen.c
+     1>c:\studing\openssl\crypto\dsa\dsa_gen.c(17): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dsa_err.c
+     1>c:\studing\openssl\crypto\dsa\dsa_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         dsa_depr.c
+     1>c:\studing\openssl\crypto\dsa\dsa_depr.c(22): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dsa_asn1.c
+     1>c:\studing\openssl\crypto\dsa\dsa_asn1.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dsa_ameth.c
+     1>c:\studing\openssl\crypto\dsa\dsa_ameth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         dllmain.c
+     1>c:\studing\openssl\crypto\dllmain.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib_int.h': No such file or directory
+         dh_rfc5114.c
+     1>c:\studing\openssl\crypto\dh\dh_rfc5114.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_prn.c
+     1>c:\studing\openssl\crypto\dh\dh_prn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_pmeth.c
+     1>c:\studing\openssl\crypto\dh\dh_pmeth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_meth.c
+     1>c:\studing\openssl\crypto\dh\dh_locl.h(10): fatal error C1083: Cannot open include file: 'openssl/dh.h': No such file or directory
+         dh_lib.c
+     1>c:\studing\openssl\crypto\dh\dh_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_key.c
+     1>c:\studing\openssl\crypto\dh\dh_key.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_kdf.c
+     1>c:\studing\openssl\crypto\dh\dh_kdf.c(10): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         dh_gen.c
+     1>c:\studing\openssl\crypto\dh\dh_gen.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_err.c
+     1>c:\studing\openssl\crypto\dh\dh_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         dh_depr.c
+     1>c:\studing\openssl\crypto\dh\dh_depr.c(12): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dh_check.c
+     1>c:\studing\openssl\crypto\dh\dh_check.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_asn1.c
+     1>c:\studing\openssl\crypto\dh\dh_asn1.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         dh_ameth.c
+     1>c:\studing\openssl\crypto\dh\dh_ameth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         xcbc_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         str2key.c
+     1>c:\studing\openssl\crypto\des\str2key.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         set_key.c
+     1>c:\studing\openssl\crypto\des\set_key.c(18): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         rpc_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         rand_key.c
+     1>c:\studing\openssl\crypto\des\rand_key.c(10): fatal error C1083: Cannot open include file: 'openssl/des.h': No such file or directory
+         qud_cksm.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         Generating Code...
+         Compiling...
+         pcbc_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ofb_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ofb64enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ofb64ede.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ncbc_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         fcrypt_b.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         fcrypt.c
+     1>c:\studing\openssl\crypto\des\fcrypt.c(21): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         ecb_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         ecb3_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         des_enc.c
+     1>c:\studing\openssl\crypto\des\des_enc.c(10): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         cfb_enc.c
+     1>c:\studing\openssl\crypto\des\cfb_enc.c(10): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         cfb64enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         cfb64ede.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         cbc_enc.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         cbc_cksm.c
+     1>c:\studing\openssl\crypto\des\des_locl.h(13): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         cversion.c
+     1>c:\studing\openssl\crypto\cversion.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         ct_x509v3.c
+     1>c:\studing\openssl\crypto\ct\ct_locl.h(11): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         ct_vfy.c
+     1>c:\studing\openssl\crypto\ct\ct_vfy.c(12): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         ct_sct_ctx.c
+     1>c:\studing\openssl\crypto\ct\ct_sct_ctx.c(17): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ct_sct.c
+     1>c:\studing\openssl\crypto\ct\ct_sct.c(14): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         Generating Code...
+         Compiling...
+         ct_prn.c
+     1>c:\studing\openssl\crypto\ct\ct_prn.c(14): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         ct_policy.c
+     1>c:\studing\openssl\crypto\ct\ct_policy.c(14): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         ct_oct.c
+     1>c:\studing\openssl\crypto\ct\ct_oct.c(17): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         ct_log.c
+     1>c:\studing\openssl\crypto\ct\ct_log.c(13): fatal error C1083: Cannot open include file: 'openssl/conf.h': No such file or directory
+         ct_err.c
+     1>c:\studing\openssl\crypto\ct\ct_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ct_b64.c
+     1>c:\studing\openssl\crypto\ct\ct_b64.c(13): fatal error C1083: Cannot open include file: 'openssl/ct.h': No such file or directory
+         cryptlib.c
+     1>c:\studing\openssl\crypto\cryptlib.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib_int.h': No such file or directory
+         cpt_err.c
+     1>c:\studing\openssl\crypto\cpt_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         conf_sap.c
+     1>c:\studing\openssl\crypto\conf\conf_sap.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         conf_mod.c
+     1>c:\studing\openssl\crypto\conf\conf_mod.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         conf_mall.c
+     1>c:\studing\openssl\crypto\conf\conf_mall.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         conf_lib.c
+     1>c:\studing\openssl\crypto\conf\conf_lib.c(12): fatal error C1083: Cannot open include file: 'internal/conf.h': No such file or directory
+         conf_err.c
+     1>c:\studing\openssl\crypto\conf\conf_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         conf_def.c
+     1>c:\studing\openssl\crypto\conf\conf_def.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         conf_api.c
+     1>c:\studing\openssl\crypto\conf\conf_api.c(14): fatal error C1083: Cannot open include file: 'openssl/conf.h': No such file or directory
+         c_zlib.c
+     1>c:\studing\openssl\crypto\comp\c_zlib.c(13): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         comp_lib.c
+     1>c:\studing\openssl\crypto\comp\comp_lib.c(13): fatal error C1083: Cannot open include file: 'openssl/objects.h': No such file or directory
+         comp_err.c
+     1>c:\studing\openssl\crypto\comp\comp_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         cms_smime.c
+     1>c:\studing\openssl\crypto\cms\cms_smime.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_sd.c
+     1>c:\studing\openssl\crypto\cms\cms_sd.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         cms_pwri.c
+     1>c:\studing\openssl\crypto\cms\cms_pwri.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_lib.c
+     1>c:\studing\openssl\crypto\cms\cms_lib.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1t.h': No such file or directory
+         cms_kari.c
+     1>c:\studing\openssl\crypto\cms\cms_kari.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_io.c
+     1>c:\studing\openssl\crypto\cms\cms_io.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1t.h': No such file or directory
+         cms_ess.c
+     1>c:\studing\openssl\crypto\cms\cms_ess.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_err.c
+     1>c:\studing\openssl\crypto\cms\cms_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         cms_env.c
+     1>c:\studing\openssl\crypto\cms\cms_env.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_enc.c
+     1>c:\studing\openssl\crypto\cms\cms_enc.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_dd.c
+     1>c:\studing\openssl\crypto\cms\cms_dd.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_cd.c
+     1>c:\studing\openssl\crypto\cms\cms_cd.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cms_att.c
+     1>c:\studing\openssl\crypto\cms\cms_att.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1t.h': No such file or directory
+         cms_asn1.c
+     1>c:\studing\openssl\crypto\cms\cms_asn1.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1t.h': No such file or directory
+         cm_pmeth.c
+     1>c:\studing\openssl\crypto\cmac\cm_pmeth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cm_ameth.c
+     1>c:\studing\openssl\crypto\cmac\cm_ameth.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         cmac.c
+     1>c:\studing\openssl\crypto\cmac\cmac.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         chacha_enc.c
+     1>c:\studing\openssl\crypto\chacha\chacha_enc.c(14): fatal error C1083: Cannot open include file: 'internal/chacha.h': No such file or directory
+         c_skey.c
+     1>c:\studing\openssl\crypto\cast\c_skey.c(10): fatal error C1083: Cannot open include file: 'openssl/cast.h': No such file or directory
+         c_ofb64.c
+     1>c:\studing\openssl\crypto\cast\c_ofb64.c(10): fatal error C1083: Cannot open include file: 'openssl/cast.h': No such file or directory
+         c_enc.c
+     1>c:\studing\openssl\crypto\cast\c_enc.c(10): fatal error C1083: Cannot open include file: 'openssl/cast.h': No such file or directory
+         c_ecb.c
+     1>c:\studing\openssl\crypto\cast\c_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/cast.h': No such file or directory
+         Generating Code...
+         Compiling...
+         c_cfb64.c
+     1>c:\studing\openssl\crypto\cast\c_cfb64.c(10): fatal error C1083: Cannot open include file: 'openssl/cast.h': No such file or directory
+         cmll_ofb.c
+     1>c:\studing\openssl\crypto\camellia\cmll_ofb.c(10): fatal error C1083: Cannot open include file: 'openssl/camellia.h': No such file or directory
+         cmll_misc.c
+     1>c:\studing\openssl\crypto\camellia\cmll_misc.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslv.h': No such file or directory
+         cmll_ecb.c
+     1>c:\studing\openssl\crypto\camellia\cmll_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/camellia.h': No such file or directory
+         cmll_ctr.c
+     1>c:\studing\openssl\crypto\camellia\cmll_ctr.c(10): fatal error C1083: Cannot open include file: 'openssl/camellia.h': No such file or directory
+         cmll_cfb.c
+     1>c:\studing\openssl\crypto\camellia\cmll_cfb.c(10): fatal error C1083: Cannot open include file: 'openssl/camellia.h': No such file or directory
+         cmll_cbc.c
+     1>c:\studing\openssl\crypto\camellia\cmll_cbc.c(10): fatal error C1083: Cannot open include file: 'openssl/camellia.h': No such file or directory
+         camellia.c
+     1>c:\studing\openssl\crypto\camellia\camellia.c(42): fatal error C1083: Cannot open include file: 'openssl/camellia.h': No such file or directory
+         buf_err.c
+     1>c:\studing\openssl\crypto\buffer\buf_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         buffer.c
+     1>c:\studing\openssl\crypto\buffer\buffer.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         rsaz_exp.c
+     1>c:\studing\openssl\crypto\bn\rsaz_exp.c(52): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bn_x931p.c
+     1>c:\studing\openssl\crypto\bn\bn_x931p.c(11): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         bn_word.c
+     1>c:\studing\openssl\crypto\bn\bn_word.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_srp.c
+     1>c:\studing\openssl\crypto\bn\bn_lcl.h(18): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bn_sqrt.c
+     1>c:\studing\openssl\crypto\bn\bn_sqrt.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_sqr.c
+     1>c:\studing\openssl\crypto\bn\bn_sqr.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_shift.c
+     1>c:\studing\openssl\crypto\bn\bn_shift.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_recp.c
+     1>c:\studing\openssl\crypto\bn\bn_recp.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_rand.c
+     1>c:\studing\openssl\crypto\bn\bn_rand.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_print.c
+     1>c:\studing\openssl\crypto\bn\bn_print.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         bn_prime.c
+     1>c:\studing\openssl\crypto\bn\bn_prime.c(14): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_nist.c
+     1>c:\studing\openssl\crypto\bn\bn_lcl.h(18): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bn_mul.c
+     1>c:\studing\openssl\crypto\bn\bn_mul.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_mpi.c
+     1>c:\studing\openssl\crypto\bn\bn_mpi.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_mont.c
+     1>c:\studing\openssl\crypto\bn\bn_mont.c(17): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_mod.c
+     1>c:\studing\openssl\crypto\bn\bn_mod.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_lib.c
+     1>c:\studing\openssl\crypto\bn\bn_lib.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_kron.c
+     1>c:\studing\openssl\crypto\bn\bn_kron.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_intern.c
+     1>c:\studing\openssl\crypto\bn\bn_intern.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_gf2m.c
+     1>c:\studing\openssl\crypto\bn\bn_gf2m.c(24): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_gcd.c
+     1>c:\studing\openssl\crypto\bn\bn_gcd.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_exp2.c
+     1>c:\studing\openssl\crypto\bn\bn_exp2.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_exp.c
+     1>c:\studing\openssl\crypto\bn\bn_exp.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_err.c
+     1>c:\studing\openssl\crypto\bn\bn_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         bn_div.c
+     1>c:\studing\openssl\crypto\bn\bn_div.c(10): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         bn_dh.c
+     1>c:\studing\openssl\crypto\bn\bn_lcl.h(18): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bn_depr.c
+     1>c:\studing\openssl\crypto\bn\bn_depr.c(15): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         bn_ctx.c
+     1>c:\studing\openssl\crypto\bn\bn_ctx.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bn_const.c
+     1>c:\studing\openssl\crypto\bn\bn_const.c(10): fatal error C1083: Cannot open include file: 'openssl/bn.h': No such file or directory
+         bn_blind.c
+     1>c:\studing\openssl\crypto\bn\bn_blind.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         Generating Code...
+         Compiling...
+         bn_asm.c
+     1>c:\studing\openssl\crypto\bn\bn_asm.c(11): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         bn_add.c
+     1>c:\studing\openssl\crypto\bn\bn_add.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x86_64-gcc.c
+     1>c:\studing\openssl\crypto\bn\bn_lcl.h(18): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         m_blake2s.c
+     1>c:\studing\openssl\crypto\blake2\m_blake2s.c(17): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         m_blake2b.c
+     1>c:\studing\openssl\crypto\blake2\m_blake2b.c(17): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         blake2s.c
+     1>c:\studing\openssl\crypto\blake2\blake2s.c(19): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         blake2b.c
+     1>c:\studing\openssl\crypto\blake2\blake2b.c(19): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         b_sock2.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         b_sock.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         b_print.c
+     1>c:\studing\openssl\crypto\bio\b_print.c(13): fatal error C1083: Cannot open include file: 'internal/numbers.h': No such file or directory
+         b_dump.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         b_addr.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_sock.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_null.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_mem.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_log.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_file.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_fd.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_dgram.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_conn.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         bss_bio.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bss_acpt.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bio_meth.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bio_lib.c
+     1>c:\studing\openssl\crypto\bio\bio_lib.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         bio_err.c
+     1>c:\studing\openssl\crypto\bio\bio_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         bio_cb.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bf_null.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bf_nbio.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bf_lbuf.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bf_buff.c
+     1>c:\studing\openssl\crypto\bio\bio_lcl.h(11): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         bf_skey.c
+     1>c:\studing\openssl\crypto\bf\bf_skey.c(12): fatal error C1083: Cannot open include file: 'openssl/blowfish.h': No such file or directory
+         bf_ofb64.c
+     1>c:\studing\openssl\crypto\bf\bf_ofb64.c(10): fatal error C1083: Cannot open include file: 'openssl/blowfish.h': No such file or directory
+         bf_enc.c
+     1>c:\studing\openssl\crypto\bf\bf_enc.c(10): fatal error C1083: Cannot open include file: 'openssl/blowfish.h': No such file or directory
+         bf_ecb.c
+     1>c:\studing\openssl\crypto\bf\bf_ecb.c(10): fatal error C1083: Cannot open include file: 'openssl/blowfish.h': No such file or directory
+         bf_cfb64.c
+     1>c:\studing\openssl\crypto\bf\bf_cfb64.c(10): fatal error C1083: Cannot open include file: 'openssl/blowfish.h': No such file or directory
+         bf_cbc.c
+     1>c:\studing\openssl\crypto\bf\bf_cbc.c(10): fatal error C1083: Cannot open include file: 'openssl/blowfish.h': No such file or directory
+         async_wait.c
+     1>c:\studing\openssl\crypto\async\async_locl.h(23): fatal error C1083: Cannot open include file: 'internal/async.h': No such file or directory
+         async_err.c
+     1>c:\studing\openssl\crypto\async\async_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         async.c
+     1>c:\studing\openssl\crypto\async\async_locl.h(23): fatal error C1083: Cannot open include file: 'internal/async.h': No such file or directory
+         async_win.c
+     1>c:\studing\openssl\crypto\async\async_locl.h(23): fatal error C1083: Cannot open include file: 'internal/async.h': No such file or directory
+         Generating Code...
+         Compiling...
+         async_posix.c
+     1>c:\studing\openssl\crypto\async\async_locl.h(23): fatal error C1083: Cannot open include file: 'internal/async.h': No such file or directory
+         async_null.c
+     1>c:\studing\openssl\crypto\async\async_locl.h(23): fatal error C1083: Cannot open include file: 'internal/async.h': No such file or directory
+         x_val.c
+     1>c:\studing\openssl\crypto\asn1\x_val.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_spki.c
+     1>c:\studing\openssl\crypto\asn1\x_spki.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_sig.c
+     1>c:\studing\openssl\crypto\asn1\x_sig.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_pkey.c
+     1>c:\studing\openssl\crypto\asn1\x_pkey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_long.c
+     1>c:\studing\openssl\crypto\asn1\x_long.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_info.c
+     1>c:\studing\openssl\crypto\asn1\x_info.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_bignum.c
+     1>c:\studing\openssl\crypto\asn1\x_bignum.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         x_algor.c
+     1>c:\studing\openssl\crypto\asn1\x_algor.c(11): fatal error C1083: Cannot open include file: 'openssl/x509.h': No such file or directory
+         t_spki.c
+     1>c:\studing\openssl\crypto\asn1\t_spki.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         t_pkey.c
+     1>c:\studing\openssl\crypto\asn1\t_pkey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         t_bitst.c
+     1>c:\studing\openssl\crypto\asn1\t_bitst.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tasn_utl.c
+     1>c:\studing\openssl\crypto\asn1\tasn_utl.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tasn_typ.c
+     1>c:\studing\openssl\crypto\asn1\tasn_typ.c(11): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         tasn_scn.c
+     1>c:\studing\openssl\crypto\asn1\tasn_scn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tasn_prn.c
+     1>c:\studing\openssl\crypto\asn1\tasn_prn.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         tasn_new.c
+     1>c:\studing\openssl\crypto\asn1\tasn_new.c(11): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         tasn_fre.c
+     1>c:\studing\openssl\crypto\asn1\tasn_fre.c(11): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         tasn_enc.c
+     1>c:\studing\openssl\crypto\asn1\tasn_enc.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         tasn_dec.c
+     1>c:\studing\openssl\crypto\asn1\tasn_dec.c(12): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         p8_pkey.c
+     1>c:\studing\openssl\crypto\asn1\p8_pkey.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p5_scrypt.c
+     1>c:\studing\openssl\crypto\asn1\p5_scrypt.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p5_pbev2.c
+     1>c:\studing\openssl\crypto\asn1\p5_pbev2.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         p5_pbe.c
+     1>c:\studing\openssl\crypto\asn1\p5_pbe.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         n_pkey.c
+     1>c:\studing\openssl\crypto\asn1\n_pkey.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         nsseq.c
+     1>c:\studing\openssl\crypto\asn1\nsseq.c(12): fatal error C1083: Cannot open include file: 'openssl/asn1t.h': No such file or directory
+         i2d_pu.c
+     1>c:\studing\openssl\crypto\asn1\i2d_pu.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         i2d_pr.c
+     1>c:\studing\openssl\crypto\asn1\i2d_pr.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         f_string.c
+     1>c:\studing\openssl\crypto\asn1\f_string.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         f_int.c
+     1>c:\studing\openssl\crypto\asn1\f_int.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         evp_asn1.c
+     1>c:\studing\openssl\crypto\asn1\evp_asn1.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         d2i_pu.c
+     1>c:\studing\openssl\crypto\asn1\d2i_pu.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         d2i_pr.c
+     1>c:\studing\openssl\crypto\asn1\d2i_pr.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         bio_ndef.c
+     1>c:\studing\openssl\crypto\asn1\bio_ndef.c(10): fatal error C1083: Cannot open include file: 'openssl/asn1.h': No such file or directory
+         bio_asn1.c
+     1>c:\studing\openssl\crypto\asn1\bio_asn1.c(17): fatal error C1083: Cannot open include file: 'internal/bio.h': No such file or directory
+         a_verify.c
+     1>c:\studing\openssl\crypto\asn1\a_verify.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_utf8.c
+     1>c:\studing\openssl\crypto\asn1\a_utf8.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_utctm.c
+     1>c:\studing\openssl\crypto\asn1\a_utctm.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_type.c
+     1>c:\studing\openssl\crypto\asn1\a_type.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         a_time.c
+     1>c:\studing\openssl\crypto\asn1\a_time.c(19): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_strnid.c
+     1>c:\studing\openssl\crypto\asn1\a_strnid.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_strex.c
+     1>c:\studing\openssl\crypto\asn1\a_strex.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_sign.c
+     1>c:\studing\openssl\crypto\asn1\a_sign.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_print.c
+     1>c:\studing\openssl\crypto\asn1\a_print.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_octet.c
+     1>c:\studing\openssl\crypto\asn1\a_octet.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_object.c
+     1>c:\studing\openssl\crypto\asn1\a_object.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_mbstr.c
+     1>c:\studing\openssl\crypto\asn1\a_mbstr.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_int.c
+     1>c:\studing\openssl\crypto\asn1\a_int.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_i2d_fp.c
+     1>c:\studing\openssl\crypto\asn1\a_i2d_fp.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_gentm.c
+     1>c:\studing\openssl\crypto\asn1\a_gentm.c(16): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_dup.c
+     1>c:\studing\openssl\crypto\asn1\a_dup.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_digest.c
+     1>c:\studing\openssl\crypto\asn1\a_digest.c(13): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_d2i_fp.c
+     1>c:\studing\openssl\crypto\asn1\a_d2i_fp.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         a_bitstr.c
+     1>c:\studing\openssl\crypto\asn1\a_bitstr.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         asn_pack.c
+     1>c:\studing\openssl\crypto\asn1\asn_pack.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         asn_mstbl.c
+     1>c:\studing\openssl\crypto\asn1\asn_mstbl.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         asn_moid.c
+     1>c:\studing\openssl\crypto\asn1\asn_moid.c(12): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         asn_mime.c
+     1>c:\studing\openssl\crypto\asn1\asn_mime.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         asn1_par.c
+     1>c:\studing\openssl\crypto\asn1\asn1_par.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         Generating Code...
+         Compiling...
+         asn1_lib.c
+     1>c:\studing\openssl\crypto\asn1\asn1_lib.c(12): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         asn1_gen.c
+     1>c:\studing\openssl\crypto\asn1\asn1_gen.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         asn1_err.c
+     1>c:\studing\openssl\crypto\asn1\asn1_err.c(12): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         ameth_lib.c
+     1>c:\studing\openssl\crypto\asn1\ameth_lib.c(11): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         armcap.c
+     1>c:\studing\openssl\crypto\armcap.c(15): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         aes_x86core.c
+     1>c:\studing\openssl\crypto\aes\aes_x86core.c(49): fatal error C1083: Cannot open include file: 'openssl/aes.h': No such file or directory
+         aes_wrap.c
+     1>c:\studing\openssl\crypto\aes\aes_wrap.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         aes_ofb.c
+     1>c:\studing\openssl\crypto\aes\aes_ofb.c(10): fatal error C1083: Cannot open include file: 'openssl/aes.h': No such file or directory
+         aes_misc.c
+     1>c:\studing\openssl\crypto\aes\aes_misc.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslv.h': No such file or directory
+         aes_ige.c
+     1>c:\studing\openssl\crypto\aes\aes_ige.c(10): fatal error C1083: Cannot open include file: 'internal/cryptlib.h': No such file or directory
+         aes_ecb.c
+     1>c:\studing\openssl\crypto\aes\aes_ecb.c(12): fatal error C1083: Cannot open include file: 'openssl/aes.h': No such file or directory
+         aes_core.c
+     1>c:\studing\openssl\crypto\aes\aes_core.c(42): fatal error C1083: Cannot open include file: 'openssl/crypto.h': No such file or directory
+         aes_cfb.c
+     1>c:\studing\openssl\crypto\aes\aes_cfb.c(10): fatal error C1083: Cannot open include file: 'openssl/aes.h': No such file or directory
+         aes_cbc.c
+     1>c:\studing\openssl\crypto\aes\aes_cbc.c(10): fatal error C1083: Cannot open include file: 'openssl/aes.h': No such file or directory
+         x509.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         win32_init.c
+         vms_term_sock.c
+         vms_decc_init.c
+         version.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         verify.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         ts.c
+     1>c:\studing\openssl\apps\ts.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         s_time.c
+     1>c:\studing\openssl\apps\s_time.c(16): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         s_socket.c
+     1>c:\studing\openssl\apps\s_socket.c(16): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         s_server.c
+     1>c:\studing\openssl\apps\s_server.c(51): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         s_client.c
+     1>c:\studing\openssl\apps\s_client.c(42): fatal error C1083: Cannot open include file: 'openssl/e_os2.h': No such file or directory
+         s_cb.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         srp.c
+     1>c:\studing\openssl\apps\srp.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         spkac.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         speed.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         smime.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         sess_id.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rsautl.c
+     1>c:\studing\openssl\apps\rsautl.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         rsa.c
+     1>c:\studing\openssl\apps\rsa.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         req.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rehash.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         rand.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         prime.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         pkeyutl.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         pkeyparam.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         pkey.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         pkcs8.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         pkcs7.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         pkcs12.c
+     1>c:\studing\openssl\apps\pkcs12.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         passwd.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         opt.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         openssl.c
+     1>c:\studing\openssl\apps\openssl.c(13): fatal error C1083: Cannot open include file: 'openssl/bio.h': No such file or directory
+         ocsp.c
+     1>c:\studing\openssl\apps\ocsp.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         nseq.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         genrsa.c
+     1>c:\studing\openssl\apps\genrsa.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         genpkey.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         gendsa.c
+     1>c:\studing\openssl\apps\gendsa.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         errstr.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         engine.c
+     1>c:\studing\openssl\apps\engine.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         enc.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ecparam.c
+     1>c:\studing\openssl\apps\ecparam.c(24): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         ec.c
+     1>c:\studing\openssl\apps\ec.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dsaparam.c
+     1>c:\studing\openssl\apps\dsaparam.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dsa.c
+     1>c:\studing\openssl\apps\dsa.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dhparam.c
+     1>c:\studing\openssl\apps\dhparam.c(10): fatal error C1083: Cannot open include file: 'openssl/opensslconf.h': No such file or directory
+         dgst.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         Generating Code...
+         Compiling...
+         crl2p7.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         crl.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         cms.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ciphers.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         ca.c
+     1>c:\studing\openssl\apps\ca.c(17): fatal error C1083: Cannot open include file: 'openssl/conf.h': No such file or directory
+         asn1pars.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         app_rand.c
+     1>c:\studing\openssl\apps\apps.h(13): fatal error C1083: Cannot open include file: 'e_os.h': No such file or directory
+         apps.c
+     1>c:\studing\openssl\apps\apps.c(30): fatal error C1083: Cannot open include file: 'openssl/err.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Studing\openssl\openssl-belt.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:49.36
