@@ -13,6 +13,7 @@
 #include <internal/evp_int.h>
 #include <openssl/pkcs12.h>
 #include <openssl/objects.h>
+#include "../../include/openssl/evp.h"
 
 void openssl_add_all_ciphers_int(void)
 {
@@ -209,6 +210,18 @@ void openssl_add_all_ciphers_int(void)
     EVP_add_cipher(EVP_camellia_128_ctr());
     EVP_add_cipher(EVP_camellia_192_ctr());
     EVP_add_cipher(EVP_camellia_256_ctr());
+#endif
+
+#ifndef OPENSSL_NO_BELT
+	EVP_add_cipher(EVP_belt_128_cbc());
+	EVP_add_cipher_alias(SN_belt_128_cbc, "BELT128");
+	EVP_add_cipher_alias(SN_belt_128_cbc, "belt128");
+	EVP_add_cipher(EVP_belt_192_cbc());
+	EVP_add_cipher_alias(SN_belt_192_cbc, "BELT192");
+	EVP_add_cipher_alias(SN_belt_192_cbc, "belt192");
+	EVP_add_cipher(EVP_belt_256_cbc());
+	EVP_add_cipher_alias(SN_belt_256_cbc, "BELT256");
+	EVP_add_cipher_alias(SN_belt_256_cbc, "belt256");
 #endif
 
 #ifndef OPENSSL_NO_CHACHA

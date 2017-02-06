@@ -1058,3 +1058,6 @@ blake2s256		1057
 id_smime_ct_contentCollection		1058
 id_smime_ct_authEnvelopedData		1059
 id_ct_xml		1060
+belt_128_cbc 1061
+belt_192_cbc 1062
+belt_256_cbc 1063
