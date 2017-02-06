@@ -189,6 +189,8 @@ static FUNCTION functions[] = {
 #ifndef OPENSSL_NO_SOCK
     { FT_general, "s_client", s_client_main, s_client_options },
 #endif
+
+
 #ifndef OPENSSL_NO_SOCK
     { FT_general, "s_server", s_server_main, s_server_options },
 #endif
@@ -258,6 +260,15 @@ static FUNCTION functions[] = {
 #endif
 #ifndef OPENSSL_NO_CAMELLIA
     { FT_cipher, "camellia-256-ecb", enc_main, enc_options },
+#endif
+#ifndef OPENSSL_NO_BELT
+	{ FT_cipher, "belt-128-cbc", enc_main },
+#endif
+#ifndef OPENSSL_NO_BELT
+	{ FT_cipher, "belt-192-cbc", enc_main },
+#endif
+#ifndef OPENSSL_NO_BELT
+	{ FT_cipher, "belt-256-cbc", enc_main },
 #endif
     { FT_cipher, "base64", enc_main, enc_options },
 #ifdef ZLIB
