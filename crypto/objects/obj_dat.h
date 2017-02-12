@@ -3088,9 +3088,9 @@ static const unsigned int sn_objs[NUM_SN] = {
      503,    /* "x500UniqueIdentifier" */
      158,    /* "x509Certificate" */
      160,    /* "x509Crl" */
-	 1061,    /* "belt_cbc_128" */
-	 1062,    /* "belt_cbc_192" */
-	 1063,    /* "belt_cbc_256" */
+	 1061,    /* "belt_128_cbc" */
+	 1062,    /* "belt_192_cbc" */
+	 1063,    /* "belt_256_cbc" */
 };
 
 #define NUM_LN 1055

@@ -215,14 +215,8 @@ void openssl_add_all_ciphers_int(void)
 
 #ifndef OPENSSL_NO_BELT
 	EVP_add_cipher(EVP_belt_128_cbc());
-	EVP_add_cipher_alias(SN_belt_128_cbc, "BELT128");
-	EVP_add_cipher_alias(SN_belt_128_cbc, "belt128");
 	EVP_add_cipher(EVP_belt_192_cbc());
-	EVP_add_cipher_alias(SN_belt_192_cbc, "BELT192");
-	EVP_add_cipher_alias(SN_belt_192_cbc, "belt192");
 	EVP_add_cipher(EVP_belt_256_cbc());
-	EVP_add_cipher_alias(SN_belt_256_cbc, "BELT256");
-	EVP_add_cipher_alias(SN_belt_256_cbc, "belt256");
 #endif
 
 #ifndef OPENSSL_NO_CHACHA

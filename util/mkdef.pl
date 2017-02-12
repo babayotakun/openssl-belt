@@ -76,7 +76,7 @@ my @known_platforms = ( "__FreeBSD__", "PERL5",
 			"EXPORT_VAR_AS_FUNCTION", "ZLIB", "_WIN32"
 			);
 my @known_ossl_platforms = ( "VMS", "WIN32", "WINNT", "OS2" );
-my @known_algorithms = ( "RC2", "RC4", "RC5", "IDEA", "DES", "BF",
+my @known_algorithms = ( "RC2", "RC4", "RC5", "IDEA", "DES", "BF", "BELT",
 			 "CAST", "MD2", "MD4", "MD5", "SHA", "SHA0", "SHA1",
 			 "SHA256", "SHA512", "RMD160",
 			 "MDC2", "WHIRLPOOL", "RSA", "DSA", "DH", "EC", "EC2M",
@@ -264,6 +264,7 @@ $crypto.=" include/openssl/sha.h" ; # unless $no_sha;
 $crypto.=" include/openssl/ripemd.h" ; # unless $no_ripemd;
 $crypto.=" include/openssl/aes.h" ; # unless $no_aes;
 $crypto.=" include/openssl/camellia.h" ; # unless $no_camellia;
+$crypto.=" include/openssl/belt.h" ; 
 $crypto.=" include/openssl/seed.h"; # unless $no_seed;
 
 $crypto.=" include/openssl/bn.h";
@@ -1260,7 +1261,7 @@ EOF
 		foreach $sym (@symbols) {
 			(my $s, my $i) = $sym =~ /^(.*?)\\(.*)$/;
 			my $v = 0;
-			$v = 1 if $i =~ /^.*?:.*?:VARIABLE/;
+			
 			if (!defined($nums{$s})) {
 				die "Error: $s does not have a number assigned\n"
 					if(!$do_update);

@@ -338,6 +338,14 @@ const EVP_CIPHER *EVP_##cname##_ecb(void) { return &cname##_ecb; }
                           cbits, flags, init_key, cleanup, set_asn1, \
                           get_asn1, ctrl)
 
+#define IMPLEMENT_CBC_BLOCK_CIPHER(cname, ksched, cprefix, kstruct, nid, \
+                               block_size, key_len, iv_len, cbits, \
+                               flags, init_key, \
+                               cleanup, set_asn1, get_asn1, ctrl) \
+        BLOCK_CIPHER_func_cbc(cname, cprefix, kstruct, ksched) \
+        BLOCK_CIPHER_def_cbc(cname, kstruct, nid, block_size, key_len, iv_len, flags, \
+                     init_key, cleanup, set_asn1, get_asn1, ctrl)
+
 #define IMPLEMENT_CFBR(cipher,cprefix,kstruct,ksched,keysize,cbits,iv_len,fl) \
         BLOCK_CIPHER_func_cfb(cipher##_##keysize,cprefix,cbits,kstruct,ksched) \
         BLOCK_CIPHER_def_cfb(cipher##_##keysize,kstruct, \

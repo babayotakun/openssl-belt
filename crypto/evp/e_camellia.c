@@ -19,6 +19,7 @@ NON_EMPTY_TRANSLATION_UNIT
 # include <openssl/camellia.h>
 # include "internal/evp_int.h"
 # include "modes_lcl.h"
+#include "../../include/openssl/camellia.h"
 
 static int camellia_init_key(EVP_CIPHER_CTX *ctx, const unsigned char *key,
                              const unsigned char *iv, int enc);

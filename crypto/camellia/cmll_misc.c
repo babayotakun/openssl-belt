@@ -33,3 +33,4 @@ void Camellia_decrypt(const unsigned char *in, unsigned char *out,
 {
     Camellia_DecryptBlock_Rounds(key->grand_rounds, in, key->u.rd_key, out);
 }
+

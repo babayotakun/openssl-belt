@@ -169,6 +169,7 @@ const char *OBJ_NAME_get(const char *name, int type)
     on.name = name;
     on.type = type;
 
+		
     for (;;) {
         ret = lh_OBJ_NAME_retrieve(names_lh, &on);
         if (ret == NULL)
