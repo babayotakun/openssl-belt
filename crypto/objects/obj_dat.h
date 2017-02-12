@@ -961,9 +961,9 @@ static const unsigned char so[6798] = {
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,0x09,0x10,0x01,0x13,  /* [ 6731] OBJ_id_smime_ct_contentCollection */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,0x09,0x10,0x01,0x17,  /* [ 6742] OBJ_id_smime_ct_authEnvelopedData */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,0x09,0x10,0x01,0x1C,  /* [ 6753] OBJ_id_ct_xml */
-	0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x09, 0x10, 0x01, 0x13,  /* [ 6764] belt_cbc_128 */
-	0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x09, 0x10, 0x01, 0x17,  /* [ 6775] belt_cbc_192 */
-	0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x09, 0x10, 0x01, 0x1C,  /* [ 6786] belt_cbc_256*/
+	0x2B, 0x06, 0x01, 0x04, 0x01, 0x82, 0xB0, 0x44, 0x85, 0x1A, 0x02,  /* [ 6764] belt_cbc_128 */
+	0x2B, 0x06, 0x01, 0x04, 0x01, 0x82, 0xB0, 0x44, 0x85, 0x1A, 0x16,/*  /* [ 6775] belt_cbc_192 */
+	0x2B, 0x06, 0x01, 0x04, 0x01, 0x82, 0xB0, 0x44, 0x85, 0x1A, 0x2A,  /* [ 6786] belt_cbc_256*/
 };
 
 #define NUM_NID 1064
@@ -2029,9 +2029,9 @@ static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"id-smime-ct-contentCollection", "id-smime-ct-contentCollection", NID_id_smime_ct_contentCollection, 11, &so[6731]},
     {"id-smime-ct-authEnvelopedData", "id-smime-ct-authEnvelopedData", NID_id_smime_ct_authEnvelopedData, 11, &so[6742]},
     {"id-ct-xml", "id-ct-xml", NID_id_ct_xml, 11, &so[6753]},
-	{ "belt_cbc_128", "belt_cbc_128", NID_belt_128_cbc, 11, &so[6764] },
-	{ "belt_cbc_192", "belt_cbc_192", NID_belt_192_cbc, 11, &so[6775] },
-	{ "belt_cbc_256", "belt_cbc_256", NID_belt_256_cbc, 11, &so[6786] },
+	{ "belt_128_cbc", "belt_128_cbc", NID_belt_128_cbc, 11, &so[6764] },
+	{ "belt_192_cbc", "belt_192_cbc", NID_belt_192_cbc, 11, &so[6775] },
+	{ "belt_256_cbc", "belt_256_cbc", NID_belt_256_cbc, 11, &so[6786] },
 };
 
 #define NUM_SN 1055
@@ -4147,9 +4147,9 @@ static const unsigned int ln_objs[NUM_LN] = {
      158,    /* "x509Certificate" */
      160,    /* "x509Crl" */
      125,    /* "zlib compression" */
-	1061,    /* "belt_cbc_128" */
-	1062,    /* "belt_cbc_192" */
-	1063,    /* "belt_cbc_256" */
+	1061,    /* "belt_128_cbc" */
+	1062,    /* "belt_192_cbc" */
+	1063,    /* "belt_256_cbc" */
 };
 
 #define NUM_OBJ 959
@@ -5110,7 +5110,7 @@ static const unsigned int obj_objs[NUM_OBJ] = {
      957,    /* OBJ_jurisdictionCountryName      1 3 6 1 4 1 311 60 2 1 3 */
     1056,    /* OBJ_blake2b512                   1 3 6 1 4 1 1722 12 2 1 16 */
     1057,    /* OBJ_blake2s256                   1 3 6 1 4 1 1722 12 2 2 8 */
-	1061,    /* "belt_cbc_128" */
-	1062,    /* "belt_cbc_192" */
-	1063,    /* "belt_cbc_256" */
+	1061,    /* OBJ_belt_128_cbc                 1 3 6 1 4 1 38980 666 2 */
+	1062,    /* OBJ_belt_192_cbc                 1 3 6 1 4 1 38980 666 22 */
+	1063,    /* OBJ_belt_256_cbc                 1 3 6 1 4 1 38980 666 42 */
 };
