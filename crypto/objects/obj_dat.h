@@ -2029,9 +2029,9 @@ static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"id-smime-ct-contentCollection", "id-smime-ct-contentCollection", NID_id_smime_ct_contentCollection, 11, &so[6731]},
     {"id-smime-ct-authEnvelopedData", "id-smime-ct-authEnvelopedData", NID_id_smime_ct_authEnvelopedData, 11, &so[6742]},
     {"id-ct-xml", "id-ct-xml", NID_id_ct_xml, 11, &so[6753]},
-	{ "belt_128_cbc", "belt_128_cbc", NID_belt_128_cbc, 11, &so[6764] },
-	{ "belt_192_cbc", "belt_192_cbc", NID_belt_192_cbc, 11, &so[6775] },
-	{ "belt_256_cbc", "belt_256_cbc", NID_belt_256_cbc, 11, &so[6786] },
+	{ "belt-128-cbc", "belt_128_cbc", NID_belt_128_cbc, 11, &so[6764] },
+	{ "belt-192-cbc", "belt_192_cbc", NID_belt_192_cbc, 11, &so[6775] },
+	{ "belt-256-cbc", "belt_256_cbc", NID_belt_256_cbc, 11, &so[6786] },
 };
 
 #define NUM_SN 1055
