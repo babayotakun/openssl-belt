@@ -599,6 +599,11 @@ SSL_CTX_callback_ctrl(ssl,SSL_CTRL_SET_TLSEXT_TICKET_KEY_CB,(void (*)(void))cb)
 # define TLS1_CK_DHE_PSK_WITH_CHACHA20_POLY1305           0x0300CCAD
 # define TLS1_CK_RSA_PSK_WITH_CHACHA20_POLY1305           0x0300CCAE
 
+/* ciphersuites with belt */
+#define TLS1_CK_RSA_WITH_BELT_128_CBC_SHA256			  0x0300FF41
+#define TLS1_CK_RSA_WITH_BELT_192_CBC_SHA256              0x0300FF84
+#define TLS1_CK_RSA_WITH_BELT_256_CBC_SHA256              0x0300FF85
+
 /*
  * XXX Backward compatibility alert: Older versions of OpenSSL gave some DHE
  * ciphers names with "EDH" instead of "DHE".  Going forward, we should be
@@ -867,6 +872,11 @@ SSL_CTX_callback_ctrl(ssl,SSL_CTRL_SET_TLSEXT_TICKET_KEY_CB,(void (*)(void))cb)
 # define TLS1_TXT_ECDHE_PSK_WITH_CHACHA20_POLY1305         "ECDHE-PSK-CHACHA20-POLY1305"
 # define TLS1_TXT_DHE_PSK_WITH_CHACHA20_POLY1305           "DHE-PSK-CHACHA20-POLY1305"
 # define TLS1_TXT_RSA_PSK_WITH_CHACHA20_POLY1305           "RSA-PSK-CHACHA20-POLY1305"
+
+/* ciphersuites with belt */
+#define TLS1_TXT_RSA_WITH_BELT_128_CBC_SHA256              "BELT128-SHA256"
+#define TLS1_TXT_RSA_WITH_BELT_192_CBC_SHA256              "BELT192-SHA256"
+#define TLS1_TXT_RSA_WITH_BELT_256_CBC_SHA256              "BELT256-SHA256"
 
 # define TLS_CT_RSA_SIGN                 1
 # define TLS_CT_DSS_SIGN                 2
