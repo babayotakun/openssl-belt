@@ -44,6 +44,7 @@
 
 /* Special sentinel to exit the program. */
 #define EXIT_THE_PROGRAM (-1)
+#include "../include/openssl/bio.h"
 
 /*
  * The LHASH callbacks ("hash" & "cmp") have been replaced by functions with

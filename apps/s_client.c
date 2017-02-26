@@ -82,6 +82,7 @@ typedef unsigned int u_int;
 #undef BUFSIZZ
 #define BUFSIZZ 1024*8
 #define S_CLIENT_IRC_READ_TIMEOUT 8
+#include "../include/openssl/bio.h"
 
 static char *prog;
 static int c_debug = 0;
@@ -874,7 +875,7 @@ int s_client_main(int argc, char **argv)
 
     prog = opt_progname(argv[0]);
     c_quiet = 0;
-    c_debug = 0;
+    c_debug = 1;
     c_showcerts = 0;
     c_nbio = 0;
     vpm = X509_VERIFY_PARAM_new();

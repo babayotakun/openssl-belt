@@ -25,6 +25,7 @@
 # undef EVP_CIPH_FLAG_TLS1_1_MULTIBLOCK
 # define EVP_CIPH_FLAG_TLS1_1_MULTIBLOCK 0
 #endif
+#include "../../include/openssl/ssl3.h"
 
 void RECORD_LAYER_init(RECORD_LAYER *rl, SSL *s)
 {

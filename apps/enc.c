@@ -28,6 +28,7 @@
 #undef BSIZE
 #define SIZE    (512)
 #define BSIZE   (8*1024)
+#include "../include/openssl/bio.h"
 
 static int set_hex(char *in, unsigned char *out, int size);
 static void show_ciphers(const OBJ_NAME *name, void *bio_);

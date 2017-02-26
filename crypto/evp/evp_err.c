@@ -17,6 +17,7 @@
 
 # define ERR_FUNC(func) ERR_PACK(ERR_LIB_EVP,func,0)
 # define ERR_REASON(reason) ERR_PACK(ERR_LIB_EVP,0,reason)
+#include "../../include/openssl/evp.h"
 
 static ERR_STRING_DATA EVP_str_functs[] = {
     {ERR_FUNC(EVP_F_AESNI_INIT_KEY), "aesni_init_key"},
@@ -89,6 +90,7 @@ static ERR_STRING_DATA EVP_str_functs[] = {
     {ERR_FUNC(EVP_F_PKEY_SET_TYPE), "pkey_set_type"},
     {ERR_FUNC(EVP_F_RC2_MAGIC_TO_METH), "rc2_magic_to_meth"},
     {ERR_FUNC(EVP_F_RC5_CTRL), "rc5_ctrl"},
+	{ERR_FUNC(EVP_F_BELT_KEY), "BELT_KEY"},
     {0, NULL}
 };
 
@@ -162,6 +164,7 @@ static ERR_STRING_DATA EVP_str_reasons[] = {
     {ERR_REASON(EVP_R_UNSUPPORTED_SALT_TYPE), "unsupported salt type"},
     {ERR_REASON(EVP_R_WRAP_MODE_NOT_ALLOWED), "wrap mode not allowed"},
     {ERR_REASON(EVP_R_WRONG_FINAL_BLOCK_LENGTH), "wrong final block length"},
+	{ERR_REASON(EVP_R_BELT_SETUP_FAILED),"belt setup failed"},
     {0, NULL}
 };
 

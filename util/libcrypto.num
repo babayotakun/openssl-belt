@@ -4221,3 +4221,5 @@ Belt_decrypt							4187	1_1_0d	EXIST::FUNCTION:BELT
 Belt_encrypt							4188	1_1_0d	EXIST::FUNCTION:BELT
 Belt_set_decrypt_key					4189	1_1_0d	EXIST::FUNCTION:BELT
 Belt_set_encrypt_key					4190	1_1_0d	EXIST::FUNCTION:BELT
+Belt_cbc_encrypt						4191	1_1_0d	EXIST::FUNCTION:BELT
+

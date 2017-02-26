@@ -40,6 +40,7 @@
 #include <openssl/evp.h>
 #include <openssl/kdf.h>
 #include <openssl/rand.h>
+#include "../include/openssl/evp.h"
 
 /* seed1 through seed5 are concatenated */
 static int tls1_PRF(SSL *s,

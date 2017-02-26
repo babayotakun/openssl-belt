@@ -46,6 +46,8 @@
 #else
 # define LLONG long
 #endif
+#include "../../../../Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/stdarg.h"
+#include "../../include/openssl/bio.h"
 
 static int fmtstr(char **, char **, size_t *, size_t *,
                   const char *, int, int, int);

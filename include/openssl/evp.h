@@ -1528,6 +1528,7 @@ int ERR_load_EVP_strings(void);
 # define EVP_F_PKEY_SET_TYPE                              158
 # define EVP_F_RC2_MAGIC_TO_METH                          109
 # define EVP_F_RC5_CTRL                                   125
+# define EVP_F_BELT_KEY                                   200
 
 /* Reason codes. */
 # define EVP_R_AES_KEY_SETUP_FAILED                       143
@@ -1590,6 +1591,7 @@ int ERR_load_EVP_strings(void);
 # define EVP_R_UNSUPPORTED_SALT_TYPE                      126
 # define EVP_R_WRAP_MODE_NOT_ALLOWED                      170
 # define EVP_R_WRONG_FINAL_BLOCK_LENGTH                   109
+# define EVP_R_BELT_SETUP_FAILED                          201
 
 # ifdef  __cplusplus
 }
