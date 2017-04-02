@@ -826,9 +826,7 @@ const EVP_CIPHER *EVP_camellia_256_ofb(void);
 const EVP_CIPHER *EVP_camellia_256_ctr(void);
 # endif
 #ifndef OPENSSL_NO_BELT
-const EVP_CIPHER *EVP_belt_128_cbc(void);
-const EVP_CIPHER *EVP_belt_192_cbc(void);
-const EVP_CIPHER *EVP_belt_256_cbc(void);
+const EVP_CIPHER *EVP_belt_256_ctr(void);
 #endif
 # ifndef OPENSSL_NO_CHACHA
 const EVP_CIPHER *EVP_chacha20(void);

@@ -155,8 +155,6 @@ extern "C" {
 # define SSL_TXT_CAMELLIA        "CAMELLIA"
 # define SSL_TXT_CHACHA20        "CHACHA20"
 # define SSL_TXT_GOST            "GOST89"
-# define SSL_TXT_BELT128		 "BELT128"
-# define SSL_TXT_BELT192		 "BELT192"
 # define SSL_TXT_BELT256		 "BELT256"
 # define SSL_TXT_BELT		     "BELT"
 
@@ -198,7 +196,7 @@ extern "C" {
  * The following cipher list is used by default. It also is substituted when
  * an application-defined cipher list string starts with 'DEFAULT'.
  */
-# define SSL_DEFAULT_CIPHER_LIST "BELT256-SHA256"
+# define SSL_DEFAULT_CIPHER_LIST "ALL"
 /*
  * As of OpenSSL 1.0.0, ssl_create_cipher_list() in ssl/ssl_ciph.c always
  * starts with a reasonable order, and all we have to do for DEFAULT is

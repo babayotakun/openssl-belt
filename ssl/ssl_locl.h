@@ -257,9 +257,7 @@
 # define SSL_AES256              0x00000080U
 # define SSL_CAMELLIA128         0x00000100U
 # define SSL_CAMELLIA256         0x00000200U
-# define SSL_BELT128			 0x10000000L
-# define SSL_BELT192			 0x01000000L
-# define SSL_BELT256			 0x00100000L
+# define SSL_BELT256			 0x10000000L
 # define SSL_eGOST2814789CNT     0x00000400U
 # define SSL_SEED                0x00000800U
 # define SSL_AES128GCM           0x00001000U
@@ -275,7 +273,7 @@
 # define SSL_AESCCM              (SSL_AES128CCM | SSL_AES256CCM | SSL_AES128CCM8 | SSL_AES256CCM8)
 # define SSL_AES                 (SSL_AES128|SSL_AES256|SSL_AESGCM|SSL_AESCCM)
 # define SSL_CAMELLIA            (SSL_CAMELLIA128|SSL_CAMELLIA256)
-# define SSL_BELT                (SSL_BELT128|SSL_BELT192|SSL_BELT256)
+# define SSL_BELT                (SSL_BELT256)
 # define SSL_CHACHA20            (SSL_CHACHA20POLY1305)
 
 /* Bits for algorithm_mac (symmetric authentication) */

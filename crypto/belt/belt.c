@@ -8,10 +8,9 @@
 void Belt_encrypt(const unsigned char *in, unsigned char *out, const BELT_KEY *key)
 {
 	int i = 0;
-	while (in[i] != '\0')
+	for (int i = 0; i < 16; i++)
 	{
 		out[i] = in[i];
-		i++;
 	}
 	printf("Text to encrypt: %s\n", in);
 }

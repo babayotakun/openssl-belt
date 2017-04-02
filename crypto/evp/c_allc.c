@@ -214,9 +214,7 @@ void openssl_add_all_ciphers_int(void)
 #endif
 
 #ifndef OPENSSL_NO_BELT
-	EVP_add_cipher(EVP_belt_128_cbc());
-	EVP_add_cipher(EVP_belt_192_cbc());
-	EVP_add_cipher(EVP_belt_256_cbc());
+	EVP_add_cipher(EVP_belt_256_ctr());
 #endif
 
 #ifndef OPENSSL_NO_CHACHA

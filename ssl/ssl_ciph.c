@@ -68,10 +68,8 @@
 #define SSL_ENC_AES256CCM8_IDX  17
 #define SSL_ENC_GOST8912_IDX    18
 #define SSL_ENC_CHACHA_IDX      19
-#define SSL_ENC_BELT128_IDX     20
-#define SSL_ENC_BELT192_IDX     21
-#define SSL_ENC_BELT256_IDX     22
-#define SSL_ENC_NUM_IDX         23
+#define SSL_ENC_BELT256_IDX     20
+#define SSL_ENC_NUM_IDX         21
 #include "../include/openssl/ssl.h"
 #include "../e_os.h"
 #include "../include/openssl/obj_mac.h"
@@ -103,9 +101,7 @@ static const ssl_cipher_table ssl_cipher_table_cipher[SSL_ENC_NUM_IDX] = {
     {SSL_AES256CCM, NID_aes_256_ccm}, /* SSL_ENC_AES256CCM_IDX 15 */
     {SSL_AES128CCM8, NID_aes_128_ccm}, /* SSL_ENC_AES128CCM8_IDX 16 */
     {SSL_AES256CCM8, NID_aes_256_ccm}, /* SSL_ENC_AES256CCM8_IDX 17 */
-	{SSL_BELT128, NID_belt_128_cbc }, /* SSL_ENC_BELT128_IDX 18 */
-	{SSL_BELT192, NID_belt_192_cbc }, /* SSL_ENC_BELT192_IDX 19 */
-	{SSL_BELT256, NID_belt_256_cbc }, /* SSL_ENC_BELT256_IDX 20 */
+	{SSL_BELT256, NID_belt_256_ctr }, /* SSL_ENC_BELT256_IDX 18 */
     {SSL_eGOST2814789CNT12, NID_gost89_cnt_12}, /* SSL_ENC_GOST8912_IDX */
     {SSL_CHACHA20POLY1305, NID_chacha20_poly1305},
 };
@@ -306,8 +302,6 @@ static const SSL_CIPHER cipher_aliases[] = {
     {0, SSL_TXT_CAMELLIA256, 0, 0, 0, SSL_CAMELLIA256},
     {0, SSL_TXT_CAMELLIA, 0, 0, 0, SSL_CAMELLIA},
     {0, SSL_TXT_CHACHA20, 0, 0, 0, SSL_CHACHA20},
-	{0, SSL_TXT_BELT128, 0, 0, 0, SSL_BELT128},
-	{0, SSL_TXT_BELT192, 0, 0, 0, SSL_BELT192},
 	{0, SSL_TXT_BELT256, 0, 0, 0, SSL_BELT256},
 	{0, SSL_TXT_BELT, 0, 0, 0, SSL_BELT},
 

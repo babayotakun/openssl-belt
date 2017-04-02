@@ -262,13 +262,7 @@ static FUNCTION functions[] = {
     { FT_cipher, "camellia-256-ecb", enc_main, enc_options },
 #endif
 #ifndef OPENSSL_NO_BELT
-	{ FT_cipher, "belt-128-cbc", enc_main },
-#endif
-#ifndef OPENSSL_NO_BELT
-	{ FT_cipher, "belt-192-cbc", enc_main },
-#endif
-#ifndef OPENSSL_NO_BELT
-	{ FT_cipher, "belt-256-cbc", enc_main },
+	{ FT_cipher, "belt-256-ctr", enc_main },
 #endif
     { FT_cipher, "base64", enc_main, enc_options },
 #ifdef ZLIB

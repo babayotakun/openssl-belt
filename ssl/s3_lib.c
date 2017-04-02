@@ -55,6 +55,7 @@
 #include <openssl/rand.h>
 
 #define SSL3_NUM_CIPHERS        OSSL_NELEM(ssl3_ciphers)
+#include "../include/openssl/tls1.h"
 
 /*
  * The list of available ciphers, mostly organized into the following
@@ -2561,38 +2562,8 @@ static SSL_CIPHER ssl3_ciphers[] = {
 #ifndef OPENSSL_NO_BELT
 	 {
 		 1,
-		 TLS1_TXT_RSA_WITH_BELT_128_CBC_SHA256,
-		 TLS1_CK_RSA_WITH_BELT_128_CBC_SHA256,
-		 SSL_kRSA,
-		 SSL_aRSA,
-		 SSL_BELT128,
-		 SSL_SHA256,
-		 TLS1_2_VERSION, TLS1_2_VERSION,
-		 DTLS1_2_VERSION, DTLS1_2_VERSION,
-		 SSL_HIGH,
-		 SSL_HANDSHAKE_MAC_SHA256 | TLS1_PRF_SHA256,
-		 128,
-		 128,
-	 },
-	 {
-		 1,
-		 TLS1_TXT_RSA_WITH_BELT_192_CBC_SHA256,
-		 TLS1_CK_RSA_WITH_BELT_192_CBC_SHA256,
-		 SSL_kRSA,
-		 SSL_aRSA,
-		 SSL_BELT192,
-		 SSL_SHA256,
-		 TLS1_2_VERSION, TLS1_2_VERSION,
-		 DTLS1_2_VERSION, DTLS1_2_VERSION,
-		 SSL_HIGH,
-		 SSL_HANDSHAKE_MAC_SHA256 | TLS1_PRF_SHA256,
-		 192,
-		 192,
-	 },
-	 {
-		 1,
-		 TLS1_TXT_RSA_WITH_BELT_256_CBC_SHA256,
-		 TLS1_CK_RSA_WITH_BELT_256_CBC_SHA256,
+		 TLS_TXT_DHE_BIGN_WITH_BELT_CTR_MAC_HBELT,
+		 TLS_CK_DHE_BIGN_WITH_BELT_CTR_MAC_HBELT,
 		 SSL_kRSA,
 		 SSL_aRSA,
 		 SSL_BELT256,

@@ -4576,17 +4576,7 @@
 #define LN_auth_null            "auth-null"
 #define NID_auth_null           1053
 
-#define SN_belt_128_cbc "BELT-128-CBC"
-#define LN_belt_128_cbc "belt-128-cbc"
-#define NID_belt_128_cbc 1061
-#define OBJ_belt_128_cbc  1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 2L
-
-#define SN_belt_192_cbc "BELT-192-CBC"
-#define LN_belt_192_cbc "belt-192-cbc"
-#define NID_belt_192_cbc 1062
-#define OBJ_belt_192_cbc  1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 22L
-
-#define SN_belt_256_cbc "BELT-256-CBC"
-#define LN_belt_256_cbc "belt-256-cbc"
-#define NID_belt_256_cbc 1063
-#define OBJ_belt_256_cbc   1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 42L
+#define SN_belt_256_ctr "BELT-256-CTR"
+#define LN_belt_256_ctr "belt-256-ctr"
+#define NID_belt_256_ctr 1061
+#define OBJ_belt_256_ctr  1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 2L

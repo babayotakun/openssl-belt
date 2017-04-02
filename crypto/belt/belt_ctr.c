@@ -3,7 +3,7 @@
 #include <openssl/belt.h>
 #include "../../include/openssl/belt.h"
 
-void Belt_cbc_encrypt(const unsigned char *in, unsigned char *out,
+void belt_ctr_encrypt(const unsigned char *in, unsigned char *out,
 	const unsigned long length, const BELT_KEY *key,
 	unsigned char *ivec, const int enc) {
 	

@@ -65,9 +65,7 @@ DEFINE_RUN_ONCE_STATIC(ossl_init_ssl_base)
     EVP_add_cipher(EVP_camellia_256_cbc());
 #endif
 #ifndef OPENSSL_NO_BELT
-	EVP_add_cipher(EVP_belt_128_cbc());
-	EVP_add_cipher(EVP_belt_192_cbc());
-	EVP_add_cipher(EVP_belt_256_cbc());
+	EVP_add_cipher(EVP_belt_256_ctr());
 #endif
 #if !defined(OPENSSL_NO_CHACHA) && !defined(OPENSSL_NO_POLY1305)
     EVP_add_cipher(EVP_chacha20_poly1305());

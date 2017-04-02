@@ -600,9 +600,7 @@ SSL_CTX_callback_ctrl(ssl,SSL_CTRL_SET_TLSEXT_TICKET_KEY_CB,(void (*)(void))cb)
 # define TLS1_CK_RSA_PSK_WITH_CHACHA20_POLY1305           0x0300CCAE
 
 /* ciphersuites with belt */
-#define TLS1_CK_RSA_WITH_BELT_128_CBC_SHA256			  0x0300FF41
-#define TLS1_CK_RSA_WITH_BELT_192_CBC_SHA256              0x0300FF84
-#define TLS1_CK_RSA_WITH_BELT_256_CBC_SHA256              0x0300FF85
+#define TLS_CK_DHE_BIGN_WITH_BELT_CTR_MAC_HBELT			  0x0300FF41
 
 /*
  * XXX Backward compatibility alert: Older versions of OpenSSL gave some DHE
@@ -874,9 +872,7 @@ SSL_CTX_callback_ctrl(ssl,SSL_CTRL_SET_TLSEXT_TICKET_KEY_CB,(void (*)(void))cb)
 # define TLS1_TXT_RSA_PSK_WITH_CHACHA20_POLY1305           "RSA-PSK-CHACHA20-POLY1305"
 
 /* ciphersuites with belt */
-#define TLS1_TXT_RSA_WITH_BELT_128_CBC_SHA256              "BELT128-SHA256"
-#define TLS1_TXT_RSA_WITH_BELT_192_CBC_SHA256              "BELT192-SHA256"
-#define TLS1_TXT_RSA_WITH_BELT_256_CBC_SHA256              "BELT256-SHA256"
+#define TLS_TXT_DHE_BIGN_WITH_BELT_CTR_MAC_HBELT              "TLS-DHE-BIGN-WITH-BELT-CTR-MAC-HBELT"
 
 # define TLS_CT_RSA_SIGN                 1
 # define TLS_CT_DSS_SIGN                 2
