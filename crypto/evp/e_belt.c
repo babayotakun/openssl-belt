@@ -1,51 +1,43 @@
 #include <openssl/opensslconf.h>
 #ifndef OPENSSL_NO_BELT
 #include <openssl/evp.h>
-#include <openssl/err.h>
 #include <string.h>
 #include <assert.h>
-#include <openssl/belt.h>
-#include <openssl/evp.h>
-#include <openssl/objects.h>
-#include "internal/evp_int.h"
+
+#include <bee2/crypto/belt.h>
 #include "evp_locl.h"
-#include "../../include/openssl/ossl_typ.h"
-#include "../../include/openssl/belt.h"
-#include "../../include/openssl/evp.h"
-#include "../../include/openssl/obj_mac.h"
-#include "../../include/openssl/modes.h"
+#include <openssl/ossl_typ.h>
+#include "../include/internal/evp_int.h"
 static int belt_init_key(EVP_CIPHER_CTX *ctx, const unsigned char *key, const unsigned char *iv, int enc);
+
+/*
+s_server -key C:\build\server.key -cert C:\build\server.crt -accept 8443 -www
+s_client -cipher 'TLS-DHE-BIGN-WITH-BELT-CTR-MAC-HBELT' -connect localhost:8443
+*/
 
 typedef struct
 {
-	BELT_KEY ks;
-	block128_f block;
+	// 68 bytes
+	void* bee2data;
 } EVP_BELT_KEY;
 
-
 #define data(ctx) EVP_C_DATA(EVP_BELT_KEY,ctx)
-#define BLOCK_BELT_CIPHER_generic(nid,keylen,blocksize,ivlen,nmode,mode,MODE,flags) \
+#define BLOCK_BELT_CIPHER_generic(nid,keylen,blocksize,ivlen,nmode,mode,MODE,flags,keysize) \
 static const EVP_CIPHER belt_256_ctr = { \
         NID_belt_256_ctr,blocksize,keylen/8,ivlen, \
         flags|EVP_CIPH_CTR_MODE,   \
         belt_init_key,              \
         belt_ctr_cipher,       \
         NULL,                           \
-        sizeof(EVP_BELT_KEY),       \
+        keysize,       \
         NULL,NULL,NULL,NULL }; \
 const EVP_CIPHER *EVP_belt_256_ctr(void) \
 { return &belt_256_ctr; }
 
 	static int belt_init_key(EVP_CIPHER_CTX *ctx, const unsigned char *key, const unsigned char *iv, int enc)
 {
-	int ret, mode;
 	EVP_BELT_KEY *dat = EVP_C_DATA(EVP_BELT_KEY, ctx);
-	ret = Belt_set_encrypt_key(key, EVP_CIPHER_CTX_key_length(ctx) * 8, &dat->ks);
-	if (ret < 0) {
-		EVPerr(EVP_F_BELT_KEY, EVP_R_BELT_SETUP_FAILED);
-		return 0;
-	}
-	dat->block = (block128_f)Belt_encrypt;
+	beltCTRStart(&dat->bee2data, key, EVP_CIPHER_CTX_key_length(ctx), iv);
 	return 1;
 }
 
@@ -58,10 +50,12 @@ static int belt_ctr_cipher(EVP_CIPHER_CTX *ctx, unsigned char *out,
 	{
 		out[i] = in[i];
 	}
-	printf("Text to encrypt: %s\n", out);
+	printf("IN: %s\n", in);
+	beltCTRStepE(out, len, &dat->bee2data);
+	printf("OUT: %s\n", out);
 	return 1;
 }
 
-BLOCK_BELT_CIPHER_generic(NID_belt_256_ctr, 256, 1, 16, ctr, ctr, CTR, 0)
+BLOCK_BELT_CIPHER_generic(NID_belt_256_ctr, 256, 1, 16, ctr, ctr, CTR, 0, 68)
 
 #endif

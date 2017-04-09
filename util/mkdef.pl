@@ -264,7 +264,6 @@ $crypto.=" include/openssl/sha.h" ; # unless $no_sha;
 $crypto.=" include/openssl/ripemd.h" ; # unless $no_ripemd;
 $crypto.=" include/openssl/aes.h" ; # unless $no_aes;
 $crypto.=" include/openssl/camellia.h" ; # unless $no_camellia;
-$crypto.=" include/openssl/belt.h" ; 
 $crypto.=" include/openssl/seed.h"; # unless $no_seed;
 
 $crypto.=" include/openssl/bn.h";
