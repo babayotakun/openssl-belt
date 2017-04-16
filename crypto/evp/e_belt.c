@@ -50,9 +50,9 @@ static int belt_ctr_cipher(EVP_CIPHER_CTX *ctx, unsigned char *out,
 	{
 		out[i] = in[i];
 	}
-	printf("IN: %s\n", in);
+	printf("IN: %.*s\n", len, in);
 	beltCTRStepE(out, len, &dat->bee2data);
-	printf("OUT: %s\n", out);
+	printf("OUT: %.*s\n", len, out);
 	return 1;
 }
 

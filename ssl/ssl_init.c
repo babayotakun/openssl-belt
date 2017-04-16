@@ -87,6 +87,8 @@ DEFINE_RUN_ONCE_STATIC(ossl_init_ssl_base)
     EVP_add_digest(EVP_sha256());
     EVP_add_digest(EVP_sha384());
     EVP_add_digest(EVP_sha512());
+	EVP_add_digest(EVP_hbelt());
+	
 #ifndef OPENSSL_NO_COMP
 # ifdef OPENSSL_INIT_DEBUG
     fprintf(stderr, "OPENSSL_INIT: ossl_init_ssl_base: "

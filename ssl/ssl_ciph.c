@@ -141,11 +141,12 @@ static const ssl_cipher_table ssl_cipher_table_mac[SSL_MD_NUM_IDX] = {
     {SSL_GOST12_512, NID_id_GostR3411_2012_512}, /* SSL_MD_GOST12_512_IDX 8 */
     {0, NID_md5_sha1},          /* SSL_MD_MD5_SHA1_IDX 9 */
     {0, NID_sha224},            /* SSL_MD_SHA224_IDX 10 */
-    {0, NID_sha512}             /* SSL_MD_SHA512_IDX 11 */
+    {0, NID_sha512},            /* SSL_MD_SHA512_IDX 11 */
+	{SSL_HBELT, NID_hbelt}		/* SSL_MD_HBELT_IDX 12 */
 };
 
 static const EVP_MD *ssl_digest_methods[SSL_MD_NUM_IDX] = {
-    NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+    NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
 };
 
 /* *INDENT-OFF* */
@@ -198,8 +199,10 @@ static int ssl_mac_pkey_id[SSL_MD_NUM_IDX] = {
     EVP_PKEY_HMAC, EVP_PKEY_HMAC, EVP_PKEY_HMAC, NID_undef,
     /* SHA256, SHA384, GOST2012_256, MAC89-12 */
     EVP_PKEY_HMAC, EVP_PKEY_HMAC, EVP_PKEY_HMAC, NID_undef,
-    /* GOST2012_512 */
-    EVP_PKEY_HMAC,
+    /* GOST2012_512 md5_sha1, SHA224, SHA512, HBELT*/
+    EVP_PKEY_HMAC, NID_undef, NID_undef, NID_undef,
+	/* HBELT */
+	EVP_PKEY_HMAC,
 };
 
 static int ssl_mac_secret_size[SSL_MD_NUM_IDX];
@@ -314,6 +317,7 @@ static const SSL_CIPHER cipher_aliases[] = {
     {0, SSL_TXT_SHA256, 0, 0, 0, 0, SSL_SHA256},
     {0, SSL_TXT_SHA384, 0, 0, 0, 0, SSL_SHA384},
     {0, SSL_TXT_GOST12, 0, 0, 0, 0, SSL_GOST12_256},
+	{0, SSL_TXT_HBELT, 0, 0, 0, 0, SSL_HBELT},
 
     /* protocol version aliases */
     {0, SSL_TXT_SSLV3, 0, 0, 0, 0, 0, SSL3_VERSION},
@@ -1706,6 +1710,9 @@ char *SSL_CIPHER_description(const SSL_CIPHER *cipher, char *buf, int len)
     case SSL_GOST12_512:
         mac = "GOST2012";
         break;
+	case SSL_HBELT:
+		mac = "HBELT";
+		break;
     default:
         mac = "unknown";
         break;

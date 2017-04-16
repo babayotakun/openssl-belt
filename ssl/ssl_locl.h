@@ -289,6 +289,8 @@
 # define SSL_GOST12_256          0x00000080U
 # define SSL_GOST89MAC12         0x00000100U
 # define SSL_GOST12_512          0x00000200U
+/* Belt hash */
+# define SSL_HBELT               0x00000400U
 
 /*
  * When adding new digest in the ssl_ciph.c and increment SSL_MD_NUM_IDX make
@@ -307,7 +309,8 @@
 # define SSL_MD_MD5_SHA1_IDX 9
 # define SSL_MD_SHA224_IDX 10
 # define SSL_MD_SHA512_IDX 11
-# define SSL_MAX_DIGEST 12
+# define SSL_MD_HBELT_IDX 12
+# define SSL_MAX_DIGEST 13
 
 /* Bits for algorithm2 (handshake digests and other extra flags) */
 

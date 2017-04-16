@@ -76,7 +76,7 @@ my @known_platforms = ( "__FreeBSD__", "PERL5",
 			"EXPORT_VAR_AS_FUNCTION", "ZLIB", "_WIN32"
 			);
 my @known_ossl_platforms = ( "VMS", "WIN32", "WINNT", "OS2" );
-my @known_algorithms = ( "RC2", "RC4", "RC5", "IDEA", "DES", "BF", "BELT",
+my @known_algorithms = ( "RC2", "RC4", "RC5", "IDEA", "DES", "BF", "BELT", "HBELT",
 			 "CAST", "MD2", "MD4", "MD5", "SHA", "SHA0", "SHA1",
 			 "SHA256", "SHA512", "RMD160",
 			 "MDC2", "WHIRLPOOL", "RSA", "DSA", "DH", "EC", "EC2M",

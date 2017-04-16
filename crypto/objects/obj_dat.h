@@ -11,7 +11,7 @@
  */
 
 /* Serialized OID's */
-static const unsigned char so[6796] = {
+static const unsigned char so[6807] = {
     0x2A,0x86,0x48,0x86,0xF7,0x0D,                 /* [    0] OBJ_rsadsi */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,            /* [    6] OBJ_pkcs */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x02,0x02,       /* [   13] OBJ_md2 */
@@ -962,10 +962,11 @@ static const unsigned char so[6796] = {
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,0x09,0x10,0x01,0x13,  /* [ 6731] OBJ_id_smime_ct_contentCollection */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,0x09,0x10,0x01,0x17,  /* [ 6742] OBJ_id_smime_ct_authEnvelopedData */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,0x09,0x10,0x01,0x1C,  /* [ 6753] OBJ_id_ct_xml */
-	0x2B, 0x06, 0x01, 0x04, 0x01, 0x82, 0xB0, 0x44, 0x85, 0x1A, 0x02,  /* [ 6764] belt_ctr_256 */
+	0x2B,0x06,0x01,0x04,0x01,0x82,0xB0,0x44,0x85,0x1A,0x02,  /* [ 6764] belt_ctr_256 */
+	0x2B,0x06,0x01,0x04,0x01,0x82,0xB0,0x44,0x85,0x1A,0x04,  /* [ 6775] hbelt */
 };
 
-#define NUM_NID 1062
+#define NUM_NID 1064
 static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"UNDEF", "undefined", NID_undef},
     {"rsadsi", "RSA Data Security, Inc.", NID_rsadsi, 6, &so[0]},
@@ -2028,10 +2029,11 @@ static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"id-smime-ct-contentCollection", "id-smime-ct-contentCollection", NID_id_smime_ct_contentCollection, 11, &so[6731]},
     {"id-smime-ct-authEnvelopedData", "id-smime-ct-authEnvelopedData", NID_id_smime_ct_authEnvelopedData, 11, &so[6742]},
     {"id-ct-xml", "id-ct-xml", NID_id_ct_xml, 11, &so[6753]},
-	{ "belt-256-ctr", "belt-256-ctr", NID_belt_256_ctr, 11, &so[6764] },
+	{"belt-256-ctr", "belt-256-ctr", NID_belt_256_ctr, 11, &so[6764]},
+	{"HBELT", "hbelt", NID_hbelt, 11, &so[6775]},
 };
 
-#define NUM_SN 1053
+#define NUM_SN 1054
 static const unsigned int sn_objs[NUM_SN] = {
      364,    /* "AD_DVCS" */
      419,    /* "AES-128-CBC" */
@@ -3085,10 +3087,11 @@ static const unsigned int sn_objs[NUM_SN] = {
      503,    /* "x500UniqueIdentifier" */
      158,    /* "x509Certificate" */
      160,    /* "x509Crl" */
-	 1061,    /* "belt_256_ctr" */
+	 1061,   /* "belt_256_ctr" */
+	 1062,   /* "hbelt" */ 
 };
 
-#define NUM_LN 1053
+#define NUM_LN 1054
 static const unsigned int ln_objs[NUM_LN] = {
      363,    /* "AD Time Stamping" */
      405,    /* "ANSI X9.62" */
@@ -4143,9 +4146,10 @@ static const unsigned int ln_objs[NUM_LN] = {
      160,    /* "x509Crl" */
      125,    /* "zlib compression" */
 	1061,    /* "belt_256_ctr" */
+    1062,    /* "hbelt" */
 };
 
-#define NUM_OBJ 957
+#define NUM_OBJ 958
 static const unsigned int obj_objs[NUM_OBJ] = {
        0,    /* OBJ_undef                        0 */
      181,    /* OBJ_iso                          1 */
@@ -5104,4 +5108,5 @@ static const unsigned int obj_objs[NUM_OBJ] = {
     1056,    /* OBJ_blake2b512                   1 3 6 1 4 1 1722 12 2 1 16 */
     1057,    /* OBJ_blake2s256                   1 3 6 1 4 1 1722 12 2 2 8 */
 	1061,    /* OBJ_belt_256_ctr                 1 3 6 1 4 1 38980 666 2 */
+	1062,    /* OBJ_hbelt						 1 3 6 1 4 1 38980 666 4 */
 };

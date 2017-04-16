@@ -100,7 +100,7 @@ foreach my $cmd (
 	"md2", "md4", "md5",
 	"gost",
 	"sha1", "sha224", "sha256", "sha384", "sha512",
-	"mdc2", "rmd160", "blake2b512", "blake2s256"
+	"mdc2", "rmd160", "blake2b512", "blake2s256", "hbelt"
 ) {
         my $str = "    { FT_md, \"".$cmd."\", dgst_main},\n";
         if (grep { $cmd eq $_ } @disablables) {

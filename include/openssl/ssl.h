@@ -167,6 +167,7 @@ extern "C" {
 # define SSL_TXT_GOST89MAC12     "GOST89MAC12"
 # define SSL_TXT_SHA256          "SHA256"
 # define SSL_TXT_SHA384          "SHA384"
+# define SSL_TXT_HBELT           "HBELT"
 
 # define SSL_TXT_SSLV3           "SSLv3"
 # define SSL_TXT_TLSV1           "TLSv1"

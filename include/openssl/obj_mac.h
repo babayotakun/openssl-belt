@@ -4576,7 +4576,12 @@
 #define LN_auth_null            "auth-null"
 #define NID_auth_null           1053
 
-#define SN_belt_256_ctr "BELT-256-CTR"
-#define LN_belt_256_ctr "belt-256-ctr"
-#define NID_belt_256_ctr 1061
-#define OBJ_belt_256_ctr  1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 2L
+#define SN_belt_256_ctr			"BELT-256-CTR"
+#define LN_belt_256_ctr			"belt-256-ctr"
+#define NID_belt_256_ctr		1061
+#define OBJ_belt_256_ctr		1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 2L
+
+#define SN_hbelt				"HBELT"
+#define LN_hbelt				"hbelt"
+#define NID_hbelt				1062
+#define OBJ_hbelt				1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 4L
