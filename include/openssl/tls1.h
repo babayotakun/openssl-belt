@@ -201,13 +201,14 @@ extern "C" {
 # define TLSEXT_hash_sha256                              4
 # define TLSEXT_hash_sha384                              5
 # define TLSEXT_hash_sha512                              6
+# define TLSEXT_hash_hbelt                               101
 # define TLSEXT_hash_gostr3411                           237
 # define TLSEXT_hash_gostr34112012_256                   238
 # define TLSEXT_hash_gostr34112012_512                   239
 
 /* Total number of different digest algorithms */
 
-# define TLSEXT_hash_num                                 10
+# define TLSEXT_hash_num                                 11
 
 /* Flag set for unrecognised algorithms */
 # define TLSEXT_nid_unknown                              0x1000000
