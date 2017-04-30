@@ -245,6 +245,7 @@ static ERR_STRING_DATA SSL_str_functs[] = {
      "tls_construct_cke_psk_preamble"},
     {ERR_FUNC(SSL_F_TLS_CONSTRUCT_CKE_RSA), "tls_construct_cke_rsa"},
     {ERR_FUNC(SSL_F_TLS_CONSTRUCT_CKE_SRP), "tls_construct_cke_srp"},
+    {ERR_FUNC(SSL_F_TLS_CONSTRUCT_CKE_BIGN), "tls_construct_cke_bign"},
     {ERR_FUNC(SSL_F_TLS_CONSTRUCT_CLIENT_CERTIFICATE),
      "tls_construct_client_certificate"},
     {ERR_FUNC(SSL_F_TLS_CONSTRUCT_CLIENT_HELLO),
@@ -286,6 +287,7 @@ static ERR_STRING_DATA SSL_str_functs[] = {
      "tls_process_cke_psk_preamble"},
     {ERR_FUNC(SSL_F_TLS_PROCESS_CKE_RSA), "tls_process_cke_rsa"},
     {ERR_FUNC(SSL_F_TLS_PROCESS_CKE_SRP), "tls_process_cke_srp"},
+    {ERR_FUNC(SSL_F_TLS_PROCESS_CKE_BIGN), "tls_process_cke_bign"},
     {ERR_FUNC(SSL_F_TLS_PROCESS_CLIENT_CERTIFICATE),
      "tls_process_client_certificate"},
     {ERR_FUNC(SSL_F_TLS_PROCESS_CLIENT_HELLO), "tls_process_client_hello"},
@@ -305,6 +307,7 @@ static ERR_STRING_DATA SSL_str_functs[] = {
     {ERR_FUNC(SSL_F_TLS_PROCESS_SKE_PSK_PREAMBLE),
      "tls_process_ske_psk_preamble"},
     {ERR_FUNC(SSL_F_TLS_PROCESS_SKE_SRP), "tls_process_ske_srp"},
+    {ERR_FUNC(SSL_F_TLS_PROCESS_SKE_BIGN), "tls_process_ske_bign"},
     {ERR_FUNC(SSL_F_USE_CERTIFICATE_CHAIN_FILE),
      "use_certificate_chain_file"},
     {0, NULL}

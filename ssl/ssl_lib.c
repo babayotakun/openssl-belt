@@ -2730,7 +2730,7 @@ void ssl_set_masks(SSL *s)
     if (mask_k & SSL_kECDHE)
         mask_k |= SSL_kECDHEPSK;
 	if (mask_k & SSL_kBIGN)
-		mask_k |= SSL_kRSAPSK;
+		mask_k |= SSL_kDHEPSK;
 #endif
 
     s->s3->tmp.mask_k = mask_k;

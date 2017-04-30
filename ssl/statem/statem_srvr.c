@@ -253,7 +253,8 @@ static int send_server_key_exchange(SSL *s)
         /* SRP: send ServerKeyExchange */
         || (alg_k & SSL_kSRP)
 #endif
-        ) {
+        /* BIGN: we should send ServerKeyExchange */
+        || (alg_k & SSL_kBIGN)) {
         return 1;
     }
 
@@ -1657,7 +1658,7 @@ int tls_construct_server_key_exchange(SSL *s)
     } else
 #endif                          /* !OPENSSL_NO_PSK */
 #ifndef OPENSSL_NO_DH
-    if (type & (SSL_kDHE | SSL_kDHEPSK)) {
+    if (type & (SSL_kDHE | SSL_kDHEPSK | SSL_kBIGN)) {
         CERT *cert = s->cert;
 
         EVP_PKEY *pkdhp = NULL;
@@ -1809,7 +1810,7 @@ int tls_construct_server_key_exchange(SSL *s)
          * stack, we need to zero pad the DHE pub key to the same length
          * as the prime, so use the length of the prime here
          */
-        if ((i == 2) && (type & (SSL_kDHE | SSL_kDHEPSK)))
+        if ((i == 2) && (type & (SSL_kDHE | SSL_kDHEPSK | SSL_kBIGN)))
             n += 2 + nr[0];
         else
 #endif
@@ -1876,7 +1877,7 @@ int tls_construct_server_key_exchange(SSL *s)
          * stack, we need to zero pad the DHE pub key to the same length
          * as the prime
          */
-        if ((i == 2) && (type & (SSL_kDHE | SSL_kDHEPSK))) {
+        if ((i == 2) && (type & (SSL_kDHE | SSL_kDHEPSK | SSL_kBIGN))) {
             s2n(nr[0], p);
             for (j = 0; j < (nr[0] - nr[2]); ++j) {
                 *p = 0;
@@ -2554,6 +2555,70 @@ static int tls_process_cke_gost(SSL *s, PACKET *pkt, int *al)
 #endif
 }
 
+static int tls_process_cke_bign(SSL *s, PACKET *pkt, int *al)
+{
+    printf("\nProcess BIGN client key exchange\n");
+    EVP_PKEY *skey = NULL;
+    DH *cdh;
+    unsigned int i;
+    BIGNUM *pub_key;
+    const unsigned char *data;
+    EVP_PKEY *ckey = NULL;
+    int ret = 0;
+
+    if (!PACKET_get_net_2(pkt, &i) || PACKET_remaining(pkt) != i) {
+        *al = SSL_AD_HANDSHAKE_FAILURE;
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN,
+            SSL_R_DH_PUBLIC_VALUE_LENGTH_IS_WRONG);
+        goto err;
+    }
+    skey = s->s3->tmp.pkey;
+    if (skey == NULL) {
+        *al = SSL_AD_HANDSHAKE_FAILURE;
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, SSL_R_MISSING_TMP_DH_KEY);
+        goto err;
+    }
+
+    if (PACKET_remaining(pkt) == 0L) {
+        *al = SSL_AD_HANDSHAKE_FAILURE;
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, SSL_R_MISSING_TMP_DH_KEY);
+        goto err;
+    }
+    if (!PACKET_get_bytes(pkt, &data, i)) {
+        /* We already checked we have enough data */
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, ERR_R_INTERNAL_ERROR);
+        goto err;
+    }
+    ckey = EVP_PKEY_new();
+    if (ckey == NULL || EVP_PKEY_copy_parameters(ckey, skey) == 0) {
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, SSL_R_BN_LIB);
+        goto err;
+    }
+    cdh = EVP_PKEY_get0_DH(ckey);
+    pub_key = BN_bin2bn(data, i, NULL);
+
+    if (pub_key == NULL || !DH_set0_key(cdh, pub_key, NULL)) {
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, ERR_R_INTERNAL_ERROR);
+        if (pub_key != NULL)
+            BN_free(pub_key);
+        goto err;
+    }
+
+    if (ssl_derive(s, skey, ckey) == 0) {
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, ERR_R_INTERNAL_ERROR);
+        goto err;
+    }
+
+    ret = 1;
+    EVP_PKEY_free(s->s3->tmp.pkey);
+    s->s3->tmp.pkey = NULL;
+err:
+    EVP_PKEY_free(ckey);
+    return ret;
+}
+
 MSG_PROCESS_RETURN tls_process_client_key_exchange(SSL *s, PACKET *pkt)
 {
     int al = -1;
@@ -2596,7 +2661,7 @@ MSG_PROCESS_RETURN tls_process_client_key_exchange(SSL *s, PACKET *pkt)
             goto err;
 	}
 	else if (alg_k & SSL_kBIGN) {
-		if (!tls_process_cke_rsa(s, pkt, &al))
+		if (!tls_process_cke_bign(s, pkt, &al))
 			goto err;
 	} else {
         al = SSL_AD_HANDSHAKE_FAILURE;

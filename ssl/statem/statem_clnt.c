@@ -99,7 +99,12 @@ static int key_exchange_expected(SSL *s)
      * ciphersuite or for SRP
      */
     if (alg_k & (SSL_kDHE | SSL_kECDHE | SSL_kDHEPSK | SSL_kECDHEPSK
-                 | SSL_kSRP)) {
+                | SSL_kSRP)) {
+        return 1;
+    }
+
+    /* BIGN: cannot skip server key exchange */
+    if (alg_k & SSL_kBIGN) {
         return 1;
     }
 
@@ -1616,6 +1621,108 @@ static int tls_process_ske_ecdhe(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
 #endif
 }
 
+static int tls_process_ske_bign(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
+{
+    printf("\nProcess BIGN server key exchange\n");
+    PACKET prime, generator, pub_key;
+    EVP_PKEY *peer_tmp = NULL;
+
+    DH *dh = NULL;
+    BIGNUM *p = NULL, *g = NULL, *bnpub_key = NULL;
+
+    int check_bits = 0;
+
+    if (!PACKET_get_length_prefixed_2(pkt, &prime)
+        || !PACKET_get_length_prefixed_2(pkt, &generator)
+        || !PACKET_get_length_prefixed_2(pkt, &pub_key)) {
+        *al = SSL_AD_DECODE_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_LENGTH_MISMATCH);
+        return 0;
+    }
+
+    peer_tmp = EVP_PKEY_new();
+    dh = DH_new();
+
+    if (peer_tmp == NULL || dh == NULL) {
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_MALLOC_FAILURE);
+        goto err;
+    }
+
+    p = BN_bin2bn(PACKET_data(&prime), PACKET_remaining(&prime), NULL);
+    g = BN_bin2bn(PACKET_data(&generator), PACKET_remaining(&generator), NULL);
+    bnpub_key = BN_bin2bn(PACKET_data(&pub_key), PACKET_remaining(&pub_key),
+        NULL);
+    if (p == NULL || g == NULL || bnpub_key == NULL) {
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_BN_LIB);
+        goto err;
+    }
+
+    /* test non-zero pupkey */
+    if (BN_is_zero(bnpub_key)) {
+        *al = SSL_AD_DECODE_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_BAD_DH_VALUE);
+        goto err;
+    }
+
+    if (!DH_set0_pqg(dh, p, NULL, g)) {
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_BN_LIB);
+        goto err;
+    }
+    p = g = NULL;
+
+    if (DH_check_params(dh, &check_bits) == 0 || check_bits != 0) {
+        *al = SSL_AD_DECODE_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_BAD_DH_VALUE);
+        goto err;
+    }
+
+    if (!DH_set0_key(dh, bnpub_key, NULL)) {
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_BN_LIB);
+        goto err;
+    }
+    bnpub_key = NULL;
+
+    if (!ssl_security(s, SSL_SECOP_TMP_DH, DH_security_bits(dh), 0, dh)) {
+        *al = SSL_AD_HANDSHAKE_FAILURE;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_DH_KEY_TOO_SMALL);
+        goto err;
+    }
+
+    if (EVP_PKEY_assign_DH(peer_tmp, dh) == 0) {
+        *al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_EVP_LIB);
+        goto err;
+    }
+
+    s->s3->peer_tmp = peer_tmp;
+
+    /*
+    * FIXME: This makes assumptions about which ciphersuites come with
+    * public keys. We should have a less ad-hoc way of doing this
+    */
+    if (s->s3->tmp.new_cipher->algorithm_auth & (SSL_aRSA | SSL_aDSS))
+        *pkey = X509_get0_pubkey(s->session->peer);
+
+    if (s->s3->tmp.new_cipher->algorithm_auth & SSL_aBIGN)
+        *pkey = X509_get0_pubkey(s->session->peer);
+    /* else anonymous DH, so no certificate or pkey. */
+
+    return 1;
+
+err:
+    BN_free(p);
+    BN_free(g);
+    BN_free(bnpub_key);
+    DH_free(dh);
+    EVP_PKEY_free(peer_tmp);
+
+    return 0;
+}
+
 MSG_PROCESS_RETURN tls_process_key_exchange(SSL *s, PACKET *pkt)
 {
     int al = -1;
@@ -1647,6 +1754,9 @@ MSG_PROCESS_RETURN tls_process_key_exchange(SSL *s, PACKET *pkt)
             goto err;
     } else if (alg_k & (SSL_kECDHE | SSL_kECDHEPSK)) {
         if (!tls_process_ske_ecdhe(s, pkt, &pkey, &al))
+            goto err;
+    } else if (alg_k & SSL_kBIGN) {
+        if (!tls_process_ske_bign(s, pkt, &pkey, &al))
             goto err;
     } else if (alg_k) {
         al = SSL_AD_UNEXPECTED_MESSAGE;
@@ -2511,6 +2621,43 @@ static int tls_construct_cke_srp(SSL *s, unsigned char **p, int *len, int *al)
 #endif
 }
 
+static int tls_construct_cke_bign(SSL *s, unsigned char **p, int *len, int *al)
+{
+    printf("\nConstruct BIGN client key exchange\n");
+    DH *dh_clnt = NULL;
+    const BIGNUM *pub_key;
+    EVP_PKEY *ckey = NULL, *skey = NULL;
+
+    skey = s->s3->peer_tmp;
+    if (skey == NULL) {
+        SSLerr(SSL_F_TLS_CONSTRUCT_CKE_BIGN, ERR_R_INTERNAL_ERROR);
+        return 0;
+    }
+    ckey = ssl_generate_pkey(skey);
+    if (ckey == NULL) {
+        SSLerr(SSL_F_TLS_CONSTRUCT_CKE_BIGN, ERR_R_INTERNAL_ERROR);
+        return 0;
+    }
+
+    dh_clnt = EVP_PKEY_get0_DH(ckey);
+
+    if (dh_clnt == NULL || ssl_derive(s, ckey, skey) == 0) {
+        SSLerr(SSL_F_TLS_CONSTRUCT_CKE_BIGN, ERR_R_INTERNAL_ERROR);
+        EVP_PKEY_free(ckey);
+        return 0;
+    }
+
+    /* send off the data */
+    DH_get0_key(dh_clnt, &pub_key, NULL);
+    *len = BN_num_bytes(pub_key);
+    s2n(*len, *p);
+    BN_bn2bin(pub_key, *p);
+    *len += 2;
+    EVP_PKEY_free(ckey);
+
+    return 1;
+}
+
 int tls_construct_client_key_exchange(SSL *s)
 {
     unsigned char *p;
@@ -2545,7 +2692,7 @@ int tls_construct_client_key_exchange(SSL *s)
 		if (!tls_construct_cke_srp(s, &p, &len, &al))
 			goto err;
 	} else if (alg_k & SSL_kBIGN) {
-			if (!tls_construct_cke_rsa(s, &p, &len, &al))
+			if (!tls_construct_cke_bign(s, &p, &len, &al))
 				goto err;
     } else {
         ssl3_send_alert(s, SSL3_AL_FATAL, SSL_AD_HANDSHAKE_FAILURE);
@@ -2897,11 +3044,11 @@ int ssl3_check_cert_and_algorithm(SSL *s)
         goto f_err;
     }
 #endif
-	if (alg_k & SSL_kBIGN && !has_bits(i, EVP_PK_RSA | EVP_PKT_ENC)) {
-		SSLerr(SSL_F_SSL3_CHECK_CERT_AND_ALGORITHM,
-			SSL_R_MISSING_RSA_ENCRYPTING_CERT);
-		goto f_err;
-	}
+    if ((alg_k & SSL_kBIGN) && (s->s3->peer_tmp == NULL)) {
+        al = SSL_AD_INTERNAL_ERROR;
+        SSLerr(SSL_F_SSL3_CHECK_CERT_AND_ALGORITHM, ERR_R_INTERNAL_ERROR);
+        goto f_err;
+    }
 
     return (1);
  f_err:
@@ -2992,3 +3139,4 @@ int ssl_cipher_list_to_bytes(SSL *s, STACK_OF(SSL_CIPHER) *sk, unsigned char *p)
 
     return (p - q);
 }
+
