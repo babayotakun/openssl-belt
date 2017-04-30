@@ -2594,7 +2594,11 @@ MSG_PROCESS_RETURN tls_process_client_key_exchange(SSL *s, PACKET *pkt)
     } else if (alg_k & SSL_kGOST) {
         if (!tls_process_cke_gost(s, pkt, &al))
             goto err;
-    } else {
+	}
+	else if (alg_k & SSL_kBIGN) {
+		if (!tls_process_cke_rsa(s, pkt, &al))
+			goto err;
+	} else {
         al = SSL_AD_HANDSHAKE_FAILURE;
         SSLerr(SSL_F_TLS_PROCESS_CLIENT_KEY_EXCHANGE,
                SSL_R_UNKNOWN_CIPHER_TYPE);

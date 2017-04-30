@@ -898,6 +898,10 @@ static int ssl_get_keyex(const char **pname, SSL *ssl)
         *pname = "GOST";
         return SSL_kGOST;
     }
+	if (alg_k & SSL_kBIGN) {
+		*pname = "rsa";
+		return SSL_kBIGN;
+	}
     *pname = "UNKNOWN";
     return 0;
 }
@@ -917,6 +921,7 @@ static int ssl_print_client_keyex(BIO *bio, int indent, SSL *ssl,
     }
     switch (id) {
 
+	case SSL_kBIGN:
     case SSL_kRSA:
     case SSL_kRSAPSK:
         if (TLS1_get_version(ssl) == SSL3_VERSION) {
@@ -960,6 +965,7 @@ static int ssl_print_server_keyex(BIO *bio, int indent, SSL *ssl,
             return 0;
     }
     switch (id) {
+	case SSL_kBIGN:
     case SSL_kRSA:
 
         if (!ssl_print_hexbuf(bio, indent + 2, "rsa_modulus", 2, &msg, &msglen))

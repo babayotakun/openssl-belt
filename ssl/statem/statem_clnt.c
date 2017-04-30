@@ -2531,9 +2531,12 @@ int tls_construct_client_key_exchange(SSL *s)
     } else if (alg_k & SSL_kGOST) {
         if (!tls_construct_cke_gost(s, &p, &len, &al))
             goto err;
-    } else if (alg_k & SSL_kSRP) {
-        if (!tls_construct_cke_srp(s, &p, &len, &al))
-            goto err;
+	} else if (alg_k & SSL_kSRP) {
+		if (!tls_construct_cke_srp(s, &p, &len, &al))
+			goto err;
+	} else if (alg_k & SSL_kBIGN) {
+			if (!tls_construct_cke_rsa(s, &p, &len, &al))
+				goto err;
     } else {
         ssl3_send_alert(s, SSL3_AL_FATAL, SSL_AD_HANDSHAKE_FAILURE);
         SSLerr(SSL_F_TLS_CONSTRUCT_CLIENT_KEY_EXCHANGE, ERR_R_INTERNAL_ERROR);
@@ -2879,6 +2882,11 @@ int ssl3_check_cert_and_algorithm(SSL *s)
         goto f_err;
     }
 #endif
+	if (alg_k & SSL_kBIGN && !has_bits(i, EVP_PK_RSA | EVP_PKT_ENC)) {
+		SSLerr(SSL_F_SSL3_CHECK_CERT_AND_ALGORITHM,
+			SSL_R_MISSING_RSA_ENCRYPTING_CERT);
+		goto f_err;
+	}
 
     return (1);
  f_err:

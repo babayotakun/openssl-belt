@@ -224,6 +224,9 @@
 # define SSL_kECDHEPSK           0x00000080U
 # define SSL_kDHEPSK             0x00000100U
 
+/* BIGN key exchange */
+# define SSL_kBIGN               0x00000200U
+
 /* all PSK */
 
 # define SSL_PSK     (SSL_kPSK | SSL_kRSAPSK | SSL_kECDHEPSK | SSL_kDHEPSK)

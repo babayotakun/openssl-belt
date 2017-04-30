@@ -159,7 +159,8 @@ static const ssl_cipher_table ssl_cipher_table_kx[] = {
     {SSL_kRSAPSK,   NID_kx_rsa_psk},
     {SSL_kPSK,      NID_kx_psk},
     {SSL_kSRP,      NID_kx_srp},
-    {SSL_kGOST,     NID_kx_gost}
+    {SSL_kGOST,     NID_kx_gost},
+	{SSL_kBIGN,     NID_kx_bign},
 };
 
 static const ssl_cipher_table ssl_cipher_table_auth[] = {
@@ -259,6 +260,8 @@ static const SSL_CIPHER cipher_aliases[] = {
     {0, SSL_TXT_kSRP, 0, SSL_kSRP},
     {0, SSL_TXT_kGOST, 0, SSL_kGOST},
 
+	{0, SSL_TXT_kBIGN, 0, SSL_kBIGN},
+
     /* server authentication aliases */
     {0, SSL_TXT_aRSA, 0, 0, SSL_aRSA},
     {0, SSL_TXT_aDSS, 0, 0, SSL_aDSS},
@@ -283,6 +286,7 @@ static const SSL_CIPHER cipher_aliases[] = {
     {0, SSL_TXT_AECDH, 0, SSL_kECDHE, SSL_aNULL},
     {0, SSL_TXT_PSK, 0, SSL_PSK},
     {0, SSL_TXT_SRP, 0, SSL_kSRP},
+	{0, SSL_TXT_BIGN, 0, SSL_kBIGN, SSL_aRSA},
 
     /* symmetric encryption aliases */
     {0, SSL_TXT_3DES, 0, 0, 0, SSL_3DES},
@@ -1350,6 +1354,7 @@ STACK_OF(SSL_CIPHER) *ssl_create_cipher_list(const SSL_METHOD *ssl_method, STACK
                                disabled_mac, co_list, &head, &tail);
 
 	ssl_cipher_apply_rule(0, 0, 0, SSL_BELT, 0, 0, 0, CIPHER_ADD, -1, &head, &tail);
+	ssl_cipher_apply_rule(0, SSL_kBIGN, 0, 0, 0, 0, 0, CIPHER_ORD, -1, &head, &tail);
     /* Now arrange all ciphers by preference. */
     /*
      * Everything else being equal, prefer ephemeral ECDH over other key
@@ -1560,6 +1565,9 @@ char *SSL_CIPHER_description(const SSL_CIPHER *cipher, char *buf, int len)
     case SSL_kRSA:
         kx = "RSA";
         break;
+	case SSL_kBIGN:
+		kx = "BIGN";
+		break;
     case SSL_kDHE:
         kx = "DH";
         break;

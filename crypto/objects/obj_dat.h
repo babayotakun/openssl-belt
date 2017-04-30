@@ -966,7 +966,7 @@ static const unsigned char so[6807] = {
 	0x2B,0x06,0x01,0x04,0x01,0x82,0xB0,0x44,0x85,0x1A,0x04,  /* [ 6775] hbelt */
 };
 
-#define NUM_NID 1064
+#define NUM_NID 1065
 static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"UNDEF", "undefined", NID_undef},
     {"rsadsi", "RSA Data Security, Inc.", NID_rsadsi, 6, &so[0]},
@@ -2031,9 +2031,10 @@ static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"id-ct-xml", "id-ct-xml", NID_id_ct_xml, 11, &so[6753]},
 	{"belt-256-ctr", "belt-256-ctr", NID_belt_256_ctr, 11, &so[6764]},
 	{"HBELT", "hbelt", NID_hbelt, 11, &so[6775]},
+	{"KxBIGN", "kx-bign", NID_kx_bign },
 };
 
-#define NUM_SN 1054
+#define NUM_SN 1055
 static const unsigned int sn_objs[NUM_SN] = {
      364,    /* "AD_DVCS" */
      419,    /* "AES-128-CBC" */
@@ -3089,6 +3090,7 @@ static const unsigned int sn_objs[NUM_SN] = {
      160,    /* "x509Crl" */
 	 1061,   /* "belt_256_ctr" */
 	 1062,   /* "hbelt" */ 
+     1063,   /* "kxBIGN "*/
 };
 
 #define NUM_LN 1054

@@ -4585,3 +4585,7 @@
 #define LN_hbelt				"hbelt"
 #define NID_hbelt				1062
 #define OBJ_hbelt				1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 4L
+
+#define SN_kx_bign              "KxBIGN"
+#define LN_kx_bign              "kx-bign"
+#define NID_kx_bign              1063

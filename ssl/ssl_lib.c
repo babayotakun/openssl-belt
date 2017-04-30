@@ -2627,33 +2627,36 @@ void SSL_set_cert_cb(SSL *s, int (*cb) (SSL *ssl, void *arg), void *arg)
 void ssl_set_masks(SSL *s)
 {
 #if !defined(OPENSSL_NO_EC) || !defined(OPENSSL_NO_GOST)
-    CERT_PKEY *cpk;
+	CERT_PKEY *cpk;
 #endif
-    CERT *c = s->cert;
-    uint32_t *pvalid = s->s3->tmp.valid_flags;
-    int rsa_enc, rsa_sign, dh_tmp, dsa_sign;
-    unsigned long mask_k, mask_a;
+	CERT *c = s->cert;
+	uint32_t *pvalid = s->s3->tmp.valid_flags;
+	int rsa_enc, rsa_sign, dh_tmp, dsa_sign;
+	unsigned long mask_k, mask_a;
 #ifndef OPENSSL_NO_EC
-    int have_ecc_cert, ecdsa_ok;
-    X509 *x = NULL;
+	int have_ecc_cert, ecdsa_ok;
+	X509 *x = NULL;
 #endif
-    if (c == NULL)
-        return;
+	if (c == NULL)
+		return;
 
 #ifndef OPENSSL_NO_DH
-    dh_tmp = (c->dh_tmp != NULL || c->dh_tmp_cb != NULL || c->dh_tmp_auto);
+	dh_tmp = (c->dh_tmp != NULL || c->dh_tmp_cb != NULL || c->dh_tmp_auto);
 #else
-    dh_tmp = 0;
+	dh_tmp = 0;
 #endif
 
-    rsa_enc = pvalid[SSL_PKEY_RSA_ENC] & CERT_PKEY_VALID;
-    rsa_sign = pvalid[SSL_PKEY_RSA_SIGN] & CERT_PKEY_SIGN;
-    dsa_sign = pvalid[SSL_PKEY_DSA_SIGN] & CERT_PKEY_SIGN;
+	rsa_enc = pvalid[SSL_PKEY_RSA_ENC] & CERT_PKEY_VALID;
+	rsa_sign = pvalid[SSL_PKEY_RSA_SIGN] & CERT_PKEY_SIGN;
+	dsa_sign = pvalid[SSL_PKEY_DSA_SIGN] & CERT_PKEY_SIGN;
 #ifndef OPENSSL_NO_EC
-    have_ecc_cert = pvalid[SSL_PKEY_ECC] & CERT_PKEY_VALID;
+	have_ecc_cert = pvalid[SSL_PKEY_ECC] & CERT_PKEY_VALID;
 #endif
-    mask_k = 0;
-    mask_a = 0;
+	mask_k = 0;
+	mask_a = 0;
+
+	/* BIGN key exchange will be always available */
+	mask_k |= SSL_kBIGN;
 
 #ifdef CIPHER_DEBUG
     fprintf(stderr, "dht=%d re=%d rs=%d ds=%d\n",
@@ -2725,6 +2728,8 @@ void ssl_set_masks(SSL *s)
         mask_k |= SSL_kDHEPSK;
     if (mask_k & SSL_kECDHE)
         mask_k |= SSL_kECDHEPSK;
+	if (mask_k & SSL_kBIGN)
+		mask_k |= SSL_kRSAPSK;
 #endif
 
     s->s3->tmp.mask_k = mask_k;
