@@ -171,7 +171,8 @@ static const ssl_cipher_table ssl_cipher_table_auth[] = {
     {SSL_aGOST01, NID_auth_gost01},
     {SSL_aGOST12, NID_auth_gost12},
     {SSL_aSRP,    NID_auth_srp},
-    {SSL_aNULL,   NID_auth_null}
+    {SSL_aNULL,   NID_auth_null},
+    {SSL_aBIGN,   NID_auth_bign},
 };
 /* *INDENT-ON* */
 
@@ -286,7 +287,7 @@ static const SSL_CIPHER cipher_aliases[] = {
     {0, SSL_TXT_AECDH, 0, SSL_kECDHE, SSL_aNULL},
     {0, SSL_TXT_PSK, 0, SSL_PSK},
     {0, SSL_TXT_SRP, 0, SSL_kSRP},
-	{0, SSL_TXT_BIGN, 0, SSL_kBIGN, SSL_aRSA},
+	{0, SSL_TXT_BIGN, 0, SSL_kBIGN, SSL_aBIGN},
 
     /* symmetric encryption aliases */
     {0, SSL_TXT_3DES, 0, 0, 0, SSL_3DES},
@@ -1622,6 +1623,9 @@ char *SSL_CIPHER_description(const SSL_CIPHER *cipher, char *buf, int len)
     case (SSL_aGOST12 | SSL_aGOST01):
         au = "GOST12";
         break;
+    case SSL_aBIGN:
+        au = "BIGN";
+        break;
     default:
         au = "unknown";
         break;
@@ -1925,6 +1929,9 @@ int ssl_cipher_get_cert_index(const SSL_CIPHER *c)
         return SSL_PKEY_GOST_EC;
     else if (alg_a & SSL_aGOST01)
         return SSL_PKEY_GOST01;
+    /* TODO: BIGN */
+    else if (alg_a & SSL_aBIGN)
+        return SSL_PKEY_RSA_ENC;
 
     return -1;
 }

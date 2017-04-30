@@ -1479,7 +1479,7 @@ id-pkinit 5                     : pkInitKDC             : Signing KDC Response
                             : KxPSK        : kx-psk
                             : KxSRP        : kx-srp
                             : KxGOST       : kx-gost
-							: KxBIGN       : kx-bign
+                            : KxBIGN       : kx-bign
 
 # NIDs for cipher authentication
                             : AuthRSA      : auth-rsa
@@ -1490,4 +1490,5 @@ id-pkinit 5                     : pkInitKDC             : Signing KDC Response
                             : AuthGOST12   : auth-gost12
                             : AuthSRP      : auth-srp
                             : AuthNULL     : auth-null
+                            : AuthBIGN     : auth-bign
 

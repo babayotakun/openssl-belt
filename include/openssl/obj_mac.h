@@ -4588,4 +4588,8 @@
 
 #define SN_kx_bign              "KxBIGN"
 #define LN_kx_bign              "kx-bign"
-#define NID_kx_bign              1063
+#define NID_kx_bign             1063
+
+#define SN_auth_bign            "AuthBIGN"
+#define LN_auth_bign            "auth-bign"
+#define NID_auth_bign           1064

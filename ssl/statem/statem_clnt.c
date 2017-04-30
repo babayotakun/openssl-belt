@@ -1397,6 +1397,9 @@ static int tls_process_ske_srp(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
     if (s->s3->tmp.new_cipher->algorithm_auth & (SSL_aRSA | SSL_aDSS))
         *pkey = X509_get0_pubkey(s->session->peer);
 
+    if (s->s3->tmp.new_cipher->algorithm_auth & SSL_aBIGN)
+        *pkey = X509_get0_pubkey(s->session->peer);
+
     return 1;
 #else
     SSLerr(SSL_F_TLS_PROCESS_SKE_SRP, ERR_R_INTERNAL_ERROR);
@@ -1489,6 +1492,9 @@ static int tls_process_ske_dhe(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
      * public keys. We should have a less ad-hoc way of doing this
      */
     if (s->s3->tmp.new_cipher->algorithm_auth & (SSL_aRSA | SSL_aDSS))
+        *pkey = X509_get0_pubkey(s->session->peer);
+
+    if (s->s3->tmp.new_cipher->algorithm_auth & SSL_aBIGN)
         *pkey = X509_get0_pubkey(s->session->peer);
     /* else anonymous DH, so no certificate or pkey. */
 
@@ -1596,6 +1602,10 @@ static int tls_process_ske_ecdhe(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
         *pkey = X509_get0_pubkey(s->session->peer);
     else if (s->s3->tmp.new_cipher->algorithm_auth & SSL_aRSA)
         *pkey = X509_get0_pubkey(s->session->peer);
+
+    else if (s->s3->tmp.new_cipher->algorithm_auth & SSL_aBIGN)
+        *pkey = X509_get0_pubkey(s->session->peer);
+
     /* else anonymous ECDH, so no certificate or pkey. */
 
     return 1;
@@ -2858,6 +2868,11 @@ int ssl3_check_cert_and_algorithm(SSL *s)
     if ((alg_a & SSL_aRSA) && !has_bits(i, EVP_PK_RSA | EVP_PKT_SIGN)) {
         SSLerr(SSL_F_SSL3_CHECK_CERT_AND_ALGORITHM,
                SSL_R_MISSING_RSA_SIGNING_CERT);
+        goto f_err;
+    }
+    if ((alg_a & SSL_aBIGN) && !has_bits(i, EVP_PK_RSA | EVP_PKT_SIGN)) {
+        SSLerr(SSL_F_SSL3_CHECK_CERT_AND_ALGORITHM,
+            SSL_R_MISSING_RSA_SIGNING_CERT);
         goto f_err;
     }
 #ifndef OPENSSL_NO_DSA

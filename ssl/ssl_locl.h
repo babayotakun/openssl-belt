@@ -249,6 +249,9 @@
 /* GOST R 34.10-2012 signature auth */
 # define SSL_aGOST12             0x00000080U
 
+/* BIGN auth*/
+# define SSL_aBIGN               0x00000100U
+
 /* Bits for algorithm_enc (symmetric encryption) */
 # define SSL_DES                 0x00000001U
 # define SSL_3DES                0x00000002U
