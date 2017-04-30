@@ -2232,6 +2232,7 @@ int ERR_load_SSL_strings(void);
 # define SSL_F_TLS_CONSTRUCT_CKE_PSK_PREAMBLE             407
 # define SSL_F_TLS_CONSTRUCT_CKE_RSA                      409
 # define SSL_F_TLS_CONSTRUCT_CKE_SRP                      410
+# define SSL_F_TLS_CONSTRUCT_CKE_BIGN                     777
 # define SSL_F_TLS_CONSTRUCT_CLIENT_CERTIFICATE           355
 # define SSL_F_TLS_CONSTRUCT_CLIENT_HELLO                 356
 # define SSL_F_TLS_CONSTRUCT_CLIENT_KEY_EXCHANGE          357
@@ -2258,6 +2259,7 @@ int ERR_load_SSL_strings(void);
 # define SSL_F_TLS_PROCESS_CKE_PSK_PREAMBLE               414
 # define SSL_F_TLS_PROCESS_CKE_RSA                        415
 # define SSL_F_TLS_PROCESS_CKE_SRP                        416
+# define SSL_F_TLS_PROCESS_CKE_BIGN                       779
 # define SSL_F_TLS_PROCESS_CLIENT_CERTIFICATE             380
 # define SSL_F_TLS_PROCESS_CLIENT_HELLO                   381
 # define SSL_F_TLS_PROCESS_CLIENT_KEY_EXCHANGE            382
@@ -2272,6 +2274,7 @@ int ERR_load_SSL_strings(void);
 # define SSL_F_TLS_PROCESS_SKE_ECDHE                      420
 # define SSL_F_TLS_PROCESS_SKE_PSK_PREAMBLE               421
 # define SSL_F_TLS_PROCESS_SKE_SRP                        422
+# define SSL_F_TLS_PROCESS_SKE_BIGN                       778
 # define SSL_F_USE_CERTIFICATE_CHAIN_FILE                 220
 
 /* Reason codes. */
