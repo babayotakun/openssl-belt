@@ -111,6 +111,7 @@ extern "C" {
 # define SSL_TXT_kDHEPSK         "kDHEPSK"
 # define SSL_TXT_kGOST           "kGOST"
 # define SSL_TXT_kSRP            "kSRP"
+# define SSL_TXT_kBIGN           "kBIGN"
 
 # define SSL_TXT_aRSA            "aRSA"
 # define SSL_TXT_aDSS            "aDSS"
@@ -137,6 +138,7 @@ extern "C" {
 # define SSL_TXT_ECDSA           "ECDSA"
 # define SSL_TXT_PSK             "PSK"
 # define SSL_TXT_SRP             "SRP"
+# define SSL_TXT_BIGN            "BIGN"
 
 # define SSL_TXT_DES             "DES"
 # define SSL_TXT_3DES            "3DES"
