@@ -60,6 +60,8 @@
 #include <openssl/dh.h>
 #include <openssl/bn.h>
 #include <openssl/md5.h>
+#include <bee2/defs.h>
+#include <bee2/crypto/bign.h>
 
 static STACK_OF(SSL_CIPHER) *ssl_bytes_to_cipher_list(SSL *s,
                                                       PACKET *cipher_suites,
@@ -1500,6 +1502,7 @@ WORK_STATE tls_post_process_client_hello(SSL *s, WORK_STATE wst)
     return WORK_ERROR;
 }
 
+
 int tls_construct_server_hello(SSL *s)
 {
     unsigned char *buf;
@@ -1610,6 +1613,7 @@ int tls_construct_server_done(SSL *s)
     return 1;
 }
 
+
 int tls_construct_server_key_exchange(SSL *s)
 {
 #ifndef OPENSSL_NO_DH
@@ -1658,7 +1662,7 @@ int tls_construct_server_key_exchange(SSL *s)
     } else
 #endif                          /* !OPENSSL_NO_PSK */
 #ifndef OPENSSL_NO_DH
-    if (type & (SSL_kDHE | SSL_kDHEPSK | SSL_kBIGN)) {
+    if (type & (SSL_kDHE | SSL_kDHEPSK)) {
         CERT *cert = s->cert;
 
         EVP_PKEY *pkdhp = NULL;
@@ -1725,6 +1729,20 @@ int tls_construct_server_key_exchange(SSL *s)
         DH_get0_key(dh, &r[2], NULL);
     } else
 #endif
+        /* BIGN: Construct server key params */
+        if (type & SSL_kBIGN) {
+
+            EVP_PKEY *sessionPrivateKey = EVP_PKEY_new();
+            DH* dhStruct = DH_new();
+            BIGNUM* private_key_bignum = BN_new();
+            BIGNUM* public_key_bignum = BN_new();
+            generate_BIGN_keypair(dhStruct, private_key_bignum, public_key_bignum);
+            EVP_PKEY_assign_DH(sessionPrivateKey, dhStruct);
+            s->s3->tmp.pkey = sessionPrivateKey;
+
+            /* r[0] -- public key*/
+            r[0] = public_key_bignum;
+        } else
 #ifndef OPENSSL_NO_EC
     if (type & (SSL_kECDHE | SSL_kECDHEPSK)) {
         int nid;
@@ -2605,7 +2623,7 @@ static int tls_process_cke_bign(SSL *s, PACKET *pkt, int *al)
         goto err;
     }
 
-    if (ssl_derive(s, skey, ckey) == 0) {
+    if (ssl_derive_bign_key(s, skey, ckey) == 0) {
         *al = SSL_AD_INTERNAL_ERROR;
         SSLerr(SSL_F_TLS_PROCESS_CKE_BIGN, ERR_R_INTERNAL_ERROR);
         goto err;

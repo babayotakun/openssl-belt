@@ -261,6 +261,8 @@ int EVP_PKEY_derive_set_peer(EVP_PKEY_CTX *ctx, EVP_PKEY *peer)
      * (different key types) is impossible here because it is checked earlier.
      * -2 is OK for us here, as well as 1, so we can check for 0 only.
      */
+
+
     if (!EVP_PKEY_missing_parameters(peer) &&
         !EVP_PKEY_cmp_parameters(ctx->pkey, peer)) {
         EVPerr(EVP_F_EVP_PKEY_DERIVE_SET_PEER, EVP_R_DIFFERENT_PARAMETERS);

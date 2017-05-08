@@ -1624,81 +1624,47 @@ static int tls_process_ske_ecdhe(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
 static int tls_process_ske_bign(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
 {
     printf("\nProcess BIGN server key exchange\n");
-    PACKET prime, generator, pub_key;
-    EVP_PKEY *peer_tmp = NULL;
+    PACKET public_key_packet;
+    DH* dhStruct = DH_new();
+    EVP_PKEY *temp_key = NULL;
+    BIGNUM *public_key = NULL;
 
-    DH *dh = NULL;
-    BIGNUM *p = NULL, *g = NULL, *bnpub_key = NULL;
 
-    int check_bits = 0;
-
-    if (!PACKET_get_length_prefixed_2(pkt, &prime)
-        || !PACKET_get_length_prefixed_2(pkt, &generator)
-        || !PACKET_get_length_prefixed_2(pkt, &pub_key)) {
+    /* Проверяем, действительно ли там BIGNUM */
+    if (!PACKET_get_length_prefixed_2(pkt, &public_key_packet)) {
         *al = SSL_AD_DECODE_ERROR;
         SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_LENGTH_MISMATCH);
         return 0;
     }
 
-    peer_tmp = EVP_PKEY_new();
-    dh = DH_new();
+    temp_key = EVP_PKEY_new();
 
-    if (peer_tmp == NULL || dh == NULL) {
+    /* Не удалось сделать ключ */
+    if (temp_key == NULL) {
         *al = SSL_AD_INTERNAL_ERROR;
         SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_MALLOC_FAILURE);
         goto err;
     }
 
-    p = BN_bin2bn(PACKET_data(&prime), PACKET_remaining(&prime), NULL);
-    g = BN_bin2bn(PACKET_data(&generator), PACKET_remaining(&generator), NULL);
-    bnpub_key = BN_bin2bn(PACKET_data(&pub_key), PACKET_remaining(&pub_key),
-        NULL);
-    if (p == NULL || g == NULL || bnpub_key == NULL) {
+    /* Читаем BIGNUM из пакетов */
+    public_key = BN_bin2bn(PACKET_data(&public_key_packet), PACKET_remaining(&public_key_packet), NULL);
+
+    /* Не удалось прочитать */
+    if (public_key == NULL) {
         *al = SSL_AD_INTERNAL_ERROR;
         SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_BN_LIB);
         goto err;
     }
+    DH_set0_key(dhStruct, public_key, 0);
+    DH_set0_pqg(dhStruct, BN_new(), NULL, BN_new());
 
-    /* test non-zero pupkey */
-    if (BN_is_zero(bnpub_key)) {
-        *al = SSL_AD_DECODE_ERROR;
-        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_BAD_DH_VALUE);
-        goto err;
-    }
-
-    if (!DH_set0_pqg(dh, p, NULL, g)) {
-        *al = SSL_AD_INTERNAL_ERROR;
-        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_BN_LIB);
-        goto err;
-    }
-    p = g = NULL;
-
-    if (DH_check_params(dh, &check_bits) == 0 || check_bits != 0) {
-        *al = SSL_AD_DECODE_ERROR;
-        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_BAD_DH_VALUE);
-        goto err;
-    }
-
-    if (!DH_set0_key(dh, bnpub_key, NULL)) {
-        *al = SSL_AD_INTERNAL_ERROR;
-        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_BN_LIB);
-        goto err;
-    }
-    bnpub_key = NULL;
-
-    if (!ssl_security(s, SSL_SECOP_TMP_DH, DH_security_bits(dh), 0, dh)) {
-        *al = SSL_AD_HANDSHAKE_FAILURE;
-        SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, SSL_R_DH_KEY_TOO_SMALL);
-        goto err;
-    }
-
-    if (EVP_PKEY_assign_DH(peer_tmp, dh) == 0) {
+    if (EVP_PKEY_assign_DH(temp_key, dhStruct) == 0) {
         *al = SSL_AD_INTERNAL_ERROR;
         SSLerr(SSL_F_TLS_PROCESS_SKE_BIGN, ERR_R_EVP_LIB);
         goto err;
     }
 
-    s->s3->peer_tmp = peer_tmp;
+    s->s3->peer_tmp = temp_key;
 
     /*
     * FIXME: This makes assumptions about which ciphersuites come with
@@ -1714,11 +1680,8 @@ static int tls_process_ske_bign(SSL *s, PACKET *pkt, EVP_PKEY **pkey, int *al)
     return 1;
 
 err:
-    BN_free(p);
-    BN_free(g);
-    BN_free(bnpub_key);
-    DH_free(dh);
-    EVP_PKEY_free(peer_tmp);
+    BN_free(public_key);
+    EVP_PKEY_free(temp_key);
 
     return 0;
 }
@@ -2623,27 +2586,33 @@ static int tls_construct_cke_srp(SSL *s, unsigned char **p, int *len, int *al)
 
 static int tls_construct_cke_bign(SSL *s, unsigned char **p, int *len, int *al)
 {
-    printf("\nConstruct BIGN client key exchange\n");
+    printf("Construct BIGN client key exchange\n");
     DH *dh_clnt = NULL;
     const BIGNUM *pub_key;
-    EVP_PKEY *ckey = NULL, *skey = NULL;
+    EVP_PKEY *client_private_key = NULL, *server_public_key = NULL;
 
-    skey = s->s3->peer_tmp;
-    if (skey == NULL) {
+    server_public_key = s->s3->peer_tmp;
+    if (server_public_key == NULL) {
         SSLerr(SSL_F_TLS_CONSTRUCT_CKE_BIGN, ERR_R_INTERNAL_ERROR);
         return 0;
     }
-    ckey = ssl_generate_pkey(skey);
-    if (ckey == NULL) {
+    client_private_key = EVP_PKEY_new();
+    DH* dhStruct = DH_new();
+    BIGNUM* private_key_bignum = BN_new();
+    BIGNUM* public_key_bignum = BN_new();
+    generate_BIGN_keypair(dhStruct, private_key_bignum, public_key_bignum);
+   
+    EVP_PKEY_assign_DH(client_private_key, dhStruct);
+    if (client_private_key == NULL) {
         SSLerr(SSL_F_TLS_CONSTRUCT_CKE_BIGN, ERR_R_INTERNAL_ERROR);
         return 0;
     }
 
-    dh_clnt = EVP_PKEY_get0_DH(ckey);
+    dh_clnt = EVP_PKEY_get0_DH(client_private_key);
 
-    if (dh_clnt == NULL || ssl_derive(s, ckey, skey) == 0) {
+    if (dh_clnt == NULL || ssl_derive_bign_key(s, client_private_key, server_public_key) == 0) {
         SSLerr(SSL_F_TLS_CONSTRUCT_CKE_BIGN, ERR_R_INTERNAL_ERROR);
-        EVP_PKEY_free(ckey);
+        EVP_PKEY_free(client_private_key);
         return 0;
     }
 
@@ -2653,8 +2622,7 @@ static int tls_construct_cke_bign(SSL *s, unsigned char **p, int *len, int *al)
     s2n(*len, *p);
     BN_bn2bin(pub_key, *p);
     *len += 2;
-    EVP_PKEY_free(ckey);
-
+    EVP_PKEY_free(client_private_key);
     return 1;
 }
 

@@ -53,6 +53,8 @@
 # define EVP_PKEY_TLS1_PRF NID_tls1_prf
 # define EVP_PKEY_HKDF   NID_hkdf
 
+# define EVP_PKEY_BIGN   NID_bignKey
+
 #ifdef  __cplusplus
 #include "ossl_typ.h"
 
@@ -398,6 +400,9 @@ typedef int (EVP_PBE_KEYGEN) (EVP_CIPHER_CTX *ctx, const char *pass,
 #  define EVP_PKEY_assign_EC_KEY(pkey,eckey) EVP_PKEY_assign((pkey),EVP_PKEY_EC,\
                                         (char *)(eckey))
 # endif
+
+#  define EVP_PKEY_assign_BIGN(pkey,bign) EVP_PKEY_assign((pkey),EVP_PKEY_BIGN,\
+                                        (char *)(bign))
 
 /* Add some extra combinations */
 # define EVP_get_digestbynid(a) EVP_get_digestbyname(OBJ_nid2sn(a))

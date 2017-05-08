@@ -53,6 +53,7 @@
 #include <openssl/md5.h>
 #include <openssl/dh.h>
 #include <openssl/rand.h>
+#include <bee2/crypto/bign.h>
 
 #define SSL3_NUM_CIPHERS        OSSL_NELEM(ssl3_ciphers)
 #include "../include/openssl/tls1.h"
@@ -4125,6 +4126,59 @@ int ssl_derive(SSL *s, EVP_PKEY *privkey, EVP_PKEY *pubkey)
     return rv;
 }
 
+/* Derive premaster or master secret for BIGN */
+int ssl_derive_bign_key(SSL *s, EVP_PKEY *privkey, EVP_PKEY *pubkey)
+{
+    int rv = 0;
+ 
+    DH* dh_private = EVP_PKEY_get0_DH(privkey);
+    DH* dh_public = EVP_PKEY_get0_DH(pubkey);
+    BIGNUM* master_key = BN_new();
+   
+
+    BIGNUM* my_private_key = BN_new();
+    BIGNUM* my_public_key = BN_new();
+    BIGNUM* opponent_public_key = BN_new();
+
+    unsigned char *my_private_key_chars = malloc(64 * sizeof(char));
+    unsigned char *my_public_key_chars = malloc(128 * sizeof(char));
+    unsigned char *opponent_public_key_chars = malloc(128 * sizeof(char));
+
+    char *master_key_chars = malloc(64 * sizeof(char));
+
+    DH_get0_key(dh_private, &my_public_key, &my_private_key);
+    DH_get0_key(dh_public, &opponent_public_key, NULL);
+
+    BN_bn2bin(my_private_key, my_private_key_chars);
+    BN_bn2bin(my_public_key, my_public_key_chars);
+    BN_bn2bin(opponent_public_key, opponent_public_key_chars);
+
+    bign_params *params = malloc(sizeof(bign_params));
+    bignStdParams(params, "1.2.112.0.2.0.34.101.45.3.3");
+
+    bignDH(master_key_chars, params, my_private_key_chars, opponent_public_key_chars, 64);
+
+    printf("\nMASTER SECRET: \n");
+    for (int i = 0; i < 64; i++)
+    {
+        printf("0x%x ",master_key_chars[i]);
+    }
+    printf("\n");
+
+    if (s->server) {
+        /* For server generate master secret and discard premaster */
+        rv = ssl_generate_master_secret(s, master_key_chars, 64, 1);
+        master_key_chars = NULL;
+    }
+    else {
+        /* For client just save premaster secret */
+        s->s3->tmp.pms = master_key_chars;
+        s->s3->tmp.pmslen = 64;
+        master_key_chars = NULL;
+        rv = 1;
+    }
+}
+
 #ifndef OPENSSL_NO_DH
 EVP_PKEY *ssl_dh_to_pkey(DH *dh)
 {
@@ -4139,3 +4193,26 @@ EVP_PKEY *ssl_dh_to_pkey(DH *dh)
     return ret;
 }
 #endif
+
+int BIGN_random_generator(char* buf, int count, void* state)
+{
+    return RAND_bytes(buf, count);
+}
+
+int generate_BIGN_keypair(DH* dh_struct, BIGNUM* private_key, BIGNUM* public_key)
+{
+    unsigned char *private_key_chars = malloc(64 * sizeof(char));
+    /*128*/
+    unsigned char *public_key_chars = malloc(128 * sizeof(char));
+    int(*generator)(char*, int);
+    generator = &BIGN_random_generator;
+    bign_params *params = malloc(sizeof(bign_params));
+    bignStdParams(params, "1.2.112.0.2.0.34.101.45.3.3");
+    bignGenKeypair(private_key_chars, public_key_chars, params, generator, 0);
+    BN_bin2bn(private_key_chars, 64, private_key);
+    BN_bin2bn(public_key_chars, 128, public_key);
+    BIGNUM* new_key = BN_new();
+    BN_copy(new_key, public_key);
+    DH_set0_key(dh_struct, public_key, private_key);
+    DH_set0_pqg(dh_struct, new_key, NULL, BN_new());
+}
