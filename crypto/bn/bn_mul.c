@@ -12,8 +12,6 @@
 #include "bn_lcl.h"
 
 #if defined(OPENSSL_NO_ASM) || !defined(OPENSSL_BN_ASM_PART_WORDS)
-#include "../../../../Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt/assert.h"
-#include "../../../../Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/vcruntime.h"
 
 /*
  * Here follows specialised variants of bn_add_words() and bn_sub_words().

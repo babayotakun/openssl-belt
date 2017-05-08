@@ -36,11 +36,6 @@ extern unsigned int OPENSSL_sparcv9cap_P[];
 
 /* maximum precomputation table size for *variable* sliding windows */
 #define TABLE_SIZE      32
-#include "../../include/openssl/bn.h"
-#include "../../include/openssl/err.h"
-#include "../../include/openssl/opensslconf.h"
-#include "../../../../Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/vcruntime.h"
-#include "../../include/openssl/ossl_typ.h"
 
 /* this one works - simple but works */
 int BN_exp(BIGNUM *r, const BIGNUM *a, const BIGNUM *p, BN_CTX *ctx)

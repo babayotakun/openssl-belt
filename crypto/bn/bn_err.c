@@ -17,8 +17,6 @@
 
 # define ERR_FUNC(func) ERR_PACK(ERR_LIB_BN,func,0)
 # define ERR_REASON(reason) ERR_PACK(ERR_LIB_BN,0,reason)
-#include "../../include/openssl/bn.h"
-#include "../../include/openssl/err.h"
 
 static ERR_STRING_DATA BN_str_functs[] = {
     {ERR_FUNC(BN_F_BNRAND), "bnrand"},
