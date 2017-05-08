@@ -4593,3 +4593,7 @@
 #define SN_auth_bign            "AuthBIGN"
 #define LN_auth_bign            "auth-bign"
 #define NID_auth_bign           1064
+
+#define LN_bign_key             "bignKey"
+#define NID_bignKey             1065
+#define OBJ_bignKey             1L, 3L, 6Lm 1L, 4L, 1L 38980L, 666L, 5L
